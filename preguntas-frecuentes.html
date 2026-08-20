@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preguntas frecuentes | Delta Digital</title>
+<style>
+  @font-face{font-family:'Gotham';src:url('fonts/Gotham-Book.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Gotham';src:url('fonts/Gotham-Medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Gotham';src:url('fonts/Gotham-Bold.otf') format('opentype');font-weight:600 700;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Gotham';src:url('fonts/Gotham-Black.otf') format('opentype');font-weight:800 900;font-style:normal;font-display:swap;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:100px;}
+  body{font-family:'Gotham',system-ui,sans-serif;color:#0a0223;background:#ffffff;-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.5;}
+  a{color:#0093f7;text-decoration:none;}
+  a:hover{color:#0077cc;}
+  ::selection{background:rgba(0,147,247,.18);}
+  :focus-visible{outline:2px solid #0093f7;outline-offset:2px;}
+  ::-webkit-scrollbar{height:0;width:0;}
+  input::placeholder,textarea::placeholder{color:#98a0b0;}
+  @keyframes ddSpin{to{transform:rotate(360deg);}}
+  @keyframes ddDrift{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-26px,-22px) scale(1.06);}}
+  @keyframes ddFloatA{0%,100%{transform:translateY(0) rotate(-8deg);}50%{transform:translateY(-22px) rotate(-8deg);}}
+  @keyframes ddFloatB{0%,100%{transform:translateY(0) rotate(10deg);}50%{transform:translateY(20px) rotate(10deg);}}
+  @keyframes ddHoloFoil{0%,100%{background-position:0% 50%;}50%{background-position:100% 50%;}}
+  @keyframes ddHoloGlare{0%,100%{background-position:140% 0;}50%{background-position:-40% 0;}}
+  @keyframes ddDot{0%,80%,100%{transform:translateY(0);opacity:.45;}40%{transform:translateY(-7px);opacity:1;}}
+  @keyframes ddBubble{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+  @keyframes ddPop{from{opacity:0;transform:scale(.92) translateY(14px);}to{opacity:1;transform:none;}}
+  @keyframes ddFadeIn{from{opacity:0;}to{opacity:1;}}
+  @keyframes ddPin{0%,100%{transform:translateY(0);}50%{transform:translateY(-5px);}}
+  .dd-pin{animation:ddPin 2.6s ease-in-out infinite;}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;}}
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div style="position:relative;width:100%;overflow-x:clip;background:#f4f6fa">
+
+<nav id="ddnav" style="position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px max(5vw,20px);background:#ffffff;border-bottom:1px solid #e7eaf2;box-shadow:0 8px 26px -22px rgba(16,24,40,.7)">
+  <div style="display:flex;align-items:center;gap:14px;flex:none">
+    <button type="button" onClick="{{ toggleDrawer }}" aria-label="Menú" style="display:{{ navMob }};align-items:center;justify-content:center;flex:none;width:44px;height:44px;margin-left:-10px;border:0;background:transparent;cursor:pointer;color:#0a0223">
+      <svg viewBox="0 0 24 24" style="width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round"><path d="{{ burgerPath }}"></path></svg>
+    </button>
+    <a href="index.html#top" aria-label="Delta Digital" style="display:block;flex:none;height:38px">
+      <img src="assets/delta-logo.svg" alt="Delta Digital" style="height:38px;width:auto;display:block">
+    </a>
+  </div>
+  <div style="display:{{ navDesk }};align-items:center;gap:38px">
+    <a href="index.html#top" style="color:#0a0223;font-size:.95rem;font-weight:400;text-decoration:none;transition:color .15s" style-hover="color:#0093f7">Inicio</a>
+    <div onMouseEnter="{{ openMenu }}" onMouseLeave="{{ closeMenu }}" style="position:relative;display:flex;align-items:center">
+      <a href="index.html#servicios" style="display:inline-flex;align-items:center;gap:6px;color:{{ servColor }};font-size:.95rem;font-weight:400;text-decoration:none;transition:color .15s">Servicios
+        <svg viewBox="0 0 12 8" style="width:11px;height:8px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s;transform:rotate({{ chevRot }})"><path d="M1 1l5 5 5-5"></path></svg>
+      </a>
+      <div style="position:absolute;top:100%;left:min(-64px, calc(100vw - 100% - 680px - max(5vw,20px)));margin-top:44px;width:min(680px, calc(100vw - 2 * max(5vw,20px)));background:#ffffff;border-radius:18px;padding:22px 26px;box-shadow:0 26px 60px -26px rgba(16,24,40,.26), 0 2px 6px rgba(16,24,40,.05);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 22px;transition:opacity .22s ease, transform .22s ease, visibility .22s;transform:translate(0,{{ menuY }});opacity:{{ menuOpacity }};visibility:{{ menuVis }}">
+        <a href="index.html#servicios" style="display:flex;gap:4px;align-items:flex-start;text-decoration:none;padding:10px;border-radius:12px;transition:background .18s" style-hover="background:#f2f7fe">
+          <img src="assets/menu/publicidad.svg" alt="" style="width:76px;height:76px;flex:none;margin:-22px 0 0 -22px">
+          <span style="display:block"><b style="display:block;font-size:.9rem;font-weight:500;color:#0a0223;margin-bottom:4px">Publicidad pagada</b><span style="display:block;font-size:.8rem;line-height:1.45;color:#98a0b0">Campañas con alta segmentación y escalabilidad.</span></span>
+        </a>
+        <a href="posicionamiento-seo.html#top" style="display:flex;gap:4px;align-items:flex-start;text-decoration:none;padding:10px;border-radius:12px;transition:background .18s" style-hover="background:#f2f7fe">
+          <img src="assets/menu/seo.svg" alt="" style="width:76px;height:76px;flex:none;margin:-22px 0 0 -22px">
+          <span style="display:block"><b style="display:block;font-size:.9rem;font-weight:500;color:#0a0223;margin-bottom:4px">Posicionamiento web</b><span style="display:block;font-size:.8rem;line-height:1.45;color:#98a0b0">Mejora tu posición en los resultados de búsqueda de Google.</span></span>
+        </a>
+        <a href="index.html#servicios" style="display:flex;gap:4px;align-items:flex-start;text-decoration:none;padding:10px;border-radius:12px;transition:background .18s" style-hover="background:#f2f7fe">
+          <img src="assets/menu/redes.svg" alt="" style="width:76px;height:76px;flex:none;margin:-22px 0 0 -22px">
+          <span style="display:block"><b style="display:block;font-size:.9rem;font-weight:500;color:#0a0223;margin-bottom:4px">Gestión de redes sociales</b><span style="display:block;font-size:.8rem;line-height:1.45;color:#98a0b0">Amplía tu alcance y presencia online con contenido atractivo y gestión activa.</span></span>
+        </a>
+        <a href="email-marketing.html#top" style="display:flex;gap:4px;align-items:flex-start;text-decoration:none;padding:10px;border-radius:12px;transition:background .18s" style-hover="background:#f2f7fe">
+          <img src="assets/menu/email.svg" alt="" style="width:76px;height:76px;flex:none;margin:-22px 0 0 -22px">
+          <span style="display:block"><b style="display:block;font-size:.9rem;font-weight:500;color:#0a0223;margin-bottom:4px">Email marketing</b><span style="display:block;font-size:.8rem;line-height:1.45;color:#98a0b0">Convierte suscriptores en clientes recurrentes con emails.</span></span>
+        </a>
+        <a href="desarrollo-web.html#top" style="display:flex;gap:4px;align-items:flex-start;text-decoration:none;padding:10px;border-radius:12px;transition:background .18s" style-hover="background:#f2f7fe">
+          <img src="assets/menu/web.svg" alt="" style="width:76px;height:76px;flex:none;margin:-22px 0 0 -22px">
+          <span style="display:block"><b style="display:block;font-size:.9rem;font-weight:500;color:#0a0223;margin-bottom:4px">Desarrollo web</b><span style="display:block;font-size:.8rem;line-height:1.45;color:#98a0b0">Diseñamos sitios web estéticos y funcionales para tu empresa.</span></span>
+        </a>
+        <a href="index.html#servicios" style="display:flex;gap:4px;align-items:flex-start;text-decoration:none;padding:10px;border-radius:12px;transition:background .18s" style-hover="background:#f2f7fe">
+          <img src="assets/menu/video.svg" alt="" style="width:76px;height:76px;flex:none;margin:-22px 0 0 -22px">
+          <span style="display:block"><b style="display:block;font-size:.9rem;font-weight:500;color:#0a0223;margin-bottom:4px">Creación de video</b><span style="display:block;font-size:.8rem;line-height:1.45;color:#98a0b0">Creamos estrategias audiovisuales que convierten ideas en historias.</span></span>
+        </a>
+      </div>
+    </div>
+    <a href="index.html#portafolio" style="color:#0a0223;font-size:.95rem;font-weight:400;text-decoration:none;transition:color .15s" style-hover="color:#0093f7">Portafolio</a>
+    <a href="blog.html#articulos" style="color:#0a0223;font-size:.95rem;font-weight:400;text-decoration:none;transition:color .15s" style-hover="color:#0093f7">Blog</a>
+  </div>
+  <a href="contacto.html#formulario" style="flex:none;display:inline-flex;align-items:center;justify-content:center;background:#0093f7;color:#fff;font-weight:600;font-size:.9rem;padding:11px 24px;border-radius:10px;text-decoration:none;box-shadow:0 10px 24px -10px rgba(0,147,247,.8), inset 0 1px 0 rgba(255,255,255,.2);transition:background .2s, transform .15s, box-shadow .2s" style-hover="background:#0077cc;transform:translateY(-1px);box-shadow:0 16px 32px -10px rgba(0,147,247,.85), inset 0 1px 0 rgba(255,255,255,.2)">Contacto</a>
+</nav>
+
+<div onClick="{{ closeDrawer }}" aria-hidden="true" style="position:fixed;inset:0;z-index:180;background:rgba(8,2,26,.45);opacity:{{ drawerShade }};visibility:{{ drawerVis }};transition:opacity .3s ease, visibility .3s"></div>
+<aside style="position:fixed;top:0;left:0;bottom:0;z-index:190;width:min(100%,440px);display:flex;flex-direction:column;background:#f4f6fa;transform:translateX({{ drawerX }});transition:transform .34s cubic-bezier(.2,.7,.2,1);visibility:{{ drawerVis }};box-shadow:24px 0 60px -30px rgba(8,2,26,.6)">
+  <div style="flex:none;height:71px"></div>
+  <div style="flex:1;overflow-y:auto;padding:0 max(5vw,20px)">
+    <a href="index.html#top" onClick="{{ closeDrawer }}" style="display:block;padding:20px 4px;font-size:1.05rem;color:#0a0223;text-decoration:none;border-bottom:1px solid #e3e6ee">Inicio</a>
+    <button type="button" onClick="{{ toggleMServ }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 4px;font-size:1.05rem;color:#0a0223;background:{{ mServBg }};border:0;border-bottom:1px solid #e3e6ee;cursor:pointer;font-family:inherit;text-align:left">Servicios
+      <svg viewBox="0 0 12 8" style="width:13px;height:9px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s;transform:rotate({{ mServRot }})"><path d="M1 1l5 5 5-5"></path></svg>
+    </button>
+    <div style="display:{{ mServDisplay }};flex-direction:column;padding:10px 0 16px">
+      <a href="index.html#servicios" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+        <img src="assets/menu/publicidad.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+        <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Publicidad pagada</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Campañas con alta segmentación y escalabilidad.</span></span>
+      </a>
+      <a href="index.html#servicios" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+        <img src="assets/menu/redes.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+        <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Gestión de redes sociales</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Amplía tu alcance y presencia online con contenido atractivo y gestión activa.</span></span>
+      </a>
+      <a href="desarrollo-web.html#top" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+        <img src="assets/menu/web.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+        <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Desarrollo web</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Diseñamos sitios web estéticos y funcionales para tu empresa.</span></span>
+      </a>
+      <a href="posicionamiento-seo.html#top" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+        <img src="assets/menu/seo.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+        <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Posicionamiento web</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Mejora tu posición en los resultados de búsqueda de Google.</span></span>
+      </a>
+      <a href="email-marketing.html#top" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+        <img src="assets/menu/email.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+        <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Email marketing</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Convierte suscriptores en clientes recurrentes con emails.</span></span>
+      </a>
+      <a href="index.html#servicios" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+        <img src="assets/menu/video.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+        <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Creación de video</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Creamos estrategias audiovisuales que convierten ideas en historias.</span></span>
+      </a>
+    </div>
+    <a href="index.html#portafolio" onClick="{{ closeDrawer }}" style="display:block;padding:20px 4px;font-size:1.05rem;color:#0a0223;text-decoration:none;border-bottom:1px solid #e3e6ee">Portafolio</a>
+    <a href="blog.html#articulos" onClick="{{ closeDrawer }}" style="display:block;padding:20px 4px;font-size:1.05rem;color:#0a0223;text-decoration:none;border-bottom:1px solid #e3e6ee">Blog</a>
+    <a href="contacto.html#formulario" onClick="{{ closeDrawer }}" style="display:block;padding:20px 4px;font-size:1.05rem;color:#0a0223;text-decoration:none;border-bottom:1px solid #e3e6ee">Agendar reunión</a>
+  </div>
+  <div style="flex:none;background:#0a0820;color:#ffffff;padding:22px max(5vw,20px);display:flex;align-items:center;justify-content:space-between;gap:18px">
+    <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
+      <a href="tel:+56999098594" style="display:flex;align-items:center;gap:11px;color:rgba(255,255,255,.9);font-size:.9rem;text-decoration:none">
+        <svg viewBox="0 0 24 24" style="flex:none;width:17px;height:17px;color:#2e9bff;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>+56 9 9909 8594</a>
+      <a href="mailto:contacto@deltadigital.cl" style="display:flex;align-items:center;gap:11px;color:rgba(255,255,255,.9);font-size:.9rem;text-decoration:none;min-width:0">
+        <svg viewBox="0 0 24 24" style="flex:none;width:17px;height:17px;color:#2e9bff;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg><span style="overflow:hidden;text-overflow:ellipsis">contacto@deltadigital.cl</span></a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;flex:none">
+      <a href="#" aria-label="LinkedIn" style="width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#ffffff;color:#0a0820"><svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21h-4z"></path></svg></a>
+      <a href="#" aria-label="Instagram" style="width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#ffffff;color:#0a0820"><svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"></circle></svg></a>
+    </div>
+  </div>
+</aside>
+
+<section id="preguntas" data-screen-label="Preguntas frecuentes" style="position:relative;background:#f4f6fa;padding:clamp(104px,10vw,140px) max(5vw,20px) clamp(70px,8vw,110px)">
+
+  <div aria-hidden="true" style="position:absolute;top:0;right:0;width:820px;height:100%;pointer-events:none;z-index:0">
+    <img src="assets/method/bg-ellipse-full.svg" alt="" style="position:absolute;right:-104px;top:-24px;width:546px;height:auto;opacity:.9">
+    <img src="assets/esfera.svg" alt="" style="position: absolute; top: 38px; width: 145px; height: auto; animation: ddFloatA 14s ease-in-out infinite; left: 743px">
+    <img src="assets/fx-dashed.svg" alt="" style="position:absolute;right:-58px;top:193px;width:200px;opacity:.4;animation:ddSpin 44s linear infinite">
+    <img src="assets/method/bg-triangle.svg" alt="" style="position:absolute;right:-24px;top:277px;width:86px;height:auto;animation:ddFloatB 12s ease-in-out infinite">
+  </div>
+
+  <div style="position:relative;z-index:1;max-width:1180px;margin:0 auto">
+
+
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;color:#6b7385;font-size:.85rem">
+      <a href="index.html#top" style="color:#6b7385;text-decoration:none" style-hover="color:#0093f7">Inicio</a>
+      <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:none;stroke:#0093f7;stroke-width:2;stroke-linecap:round"><path d="M5 12h13M13 6l6 6-6 6"></path></svg>
+      <span style="color:#0a0223;font-weight:600">Preguntas frecuentes</span>
+    </div>
+
+    <h1 style="font-weight:700;font-size:clamp(1.9rem,3.4vw,2.7rem);line-height:1.12;letter-spacing:-.03em;color:#0a0223;margin-bottom:clamp(18px,2.4vw,28px);max-width:20ch">Preguntas <span style="color:#0093f7">frecuentes</span></h1>
+
+    <div id="ddFaqTabs" style="position:sticky;top:88px;z-index:150;display:flex;flex-direction:{{ fqDir }};transition:max-width .25s;max-width:{{ fqMax }};margin:{{ fqMargin }};background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 2px 4px rgba(16,24,40,.05), 0 22px 50px -30px rgba(16,24,40,.3)">
+        <a href="#faq-c" onClick="{{ goC }}" style="flex:{{ fqFlex0 }};min-width:0;overflow:hidden;display:flex;align-items:center;justify-content:{{ fqJustify }};gap:10px;padding:{{ fqPad }};text-decoration:none;font-size:.95rem;font-weight:{{ fqW0 }};color:{{ fqC0 }};transition:color .2s">
+          <img src="assets/faq/tab-3.svg" alt="" aria-hidden="true" style="width:36px;height:36px;flex:none;margin:-6px 0;border-radius:12px;background:#ffffff;box-shadow:0 0 0 6px #ffffff, 0 0 18px 8px rgba(255,255,255,.95), 0 10px 20px -8px rgba(16,24,40,.22), 0 3px 8px -3px rgba(16,24,40,.14)">
+          <span style="display:{{ fqLbl0 }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:relative;transition:color .2s">Política de cookies<span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:-14px;height:2.5px;border-radius:2px;background:{{ fqL0 }};transition:background .2s"></span></span>
+        </a>
+        <span aria-hidden="true" style="flex:none;align-self:stretch;width:1px;margin:18px 0;background:#e7eaf2;display:{{ fqSepDisp }}"></span>
+        <a href="#faq-p" onClick="{{ goP }}" style="flex:{{ fqFlex1 }};min-width:0;overflow:hidden;display:flex;align-items:center;justify-content:{{ fqJustify }};gap:10px;padding:{{ fqPad }};text-decoration:none;font-size:.95rem;font-weight:{{ fqW1 }};color:{{ fqC1 }};transition:color .2s">
+          <img src="assets/faq/tab-1.svg" alt="" aria-hidden="true" style="width:36px;height:36px;flex:none;margin:-6px 0;border-radius:12px;background:#ffffff;box-shadow:0 0 0 6px #ffffff, 0 0 18px 8px rgba(255,255,255,.95), 0 10px 20px -8px rgba(16,24,40,.22), 0 3px 8px -3px rgba(16,24,40,.14)">
+          <span style="display:{{ fqLbl1 }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:relative;transition:color .2s">Política de privacidad<span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:-14px;height:2.5px;border-radius:2px;background:{{ fqL1 }};transition:background .2s"></span></span>
+        </a>
+        <span aria-hidden="true" style="flex:none;align-self:stretch;width:1px;margin:18px 0;background:#e7eaf2;display:{{ fqSepDisp }}"></span>
+        <a href="#faq-l" onClick="{{ goL }}" style="flex:{{ fqFlex2 }};min-width:0;overflow:hidden;display:flex;align-items:center;justify-content:{{ fqJustify }};gap:10px;padding:{{ fqPad }};text-decoration:none;font-size:.95rem;font-weight:{{ fqW2 }};color:{{ fqC2 }};transition:color .2s">
+          <img src="assets/faq/tab-2.svg" alt="" aria-hidden="true" style="width:36px;height:36px;flex:none;margin:-6px 0;border-radius:12px;background:#ffffff;box-shadow:0 0 0 6px #ffffff, 0 0 18px 8px rgba(255,255,255,.95), 0 10px 20px -8px rgba(16,24,40,.22), 0 3px 8px -3px rgba(16,24,40,.14)">
+          <span style="display:{{ fqLbl2 }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:relative;transition:color .2s">Aviso legal<span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:-14px;height:2.5px;border-radius:2px;background:{{ fqL2 }};transition:background .2s"></span></span>
+        </a>
+    </div>
+
+    <div>
+  <div id="faq-c" data-screen-label="Política de cookies" style="scroll-margin-top:150px;margin-top:0">
+    <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:6px">
+      <span style="color:#0093f7;font-size:.8rem;font-weight:700;letter-spacing:.14em">01</span>
+      <span style="color:#8a92a3;font-size:.8rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase">Cookies</span>
+    </div>
+    <h2 style="font-weight:700;font-size:clamp(1.5rem,3vw,2.35rem);line-height:1.12;letter-spacing:-.03em;color:#0a0223;margin-bottom:8px"><span style="color:#0093f7">Política</span> de cookies</h2>
+    <p style="color:#8a92a3;font-size:.84rem;margin-bottom:clamp(22px,2.6vw,32px)">Última actualización: agosto 2026</p>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div id="faq-c-1" style="scroll-margin-top:130px;background:#ffffff;border-radius:14px;box-shadow:0 1px 2px rgba(16,24,40,.04), 0 14px 30px -26px rgba(16,24,40,.5);overflow:hidden">
+        <button type="button" onClick="{{ togC1 }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:19px 22px;border:0;background:transparent;font-family:inherit;font-size:clamp(.95rem,1.25vw,1.02rem);font-weight:500;color:#0a0223;text-align:left;cursor:pointer;transition:color .2s" style-hover="color:#0093f7">
+          <span>1. ¿Qué son las cookies?</span>
+          <span style="flex:none;width:30px;height:30px;border-radius:50%;border:1.6px solid #0093f7;color:#0093f7;display:grid;place-items:center;transition:transform .3s cubic-bezier(.22,.61,.36,1);transform:rotate({{ rotC1 }})">
+            <svg viewBox="0 0 12 8" style="width:11px;height:8px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round"><path d="M1 1.5 6 6.5l5-5"></path></svg>
+          </span>
+        </button>
+        <div style="overflow:hidden;max-height:{{ mhC1 }};opacity:{{ opC1 }};transition:max-height .36s cubic-bezier(.22,.61,.36,1), opacity .3s ease">
+          <div style="display:flex;flex-direction:column;gap:12px;padding:2px 22px 22px">
+            <p style="color:#3a4254;font-size:.95rem;line-height:1.75">Las cookies son pequeños archivos que se descargan en su dispositivo al acceder a ciertos sitios web. Permiten reconocer al Usuario, recordar sus preferencias y analizar el uso del sitio.</p>
+          </div>
+        </div>
+      </div>
+      <div id="faq-c-2" style="scroll-margin-top:130px;background:#ffffff;border-radius:14px;box-shadow:0 1px 2px rgba(16,24,40,.04), 0 14px 30px -26px rgba(16,24,40,.5);overflow:hidden">
+        <button type="button" onClick="{{ togC2 }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:19px 22px;border:0;background:transparent;font-family:inherit;font-size:clamp(.95rem,1.25vw,1.02rem);font-weight:500;color:#0a0223;text-align:left;cursor:pointer;transition:color .2s" style-hover="color:#0093f7">
+          <span>2. Tipos de cookies que utilizamos</span>
+          <span style="flex:none;width:30px;height:30px;border-radius:50%;border:1.6px solid #0093f7;color:#0093f7;display:grid;place-items:center;transition:transform .3s cubic-bezier(.22,.61,.36,1);transform:rotate({{ rotC2 }})">
+            <svg viewBox="0 0 12 8" style="width:11px;height:8px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round"><path d="M1 1.5 6 6.5l5-5"></path></svg>
+          </span>
+        </button>
+        <div style="overflow:hidden;max-height:{{ mhC2 }};opacity:{{ opC2 }};transition:max-height .36s cubic-bezier(.22,.61,.36,1), opacity .3s ease">
+          <div style="display:flex;flex-direction:column;gap:12px;padding:2px 22px 22px">
+            <ul style="list-style:disc;padding-left:20px;display:flex;flex-direction:column;gap:9px;color:#3a4254;font-size:.95rem;line-height:1.75">
+              <li><b style="font-weight:700;color:#0a0223">Cookies técnicas:</b> necesarias para el funcionamiento básico del sitio.</li>
+              <li><b style="font-weight:700;color:#0a0223">Cookies de analítica:</b> permiten medir la actividad en el sitio (ej. Google Analytics).</li>
+              <li><b style="font-weight:700;color:#0a0223">Cookies de publicidad:</b> usadas para mostrar anuncios personalizados (ej. Meta Pixel).</li>
+              <li><b style="font-weight:700;color:#0a0223">Cookies de personalización:</b> recuerdan preferencias de navegación.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="faq-c-3" style="scroll-margin-top:130px;background:#ffffff;border-radius:14px;box-shadow:0 1px 2px rgba(16,24,40,.04), 0 14px 30px -26px rgba(16,24,40,.5);overflow:hidden">
+        <button type="button" onClick="{{ togC3 }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:19px 22px;border:0;background:transparent;font-family:inherit;font-size:clamp(.95rem,1.25vw,1.02rem);font-weight:500;color:#0a0223;text-align:left;cursor:pointer;transition:color .2s" style-hover="color:#0093f7">
+          <span>3. Gestión de cookies</span>
+          <span style="flex:none;width:30px;height:30px;border-radius:50%;border:1.6px solid #0093f7;color:#0093f7;display:grid;place-items:center;transition:transform .3s cubic-bezier(.22,.61,.36,1);transform:rotate({{ rotC3 }})">
+            <svg viewBox="0 0 12 8" style="width:11px;height:8px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round"><path d="M1 1.5 6 6.5l5-5"></path></svg>
+          </span>
+        </button>
+        <div style="overflow:hidden;max-height:{{ mhC3 }};opacity:{{ opC3 }};transition:max-height .36s cubic-bezier(.22,.61,.36,1), opacity .3s ease">
+          <div style="display:flex;flex-direction:column;gap:12px;padding:2px 22px 22px">
+            <p style="color:#3a4254;font-size:.95rem;line-height:1.75">Puede configurar su navegador para bloquear o eliminar cookies en cualquier momento. Esto podría afectar el correcto funcionamiento de algunas funcionalidades del sitio.</p>
+          </div>
+        </div>
+      </div>
+      <div id="faq-c-4" style="scroll-margin-top:130px;background:#ffffff;border-radius:14px;box-shadow:0 1px 2px rgba(16,24,40,.04), 0 14px 30px -26px rgba(16,24,40,.5);overflow:hidden">
+        <button type="button" onClick="{{ togC4 }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:19px 22px;border:0;background:transparent;font-family:inherit;font-size:clamp(.95rem,1.25vw,1.02rem);font-weight:500;color:#0a0223;text-align:left;cursor:pointer;transition:color .2s" style-hover="color:#0093f7">
+          <span>4. Cookies de terceros</span>
+          <span style="flex:none;width:30px;height:30px;border-radius:50%;border:1.6px solid #0093f7;color:#0093f7;display:grid;place-items:center;transition:transform .3s cubic-bezier(.22,.61,.36,1);transform:rotate({{ rotC4 }})">
+            <svg viewBox="0 0 12 8" style="width:11px;height:8px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round"><path d="M1 1.5 6 6.5l5-5"></path></svg>
+          </span>
+        </button>
+        <div style="overflow:hidden;max-height:{{ mhC4 }};opacity:{{ opC4 }};transition:max-height .36s cubic-bezier(.22,.61,.36,1), opacity .3s ease">
+          <div style="display:flex;flex-direction:column;gap:12px;padding:2px 22px 22px">
+            <p style="color:#3a4254;font-size:.95rem;line-height:1.75">Algunas cookies son gestionadas por servicios externos (Google, Meta, HubSpot) que prestan funcionalidades adicionales.</p>
+          </div>
+        </div>
+      </div>
+      <div id="faq-c-5" style="scroll-margin-top:130px;background:#ffffff;border-radius:14px;box-shadow:0 1px 2px rgba(16,24,40,.04), 0 14px 30px -26px rgba(16,24,40,.5);overflow:hidden">
+        <button type="button" onClick="{{ togC5 }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:19px 22px;border:0;background:transparent;font-family:inherit;font-size:clamp(.95rem,1.25vw,1.02rem);font-weight:500;color:#0a0223;text-align:left;cursor:pointer;transition:color .2s" style-hover="color:#0093f7">
+          <span>5. Actualizaciones de la política de cookies</span>
+          <span style="flex:none;width:30px;height:30px;border-radius:50%;border:1.6px solid #0093f7;color:#0093f7;display:grid;place-items:center;transition:transform .3s cubic-bezier(.22,.61,.36,1);transform:rotate({{ rotC5 }})">
+            <svg viewBox="0 0 12 8" style="width:11px;height:8px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round"><path d="M1 1.5 6 6.5l5-5"></path></svg>
+          </span>
+        </button>
+        <div style="overflow:hidden;max-height:{{ mhC5 }};opacity:{{ opC5 }};transition:max-height .36s cubic-bezier(.22,.61,.36,1), opacity .3s ease">
+          <div style="display:flex;flex-direction:column;gap:12px;padding:2px 22px 22px">
+            <p style="color:#3a4254;font-size:.95rem;line-height:1.75">Podremos actualizar esta política si incorporamos nuevas cookies o servicios que impliquen cambios en el tratamiento de datos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="faq-p" data-screen-label="Política de privacidad" style="scroll-margin-top:150px;margin-top:clamp(58px,6vw,90px)">
+    <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:6px">
+      <span style="color:#0093f7;font-size:.8rem;font-weight:700;letter-spacing:.14em">02</span>
+      <span style="color:#8a92a3;font-size:.8rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase">Privacidad</span>
+    </div>
+    <h2 style="font-weight:700;font-size:clamp(1.5rem,3vw,2.35rem);line-height:1.12;letter-spacing:-.03em;color:#0a0223;margin-bottom:8px"><span style="color:#0093f7">Política</span> de privacidad</h2>
+    <p style="color:#8a92a3;font-size:.84rem;margin-bottom:clamp(22px,2.6vw,32px)">Última actualización: agosto 2026</p>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div id="faq-p-1" style="scroll-margin-top:130px;background:#ffffff;border-radius:14px;box-shadow:0 1px 2px rgba(16,24,40,.04), 0 14px 30px -26px rgba(16,24,40,.5);overflow:hidden">
+        <button type="button" onClick="{{ togP1 }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:19px 22px;border:0;background:transparent;font-family:inherit;font-size:clamp(.95rem,1.25vw,1.02rem);font-weight:500;color:#0a0223;text-align:left;cursor:pointer;transition:color .2s" style-hover="color:#0093f7">
+          <span>1. Información que recopilamos</span>
+          <span style="flex:none;width:30px;height:30px;border-radius:50%;border:1.6px solid #0093f7;color:#0093f7;display:grid;place-items:center;transition:transform .3s cubic-bezier(.22,.61,.36,1);transform:rotate({{ rotP1 }})">
+            <svg viewBox="0 0 12 8" style="width:11px;height:8px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round"><path d="M1 1.5 6 6.5l5-5"></path></svg>
+          </span>
+        </button>
+        <div style="overflow:hidden;max-height:{{ mhP1 }};opacity:{{ opP1 }};transition:max-height .36s cubic-bezier(.22,.61,.36,1), opacity .3s ease">
+          <div style="display:flex;flex-direction:column;gap:12px;padding:2px 22px 22px">
+            <p style="color:#3a4254;font-size:.95rem;line-height:1.75">Recopilamos información personal únicamente cuando es necesario y con su consentimiento. Esto puede incluir:</p>
+            <ul style="list-style:disc;padding-left:20px;display:flex;flex-direction:column;gap:9px;color:#3a4254;font-size:.95rem;line-height:1.75">
+              <li><b style="font-weight:700;color:#0a0223">Datos de contacto:</b> nombre, correo electrónico, teléfono.</li>
+              <li><b style="font-weight:700;color:#0a0223">Información de la empresa:</b> razón social, cargo, sitio web.</li>
+              <li><b style="font-weight:700;color:#0a0223">Información técnica:</b> dirección IP, navegador, dispositivo y datos de navegación.</li>
+              <li>Cualquier información que nos facilite voluntariamente a través de formularios o al contactarnos.</li>
+            </ul>
+            <p style="color:#3a4254;font-size:.95rem;line-height:1.75"><b style="font-weight:700;color:#0a0223">Nota:</b> No solicitamos información sensible (salud, religión, etc.).</p>
+          </div>
+        </div>
+      </div>
+      <div id="faq-p-2" style="scroll-margin-top:130px;background:#ffffff;border-radius:14px;box-shadow:0 1px 2px rgba(16,24,40,.04), 0 14px 30px -26px rgba(16,24,40,.5);overflow:hidden">
+        <button type="button" onClick="{{ togP2 }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:19px 22px;border:0;background:transparent;font-family:inherit;font-size:clamp(.95rem,1.25vw,1.02rem);font-weight:500;color:#0a0223;text-align:left;cursor:pointer;transition:color .2s" style-hover="color:#0093f7">
+          <span>2. Uso de la información recopilada</span>
+          <span style="flex:none;width:30px;height:30px;border-radius:50%;border:1.6px solid #0093f7;color:#0093f7;display:grid;place-items:center;transition:transform .3s cubic-bezier(.22,.61,.36,1);transform:rotate({{ rotP2 }})">
+            <svg viewBox="0 0 12 8" style="width:11px;height:8px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round"><path d="M1 1.5 6 6.5l5-5"></path></svg>
+          </span>
+        </button>
+        <div style="overflow:hidden;max-height:{{ mhP2 }};opacity:{{ opP2 }};transition:max-height .36s cubic-bezier(.22,.61,.36,1), opacity .3s ease">
+          <div style="display:flex;flex-direction:column;gap:12px;padding:2px 22px 22px">
+            <p style="color:#3a4254;font-size:.95rem;line-height:1.75">Usamos la información únicamente para los fines para los que fue entregada, que pueden ser:</p>
+            <ul style="list-style:disc;padding-left:20px;display:flex;flex-direction:column;gap:9px;color:#3a4254;font-size:.95rem;line-height:1.75">
+              <li>Responder consultas y solicitudes.</li>
+              <li>Elaborar propuestas comerciales o presupuestos.</li>
+              <li>Prestar los servicios contratados y gestionar su facturación.</li>
+              <li>Mejorar nuestros servicios y la experiencia en el sitio web.</li>
+              <li>Cumplir con obligaciones legales y regulatorias.</li>
+            </ul>
+            <p style="color:#3a4254;font-size:.95rem;line-height:1.75"><b style="font-weight:700;color:#0a0223">Nota:</b> No vendemos ni cedemos datos personales a terceros con fines comerciales.</p>
+          </div>
+        </div>
+      </div>
+      <div id="faq-p-3" style="scroll-margin-top:130px;background:#ffffff;border-radius:14px;box-shadow:0 1px 2px rgba(16,24,40,.04), 0 14px 30px -26px rgba(16,24,40,.5);overflow:hidden">
+        <button type="button" onClick="{{ togP3 }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:19px 22px;border:0;background:transparent;font-family:inherit;font-size:clamp(.95rem,1.25vw,1.02rem);font-weight:500;color:#0a0223;text-align:left;cursor:pointer;transition:color .2s" style-hover="color:#0093f7">
+          <span>3. Cookies</span>
+          <span style="flex:none;width:30px;height:30px;border-radius:50%;border:1.6px solid #0093f7;color:#0093f7;display:grid;place-items:center;transition:transform .3s cubic-bezier(.22,.61,.36,1);transform:rotate({{ rotP3 }})">
+            <svg viewBox="0 0 12 8" style="width:11px;height:8px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round"><path d="M1 1.5 6 6.5l5-5"></path></svg>
+          </span>
+        </button>
+        <div style="overflow:hidden;max-height:{{ mhP3 }};opacity:{{ opP3 }};transition:max-height .36s cubic-bezier(.22,.61,.36,1), opacity .3s ease">
+          <div style="display:flex;flex-direction:column;gap:12px;padding:2px 22px 22px">
+            <p style="color:#3a4254;font-size:.95rem;line-height:1.75">Nuestro sitio web utiliza cookies y tecnologías similares para:</p>
+            <ul style="list-style:disc;padding-left:20px;display:flex;flex-direction:column;gap:9px;color:#3a4254;font-size:.95rem;line-height:1.75">
+              <li>Recordar sus preferencias y mejorar su experiencia de navegación.</li>
+              <li>Analizar el tráfico y el rendimiento del sitio (ej. Google Analytics).</li>
+              <li>Mostrar contenidos o anuncios personalizados.</li>
+            </ul>
+            <p style="color:#3a4254;font-size:.95rem;line-height:1.75">Puede aceptar, rechazar o configurar el uso de cookies en cualquier momento a través del banner de cookies o los ajustes de su navegador.</p>
+          </div>
+        </div>
+      </div>
+      <div id="faq-p-4" style="scroll-margin-top:130px;background:#ffffff;border-radius:14px;box-shadow:0 1px 2px rgba(16,24,40,.04), 0 14px 30px -26px rgba(16,24,40,.5);overflow:hidden">
+        <button type="button" onClick="{{ togP4 }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:19px 22px;border:0;background:transparent;font-family:inherit;font-size:clamp(.95rem,1.25vw,1.02rem);font-weight:500;color:#0a0223;text-align:left;cursor:pointer;transition:color .2s" style-hover="color:#0093f7">
+          <span>4. Enlaces a terceros</span>
+          <span style="flex:none;width:30px;height:30px;border-radius:50%;border:1.6px solid #0093f7;color:#0093f7;display:grid;place-items:center;transition:transform .3s cubic-bezier(.22,.61,.36,1);transform:rotate({{ rotP4 }})">
+            <svg viewBox="0 0 12 8" style="width:11px;height:8px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round"><path d="M1 1.5 6 6.5l5-5"></path></svg>
+          </span>
+        </button>
+        <div style="overflow:hidden;max-height:{{ mhP4 }};opacity:{{ opP4 }};transition:max-height .36s cubic-bezier(.22,.61,.36,1), opacity .3s ease">
+          <div style="display:flex;flex-direction:column;gap:12px;padding:2px 22px 22px">
+            <p style="color:#3a4254;font-size:.95rem;line-height:1.75">Nuestro sitio web puede contener enlaces a sitios web de terceros. No somos responsables de las prácticas de privacidad ni del contenido de dichos sitios. Le recomendamos revisar las políticas de privacidad de cada sitio que visite.</p>
+          </div>
+        </div>
+      </div>
+      <div id="faq-p-5" style="scroll-margin-top:130px;background:#ffffff;border-radius:14px;box-shadow:0 1px 2px rgba(16,24,40,.04), 0 14px 30px -26px rgba(16,24,40,.5);overflow:hidden">
+        <button type="button" onClick="{{ togP5 }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:19px 22px;border:0;background:transparent;font-family:inherit;font-size:clamp(.95rem,1.25vw,1.02rem);font-weight:500;color:#0a0223;text-align:left;cursor:pointer;transition:color .2s" style-hover="color:#0093f7">
+          <span>5. Control de su información personal</span>
+          <span style="flex:none;width:30px;height:30px;border-radius:50%;border:1.6px solid #0093f7;color:#0093f7;display:grid;place-items:center;transition:transform .3s cubic-bezier(.22,.61,.36,1);transform:rotate({{ rotP5 }})">
+            <svg viewBox="0 0 12 8" style="width:11px;height:8px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round"><path d="M1 1.5 6 6.5l5-5"></path></svg>
+          </span>
+        </button>
+        <div style="overflow:hidden;max-height:{{ mhP5 }};opacity:{{ opP5 }};transition:max-height .36s cubic-bezier(.22,.61,.36,1), opacity .3s ease">
+          <div style="display:flex;flex-direction:column;gap:12px;padding:2px 22px 22px">
+            <p style="color:#3a4254;font-size:.95rem;line-height:1.75">Usted tiene derecho a:</p>
+            <ul style="list-style:disc;padding-left:20px;display:flex;flex-direction:column;gap:9px;color:#3a4254;font-size:.95rem;line-height:1.75">
+              <li>Acceder, rectificar o eliminar sus datos personales.</li>
+              <li>Limitar u oponerse al tratamiento de sus datos.</li>
+              <li>Solicitar la portabilidad de su información.</li>
+            </ul>
+            <p style="color:#3a4254;font-size:.95rem;line-height:1.75">Para ejercer estos derechos, puede escribirnos a <a href="mailto:contacto@deltadigital.cl" style="color:#0093f7;text-decoration:none">contacto@deltadigital.cl</a>. Atenderemos su solicitud en los plazos exigidos por la ley.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="faq-l" data-screen-label="Aviso legal" style="scroll-margin-top:150px;margin-top:clamp(58px,6vw,90px)">
+    <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:6px">
+      <span style="color:#0093f7;font-size:.8rem;font-weight:700;letter-spacing:.14em">03</span>
+      <span style="color:#8a92a3;font-size:.8rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase">Aviso legal</span>
+    </div>
+    <h2 style="font-weight:700;font-size:clamp(1.5rem,3vw,2.35rem);line-height:1.12;letter-spacing:-.03em;color:#0a0223;margin-bottom:8px"><span style="color:#0093f7">Aviso</span> legal</h2>
+    <p style="color:#8a92a3;font-size:.84rem;margin-bottom:clamp(22px,2.6vw,32px)">Última actualización: agosto 2026</p>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div id="faq-l-1" style="scroll-margin-top:130px;background:#ffffff;border-radius:14px;box-shadow:0 1px 2px rgba(16,24,40,.04), 0 14px 30px -26px rgba(16,24,40,.5);overflow:hidden">
+        <button type="button" onClick="{{ togL1 }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:19px 22px;border:0;background:transparent;font-family:inherit;font-size:clamp(.95rem,1.25vw,1.02rem);font-weight:500;color:#0a0223;text-align:left;cursor:pointer;transition:color .2s" style-hover="color:#0093f7">
+          <span>1. Identificación del titular</span>
+          <span style="flex:none;width:30px;height:30px;border-radius:50%;border:1.6px solid #0093f7;color:#0093f7;display:grid;place-items:center;transition:transform .3s cubic-bezier(.22,.61,.36,1);transform:rotate({{ rotL1 }})">
+            <svg viewBox="0 0 12 8" style="width:11px;height:8px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round"><path d="M1 1.5 6 6.5l5-5"></path></svg>
+          </span>
+        </button>
+        <div style="overflow:hidden;max-height:{{ mhL1 }};opacity:{{ opL1 }};transition:max-height .36s cubic-bezier(.22,.61,.36,1), opacity .3s ease">
+          <div style="display:flex;flex-direction:column;gap:12px;padding:2px 22px 22px">
+            <p style="color:#3a4254;font-size:.95rem;line-height:1.75">Este sitio web (deltadigital.cl) es titularidad de <b style="font-weight:700;color:#0a0223">Delta Digital SpA</b>, con domicilio en <b style="font-weight:700;color:#0a0223">Dr. Manuel Barros Borgoño N°71, Oficina 1105, Santiago de Chile</b>, y correo electrónico de contacto <a href="mailto:contacto@deltadigital.cl" style="color:#0093f7;text-decoration:none">contacto@deltadigital.cl</a>.</p>
+          </div>
+        </div>
+      </div>
+      <div id="faq-l-2" style="scroll-margin-top:130px;background:#ffffff;border-radius:14px;box-shadow:0 1px 2px rgba(16,24,40,.04), 0 14px 30px -26px rgba(16,24,40,.5);overflow:hidden">
+        <button type="button" onClick="{{ togL2 }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:19px 22px;border:0;background:transparent;font-family:inherit;font-size:clamp(.95rem,1.25vw,1.02rem);font-weight:500;color:#0a0223;text-align:left;cursor:pointer;transition:color .2s" style-hover="color:#0093f7">
+          <span>2. Objeto del sitio web</span>
+          <span style="flex:none;width:30px;height:30px;border-radius:50%;border:1.6px solid #0093f7;color:#0093f7;display:grid;place-items:center;transition:transform .3s cubic-bezier(.22,.61,.36,1);transform:rotate({{ rotL2 }})">
+            <svg viewBox="0 0 12 8" style="width:11px;height:8px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round"><path d="M1 1.5 6 6.5l5-5"></path></svg>
+          </span>
+        </button>
+        <div style="overflow:hidden;max-height:{{ mhL2 }};opacity:{{ opL2 }};transition:max-height .36s cubic-bezier(.22,.61,.36,1), opacity .3s ease">
+          <div style="display:flex;flex-direction:column;gap:12px;padding:2px 22px 22px">
+            <p style="color:#3a4254;font-size:.95rem;line-height:1.75">El contenido de este sitio web tiene fines exclusivamente informativos. No constituye en ningún caso asesoría profesional, por lo que el usuario deberá tomar decisiones en base a su propio criterio o solicitando orientación especializada.</p>
+          </div>
+        </div>
+      </div>
+      <div id="faq-l-3" style="scroll-margin-top:130px;background:#ffffff;border-radius:14px;box-shadow:0 1px 2px rgba(16,24,40,.04), 0 14px 30px -26px rgba(16,24,40,.5);overflow:hidden">
+        <button type="button" onClick="{{ togL3 }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:19px 22px;border:0;background:transparent;font-family:inherit;font-size:clamp(.95rem,1.25vw,1.02rem);font-weight:500;color:#0a0223;text-align:left;cursor:pointer;transition:color .2s" style-hover="color:#0093f7">
+          <span>3. Condiciones de uso</span>
+          <span style="flex:none;width:30px;height:30px;border-radius:50%;border:1.6px solid #0093f7;color:#0093f7;display:grid;place-items:center;transition:transform .3s cubic-bezier(.22,.61,.36,1);transform:rotate({{ rotL3 }})">
+            <svg viewBox="0 0 12 8" style="width:11px;height:8px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round"><path d="M1 1.5 6 6.5l5-5"></path></svg>
+          </span>
+        </button>
+        <div style="overflow:hidden;max-height:{{ mhL3 }};opacity:{{ opL3 }};transition:max-height .36s cubic-bezier(.22,.61,.36,1), opacity .3s ease">
+          <div style="display:flex;flex-direction:column;gap:12px;padding:2px 22px 22px">
+            <p style="color:#3a4254;font-size:.95rem;line-height:1.75">El acceso y uso de este sitio web atribuye la condición de Usuario e implica la aceptación de este Aviso legal. El Usuario se compromete a:</p>
+            <ul style="list-style:disc;padding-left:20px;display:flex;flex-direction:column;gap:9px;color:#3a4254;font-size:.95rem;line-height:1.75">
+              <li>No utilizar el sitio web con fines ilícitos o contrarios a la ley.</li>
+              <li>No introducir virus, malware u otros elementos que puedan dañar sistemas informáticos.</li>
+              <li>No reproducir, distribuir o comunicar públicamente el contenido del sitio web sin autorización expresa de Delta Digital.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="faq-l-4" style="scroll-margin-top:130px;background:#ffffff;border-radius:14px;box-shadow:0 1px 2px rgba(16,24,40,.04), 0 14px 30px -26px rgba(16,24,40,.5);overflow:hidden">
+        <button type="button" onClick="{{ togL4 }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:19px 22px;border:0;background:transparent;font-family:inherit;font-size:clamp(.95rem,1.25vw,1.02rem);font-weight:500;color:#0a0223;text-align:left;cursor:pointer;transition:color .2s" style-hover="color:#0093f7">
+          <span>4. Propiedad intelectual e industrial</span>
+          <span style="flex:none;width:30px;height:30px;border-radius:50%;border:1.6px solid #0093f7;color:#0093f7;display:grid;place-items:center;transition:transform .3s cubic-bezier(.22,.61,.36,1);transform:rotate({{ rotL4 }})">
+            <svg viewBox="0 0 12 8" style="width:11px;height:8px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round"><path d="M1 1.5 6 6.5l5-5"></path></svg>
+          </span>
+        </button>
+        <div style="overflow:hidden;max-height:{{ mhL4 }};opacity:{{ opL4 }};transition:max-height .36s cubic-bezier(.22,.61,.36,1), opacity .3s ease">
+          <div style="display:flex;flex-direction:column;gap:12px;padding:2px 22px 22px">
+            <p style="color:#3a4254;font-size:.95rem;line-height:1.75">Todos los contenidos (textos, imágenes, logotipos, diseño, código fuente) son propiedad de Delta Digital o de terceros con licencia. Queda prohibida su reproducción total o parcial sin autorización expresa.</p>
+          </div>
+        </div>
+      </div>
+      <div id="faq-l-5" style="scroll-margin-top:130px;background:#ffffff;border-radius:14px;box-shadow:0 1px 2px rgba(16,24,40,.04), 0 14px 30px -26px rgba(16,24,40,.5);overflow:hidden">
+        <button type="button" onClick="{{ togL5 }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:19px 22px;border:0;background:transparent;font-family:inherit;font-size:clamp(.95rem,1.25vw,1.02rem);font-weight:500;color:#0a0223;text-align:left;cursor:pointer;transition:color .2s" style-hover="color:#0093f7">
+          <span>5. Responsabilidad</span>
+          <span style="flex:none;width:30px;height:30px;border-radius:50%;border:1.6px solid #0093f7;color:#0093f7;display:grid;place-items:center;transition:transform .3s cubic-bezier(.22,.61,.36,1);transform:rotate({{ rotL5 }})">
+            <svg viewBox="0 0 12 8" style="width:11px;height:8px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round"><path d="M1 1.5 6 6.5l5-5"></path></svg>
+          </span>
+        </button>
+        <div style="overflow:hidden;max-height:{{ mhL5 }};opacity:{{ opL5 }};transition:max-height .36s cubic-bezier(.22,.61,.36,1), opacity .3s ease">
+          <div style="display:flex;flex-direction:column;gap:12px;padding:2px 22px 22px">
+            <p style="color:#3a4254;font-size:.95rem;line-height:1.75">Delta Digital no garantiza la disponibilidad continua del sitio ni se responsabiliza de posibles daños derivados del uso de la web o de la existencia de enlaces a sitios de terceros.</p>
+          </div>
+        </div>
+      </div>
+      <div id="faq-l-6" style="scroll-margin-top:130px;background:#ffffff;border-radius:14px;box-shadow:0 1px 2px rgba(16,24,40,.04), 0 14px 30px -26px rgba(16,24,40,.5);overflow:hidden">
+        <button type="button" onClick="{{ togL6 }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:19px 22px;border:0;background:transparent;font-family:inherit;font-size:clamp(.95rem,1.25vw,1.02rem);font-weight:500;color:#0a0223;text-align:left;cursor:pointer;transition:color .2s" style-hover="color:#0093f7">
+          <span>6. Enlaces a terceros</span>
+          <span style="flex:none;width:30px;height:30px;border-radius:50%;border:1.6px solid #0093f7;color:#0093f7;display:grid;place-items:center;transition:transform .3s cubic-bezier(.22,.61,.36,1);transform:rotate({{ rotL6 }})">
+            <svg viewBox="0 0 12 8" style="width:11px;height:8px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round"><path d="M1 1.5 6 6.5l5-5"></path></svg>
+          </span>
+        </button>
+        <div style="overflow:hidden;max-height:{{ mhL6 }};opacity:{{ opL6 }};transition:max-height .36s cubic-bezier(.22,.61,.36,1), opacity .3s ease">
+          <div style="display:flex;flex-direction:column;gap:12px;padding:2px 22px 22px">
+            <p style="color:#3a4254;font-size:.95rem;line-height:1.75">El sitio puede incluir enlaces a páginas externas. Delta Digital no se hace responsable de su contenido, políticas o prácticas.</p>
+          </div>
+        </div>
+      </div>
+      <div id="faq-l-7" style="scroll-margin-top:130px;background:#ffffff;border-radius:14px;box-shadow:0 1px 2px rgba(16,24,40,.04), 0 14px 30px -26px rgba(16,24,40,.5);overflow:hidden">
+        <button type="button" onClick="{{ togL7 }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:19px 22px;border:0;background:transparent;font-family:inherit;font-size:clamp(.95rem,1.25vw,1.02rem);font-weight:500;color:#0a0223;text-align:left;cursor:pointer;transition:color .2s" style-hover="color:#0093f7">
+          <span>7. Legislación aplicable</span>
+          <span style="flex:none;width:30px;height:30px;border-radius:50%;border:1.6px solid #0093f7;color:#0093f7;display:grid;place-items:center;transition:transform .3s cubic-bezier(.22,.61,.36,1);transform:rotate({{ rotL7 }})">
+            <svg viewBox="0 0 12 8" style="width:11px;height:8px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round"><path d="M1 1.5 6 6.5l5-5"></path></svg>
+          </span>
+        </button>
+        <div style="overflow:hidden;max-height:{{ mhL7 }};opacity:{{ opL7 }};transition:max-height .36s cubic-bezier(.22,.61,.36,1), opacity .3s ease">
+          <div style="display:flex;flex-direction:column;gap:12px;padding:2px 22px 22px">
+            <p style="color:#3a4254;font-size:.95rem;line-height:1.75">Este Aviso legal se rige por la legislación chilena. En caso de conflicto, las partes se someterán a los tribunales de Santiago de Chile.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;margin-top:clamp(46px,5vw,72px);padding:clamp(24px,2.6vw,32px);border-radius:16px;background:#ffffff;box-shadow:0 1px 2px rgba(16,24,40,.04), 0 16px 34px -26px rgba(16,24,40,.5)">
+        <div>
+          <h3 style="font-weight:700;font-size:1.1rem;letter-spacing:-.02em;color:#0a0223;margin-bottom:6px">¿Dudas sobre el uso de tus datos?</h3>
+          <p style="color:#6b7385;font-size:.94rem;line-height:1.6">Escríbenos y te respondemos con el detalle que necesites.</p>
+        </div>
+        <a href="mailto:contacto@deltadigital.cl" style="flex:none;display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:12px;background:#0093f7;color:#ffffff;font-weight:700;font-size:.94rem;text-decoration:none;transition:background .2s, box-shadow .25s" style-hover="background:#0077cc;box-shadow:0 14px 30px -12px rgba(0,147,247,.6)">contacto@deltadigital.cl
+          <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M5 12h13M13 6l6 6-6 6"></path></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="contacto" data-screen-label="Footer" style="position:relative;background:#0a0820;color:#ffffff">
+  <section style="position:relative;overflow:hidden;background:#0b1c3e url('assets/cta-bg.png') center/cover no-repeat;padding:clamp(54px,6vw,88px) max(5vw,20px)">
+    <img src="assets/fx-dashed.svg" alt="" aria-hidden="true" style="display: {{ ctaFx }}; position: absolute; top: -47px; left: 143px; width: {{ ctaDashW }}; opacity: .5; z-index: 1; pointer-events: none; will-change: transform; animation: ddSpin 40s linear infinite">
+    <img src="assets/fx-circle.svg" alt="" aria-hidden="true" style="display:{{ ctaFx }};position:absolute;left:-110px;top:22%;width:280px;opacity:.4;z-index:0;pointer-events:none;will-change:transform;animation:ddDrift 30s ease-in-out infinite reverse">
+    <span aria-hidden="true" style="display: {{ ctaFx }}; position: absolute; width: 544px; height: 544px; z-index: 2; pointer-events: none; right: -129px; top: 165px; backdrop-filter: blur(16px) saturate(120%); -webkit-backdrop-filter: blur(16px) saturate(120%); border-radius: 50%; opacity: 0.9"></span><span aria-hidden="true" style="display: {{ ctaFx }}; position: absolute; right: -211px; top: 92px; z-index: 2; pointer-events: none; transform: scaleX(-1); line-height: 0"><img src="assets/fx-circle2.svg" alt="" aria-hidden="true" style="display: block; opacity: .9; pointer-events: none"></span><img src="assets/fx-circle2.svg" alt="" aria-hidden="true" style="display: {{ ctaFx }}; position: absolute; width: 592px; opacity: .9; z-index: 0; pointer-events: none; will-change: transform; animation: ddDrift 24s ease-in-out infinite; left: -227px; top: -77px; height: 592px">
+    <img src="assets/fx-arrow1.svg" alt="" aria-hidden="true" style="display:{{ ctaFx }};position:absolute;left:{{ ctaA1L }};top:{{ ctaA1T }};width:{{ ctaA1W }};z-index:1;pointer-events:none;filter:drop-shadow(0 12px 22px rgba(0,90,180,.5));will-change:transform;animation:ddFloatA 9s ease-in-out infinite">
+    <img src="assets/fx-arrow2.svg" alt="" aria-hidden="true" style="display:{{ ctaFx }};position:absolute;right:{{ ctaA2R }};top:{{ ctaA2T }};width:{{ ctaA2W }};z-index:1;pointer-events:none;filter:drop-shadow(0 14px 26px rgba(0,120,240,.45));will-change:transform;animation:ddFloatB 11s ease-in-out infinite">
+    <div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(90,160,255,.55),transparent);z-index:5"></div>
+    <div style="position:relative;z-index:4;max-width:620px;margin:0 auto;text-align:center">
+      <h2 style="font-size:clamp(1.65rem,3.2vw,2.5rem);font-weight:700;line-height:1.1;letter-spacing:-.02em;margin:0 0 16px;color:#ffffff;text-wrap:balance">Descubre lo que podemos hacer <span style="color:#2e9bff">por ti</span></h2>
+      <p style="max-width:470px;margin:0 auto 28px;color:rgba(255,255,255,.62);font-size:.95rem;line-height:1.6">Nuestro equipo de profesionales cuenta con experiencia en distintas especialidades e industrias, juntos encontraremos la mejor solución para tu negocio.</p>
+      <a href="contacto.html#formulario" style="display:inline-block;color:#ffffff;font-weight:600;font-size:.9rem;padding:13px 34px;border-radius:13px;text-decoration:none;background:linear-gradient(180deg,rgba(124,144,184,.42),rgba(58,74,110,.5));border:1px solid rgba(255,255,255,.26);box-shadow:0 12px 32px -12px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.35);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:transform .25s, background .25s, box-shadow .25s" style-hover="transform:translateY(-2px);background:linear-gradient(180deg,rgba(46,155,255,.62),rgba(0,103,180,.62));box-shadow:0 18px 44px -12px rgba(0,120,240,.6), inset 0 1px 0 rgba(255,255,255,.4)">Contacto</a>
+    </div>
+  </section>
+
+  <footer style="position:relative;z-index:2;background:#0a0820;padding:clamp(40px,4.5vw,58px) max(5vw,20px) 24px">
+    <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,max(230px,26%)),1fr));gap:40px;align-items:start">
+      <div>
+        <a href="index.html#top" aria-label="Delta Digital"><img src="assets/delta-logo-light.svg" alt="Delta Digital" style="height:34px;width:auto;display:block"></a>
+        <ul style="list-style:none;padding:0;margin:22px 0 18px;display:flex;flex-direction:column;gap:11px">
+          <li style="display:flex;align-items:center;gap:11px">
+            <svg viewBox="0 0 24 24" style="flex:none;width:16px;height:16px;color:#2e9bff;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <a href="tel:+56999098594" style="color:rgba(255,255,255,.82);font-size:.875rem;text-decoration:none;transition:color .15s;white-space:nowrap" style-hover="color:#ffffff">+569 990 98 594</a>
+          </li>
+          <li style="display:flex;align-items:center;gap:11px">
+            <svg viewBox="0 0 24 24" style="flex:none;width:16px;height:16px;color:#2e9bff;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg>
+            <a href="mailto:contacto@deltadigital.cl" style="color:rgba(255,255,255,.82);font-size:.875rem;text-decoration:none;transition:color .15s" style-hover="color:#ffffff">contacto@deltadigital.cl</a>
+          </li>
+          <li style="display:flex;align-items:center;gap:11px">
+            <svg viewBox="0 0 24 24" style="flex:none;width:16px;height:16px;color:#2e9bff;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span style="color:rgba(255,255,255,.82);font-size:.875rem">Dr. Manuel Barros Borgoño N°71 OF 1105</span>
+          </li>
+        </ul>
+        <div style="display:flex;gap:10px">
+          <a href="#" aria-label="LinkedIn" style="width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);color:#cfe3ff;transition:background .2s, transform .2s, color .2s" style-hover="background:#0093f7;color:#ffffff;transform:translateY(-2px)">
+            <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21h-4z"></path></svg>
+          </a>
+          <a href="#" aria-label="Instagram" style="width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);color:#cfe3ff;transition:background .2s, transform .2s, color .2s" style-hover="background:#0093f7;color:#ffffff;transform:translateY(-2px)">
+            <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"></circle></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav style="display:flex;flex-direction:column;gap:13px;padding-top:2px" aria-label="Footer">
+        <a href="index.html#top" style="color:rgba(255,255,255,.78);text-decoration:none;font-size:.9rem;font-weight:500;width:max-content;transition:color .15s, transform .2s" style-hover="color:#ffffff;transform:translateX(3px)">Inicio</a>
+        <a href="index.html#servicios" style="color:rgba(255,255,255,.78);text-decoration:none;font-size:.9rem;font-weight:500;width:max-content;transition:color .15s, transform .2s" style-hover="color:#ffffff;transform:translateX(3px)">Servicios</a>
+        <a href="index.html#portafolio" style="color:rgba(255,255,255,.78);text-decoration:none;font-size:.9rem;font-weight:500;width:max-content;transition:color .15s, transform .2s" style-hover="color:#ffffff;transform:translateX(3px)">Portafolio</a>
+        <a href="blog.html#articulos" style="color:rgba(255,255,255,.78);text-decoration:none;font-size:.9rem;font-weight:500;width:max-content;transition:color .15s, transform .2s" style-hover="color:#ffffff;transform:translateX(3px)">Blog</a>
+        <a href="contacto.html#formulario" style="color:rgba(255,255,255,.78);text-decoration:none;font-size:.9rem;font-weight:500;width:max-content;transition:color .15s, transform .2s" style-hover="color:#ffffff;transform:translateX(3px)">Contacto</a>
+      </nav>
+
+      <div style="display:flex;flex-direction:column;gap:11px">
+        <div style="position:relative;display:block;border-radius:10px;overflow:hidden;isolation:isolate;width:100%;max-width:268px;aspect-ratio:260/61;box-shadow:0 12px 28px -12px rgba(0,0,0,.5);transition:transform .28s, box-shadow .28s" style-hover="transform:translateY(-3px);box-shadow:0 20px 40px -14px rgba(0,90,210,.55)" style-before="content:'';position:absolute;inset:0;z-index:2;border-radius:inherit;pointer-events:none;mix-blend-mode:color-dodge;opacity:.4;background:repeating-linear-gradient(115deg, rgba(255,0,128,.5) 0%, rgba(255,196,0,.5) 7%, rgba(0,255,170,.5) 15%, rgba(0,170,255,.5) 23%, rgba(170,0,255,.5) 31%, rgba(255,0,128,.5) 40%);background-size:320% 320%;animation:ddHoloFoil 7s ease-in-out infinite" style-after="content:'';position:absolute;inset:0;z-index:3;border-radius:inherit;pointer-events:none;mix-blend-mode:overlay;background:linear-gradient(115deg, transparent 30%, rgba(255,255,255,.85) 48%, transparent 66%);background-size:280% 100%;animation:ddHoloGlare 7s ease-in-out infinite"><img src="assets/badges/hubspot-partner.svg" alt="HubSpot Partner" style="display:block;width:100%;height:100%"></div>
+        <div style="position:relative;display:block;border-radius:10px;overflow:hidden;isolation:isolate;width:100%;max-width:268px;aspect-ratio:260/61;box-shadow:0 12px 28px -12px rgba(0,0,0,.5);transition:transform .28s, box-shadow .28s" style-hover="transform:translateY(-3px);box-shadow:0 20px 40px -14px rgba(0,90,210,.55)" style-before="content:'';position:absolute;inset:0;z-index:2;border-radius:inherit;pointer-events:none;mix-blend-mode:color-dodge;opacity:.4;background:repeating-linear-gradient(115deg, rgba(255,0,128,.5) 0%, rgba(255,196,0,.5) 7%, rgba(0,255,170,.5) 15%, rgba(0,170,255,.5) 23%, rgba(170,0,255,.5) 31%, rgba(255,0,128,.5) 40%);background-size:320% 320%;animation:ddHoloFoil 7s ease-in-out infinite;animation-delay:-2.6s" style-after="content:'';position:absolute;inset:0;z-index:3;border-radius:inherit;pointer-events:none;mix-blend-mode:overlay;background:linear-gradient(115deg, transparent 30%, rgba(255,255,255,.85) 48%, transparent 66%);background-size:280% 100%;animation:ddHoloGlare 7s ease-in-out infinite;animation-delay:-2.6s"><img src="assets/badges/google-partner.svg" alt="Google Partner" style="display:block;width:100%;height:100%"></div>
+        <div style="position:relative;display:block;border-radius:10px;overflow:hidden;isolation:isolate;width:100%;max-width:268px;aspect-ratio:260/61;box-shadow:0 12px 28px -12px rgba(0,0,0,.5);transition:transform .28s, box-shadow .28s" style-hover="transform:translateY(-3px);box-shadow:0 20px 40px -14px rgba(0,90,210,.55)" style-before="content:'';position:absolute;inset:0;z-index:2;border-radius:inherit;pointer-events:none;mix-blend-mode:color-dodge;opacity:.4;background:repeating-linear-gradient(115deg, rgba(255,0,128,.5) 0%, rgba(255,196,0,.5) 7%, rgba(0,255,170,.5) 15%, rgba(0,170,255,.5) 23%, rgba(170,0,255,.5) 31%, rgba(255,0,128,.5) 40%);background-size:320% 320%;animation:ddHoloFoil 7s ease-in-out infinite;animation-delay:-4.7s" style-after="content:'';position:absolute;inset:0;z-index:3;border-radius:inherit;pointer-events:none;mix-blend-mode:overlay;background:linear-gradient(115deg, transparent 30%, rgba(255,255,255,.85) 48%, transparent 66%);background-size:280% 100%;animation:ddHoloGlare 7s ease-in-out infinite;animation-delay:-4.7s"><img src="assets/badges/meta-partner.svg" alt="Meta Business Partner" style="display:block;width:100%;height:100%"></div>
+      </div>
+    </div>
+
+    <div style="max-width:1180px;margin:32px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
+      <span style="color:rgba(255,255,255,.5);font-size:.8rem">© 2025 Delta Digital. Todos los derechos reservados.</span>
+      <div style="display:flex;gap:28px;flex-wrap:wrap">
+        <a href="preguntas-frecuentes.html#faq-l" style="color:rgba(255,255,255,.62);font-size:.84rem;text-decoration:none;transition:color .15s" style-hover="color:#ffffff">Aviso legal</a>
+        <a href="preguntas-frecuentes.html#faq-p" style="color:rgba(255,255,255,.62);font-size:.84rem;text-decoration:none;transition:color .15s" style-hover="color:#ffffff">Política de privacidad</a>
+        <a href="preguntas-frecuentes.html#faq-c" style="color:rgba(255,255,255,.62);font-size:.84rem;text-decoration:none;transition:color .15s" style-hover="color:#ffffff">Política de cookies</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<sc-if value="{{ showWhatsApp }}" hint-placeholder-val="{{ true }}">
+<a href="{{ waHref }}" target="_blank" rel="noopener" aria-label="WhatsApp" style="position:fixed;right:26px;bottom:26px;z-index:180;width:73px;height:73px;border-radius:50%;display:grid;place-items:center;backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);background:rgba(255,255,255,.14);box-shadow:0 18px 40px -16px rgba(16,24,40,.45);transition:transform .2s" style-hover="transform:translateY(-3px)">
+  <img src="assets/whatsapp.svg" alt="" aria-hidden="true" style="width:100%;height:100%;display:block">
+</a>
+</sc-if>
+
+
+</div></x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showWhatsApp&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Contacto&quot;},&quot;whatsappNumero&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;56999098594&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contacto&quot;},&quot;respuestaEstimada&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;2hrs.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Formulario&quot;},&quot;duracionEnvio&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:2400,&quot;min&quot;:600,&quot;max&quot;:5000,&quot;step&quot;:200,&quot;unit&quot;:&quot;ms&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Formulario&quot;}}">
+class Component extends DCLogic {
+  state = { menuOpen: false, drawer: false, mServ: false, step: 'form', errors: {}, acc: { c1: true }, activeSec: 'c', stuck: false, mapZoom: 1, mapTx: 0, mapTy: 0, narrow: typeof window !== 'undefined' && window.innerWidth <= 900 };
+
+  componentDidMount() {
+    this._onResize = () => {
+      const n = window.innerWidth <= 900;
+      if (n !== this.state.narrow) this.setState({ narrow: n, drawer: n ? this.state.drawer : false });
+    };
+    window.addEventListener('resize', this._onResize, { passive: true });
+    this._spy = () => this._onScrollSpy();
+    window.addEventListener('scroll', this._spy, { passive: true, capture: true });
+    document.addEventListener('scroll', this._spy, { passive: true, capture: true });
+    this._hash = () => this._fromHash();
+    window.addEventListener('hashchange', this._hash);
+    setTimeout(this._hash, 60);
+  }
+
+  _mapState() {
+    if (!window.__ddMapa) window.__ddMapa = { level: 3, tx: 0, ty: 0 };
+    return window.__ddMapa;
+  }
+
+  _level() { return this._mapState().level; }
+
+  _scale(level) { return [1, 1.5, 2.2, 3.2, 4.8][level - 1] || 1; }
+
+  _wire(box) {
+    if (box._ddWired) return;
+    box._ddWired = true;
+    box.addEventListener('click', e => {
+      const btn = e.target.closest ? e.target.closest('[data-zoom]') : null;
+      if (!btn) return;
+      e.preventDefault();
+      e.stopPropagation();
+      const s = this._mapState();
+      const next = Math.min(5, Math.max(1, s.level + (btn.getAttribute('data-zoom') === 'in' ? 1 : -1)));
+      if (next === s.level) return;
+      s.level = next;
+      this._applyMap(true);
+    }, true);
+  }
+
+  _applyMap(animate) {
+    const s = this._mapState();
+    const box = this._box;
+    const scale = this._scale(s.level);
+    const w = box ? box.clientWidth : 368;
+    const h = box ? box.clientHeight : 200;
+    const mx = Math.max(0, (w * (scale - 1)) / 2);
+    const my = Math.max(0, (h * (scale - 1)) / 2);
+    s.tx = Math.min(mx, Math.max(-mx, s.tx));
+    s.ty = Math.min(my, Math.max(-my, s.ty));
+    const tr = 'translate(' + s.tx + 'px,' + s.ty + 'px)';
+    const ease = animate ? 'transform .3s cubic-bezier(.22,.61,.36,1)' : 'none';
+    if (this._img) {
+      this._img.style.transition = ease;
+      this._img.style.transform = tr + ' scale(' + scale + ')';
+    }
+    if (this._pin) {
+      this._pin.style.transition = ease;
+      this._pin.style.transform = tr;
+    }
+    if (box) {
+      box.style.cursor = s.level > 1 ? 'grab' : 'default';
+      const bin = box.querySelector('[data-zoom="in"]');
+      const bout = box.querySelector('[data-zoom="out"]');
+      if (bin) { bin.style.opacity = s.level >= 5 ? '.4' : '1'; bin.style.cursor = s.level >= 5 ? 'default' : 'pointer'; }
+      if (bout) { bout.style.opacity = s.level <= 1 ? '.4' : '1'; bout.style.cursor = s.level <= 1 ? 'default' : 'pointer'; }
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this._onResize);
+    window.removeEventListener('scroll', this._spy, true);
+    document.removeEventListener('scroll', this._spy, true);
+    window.removeEventListener('hashchange', this._hash);
+    clearTimeout(this._t);
+  }
+
+  _validate(form) {
+    const v = k => (form.elements[k] ? String(form.elements[k].value || '').trim() : '');
+    const errors = {};
+    if (!v('nombre')) errors.nombre = 'Cuéntanos tu nombre para saber con quién hablamos.';
+    const mail = v('email');
+    if (!mail) errors.email = 'Necesitamos tu correo para poder responderte.';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail)) errors.email = 'Revisa el correo: parece que le falta algo.';
+    const tel = v('telefono');
+    if (!tel) errors.telefono = 'Déjanos un teléfono de contacto.';
+    else if (tel.replace(/[^0-9]/g, '').length < 8) errors.telefono = 'Ese teléfono parece incompleto.';
+    if (!v('mensaje')) errors.mensaje = 'Escríbenos brevemente qué necesitas.';
+    else if (v('mensaje').length < 10) errors.mensaje = 'Un poco más de detalle nos ayuda a responderte mejor.';
+    return errors;
+  }
+
+  _submit(e) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const errors = this._validate(form);
+    if (Object.keys(errors).length) {
+      this.setState({ errors });
+      const first = form.querySelector('[name="' + Object.keys(errors)[0] + '"]');
+      if (first && first.focus) first.focus({ preventScroll: false });
+      return;
+    }
+    this.setState({ errors: {}, step: 'sending' });
+    clearTimeout(this._t);
+    this._t = setTimeout(() => this.setState({ step: 'done' }), Math.max(400, (this.props.duracionEnvio ?? 2400)));
+  }
+
+  _accKeys() {
+    return ['c1','c2','c3','c4','c5','p1','p2','p3','p4','p5','l1','l2','l3','l4','l5','l6','l7'];
+  }
+
+  _openKey(k, scroll) {
+    this.setState(s => {
+      const next = {};
+      Object.keys(s.acc || {}).forEach(x => { if (x[0] !== k[0]) next[x] = s.acc[x]; });
+      next[k] = true;
+      return { acc: next };
+    }, () => { if (scroll) this._scrollTo('faq-' + k[0] + '-' + k.slice(1)); });
+  }
+
+  _scrollParent(el) {
+    let p = el && el.parentElement;
+    while (p) {
+      const oy = getComputedStyle(p).overflowY;
+      if ((oy === 'auto' || oy === 'scroll') && p.scrollHeight > p.clientHeight + 4) return p;
+      p = p.parentElement;
+    }
+    return null;
+  }
+
+  _scrollTo(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const box = this._scrollParent(el);
+    if (box) {
+      const top = box.scrollTop + el.getBoundingClientRect().top - box.getBoundingClientRect().top - 150;
+      box.scrollTo({ top: top, behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 150, behavior: 'smooth' });
+    }
+  }
+
+  _fromHash() {
+    const h = (window.location.hash || '').replace('#', '');
+    const m = h.match(/^faq-([cpl])(?:-(\d+))?$/);
+    if (!m) return;
+    this.setState({ activeSec: m[1] });
+    if (m[2]) this._openKey(m[1] + m[2], true);
+  }
+
+  _onScrollSpy() {
+    const tabs = document.getElementById('ddFaqTabs');
+    if (tabs) {
+      const stuck = tabs.getBoundingClientRect().top <= 90;
+      if (stuck !== this.state.stuck) this.setState({ stuck: stuck });
+    }
+    const secs = ['c', 'p', 'l'];
+    let active = this.state.activeSec || 'c';
+    secs.forEach(s => {
+      const el = document.getElementById('faq-' + s);
+      if (el && el.getBoundingClientRect().top <= 220) active = s;
+    });
+    if (active !== this.state.activeSec) this.setState({ activeSec: active });
+  }
+
+  renderVals() {
+    const acc = {};
+    this._accKeys().forEach(k => {
+      const K = k.toUpperCase();
+      const open = !!(this.state.acc || {})[k];
+      acc['mh' + K] = open ? '1600px' : '0px';
+      acc['op' + K] = open ? '1' : '0';
+      acc['rot' + K] = open ? '180deg' : '0deg';
+      acc['tog' + K] = () => {
+        if ((this.state.acc || {})[k]) this.setState(s => {
+          const next = Object.assign({}, s.acc);
+          delete next[k];
+          return { acc: next };
+        });
+        else this._openKey(k, false);
+      };
+    });
+    const active = this.state.activeSec || 'c';
+    const nn = this.state.narrow;
+    const stk = this.state.stuck;
+    const ai = ['c', 'p', 'l'].indexOf(active);
+    acc.fqDir = nn && !stk ? 'column' : 'row';
+    acc.fqMax = nn ? '100%' : '760px';
+    acc.fqJustify = nn && !stk ? 'flex-start' : 'center';
+    acc.fqSepDisp = nn && !stk ? 'none' : 'block';
+    acc.fqPad = nn && stk ? '12px 14px 14px' : (nn ? '14px 18px' : '18px 12px 20px');
+    [0, 1, 2].forEach(i => {
+      acc['fqLbl' + i] = nn && stk && ai !== i ? 'none' : 'inline';
+      acc['fqFlex' + i] = nn && stk ? (ai === i ? '1 1 auto' : '0 0 auto') : '1';
+    });
+    acc.fqMargin = this.state.stuck ? '0 auto clamp(38px,4.6vw,60px)' : '0 auto clamp(38px,4.6vw,60px) 0';
+    ['c', 'p', 'l'].forEach(s => {
+      const S = s.toUpperCase();
+      const on = active === s;
+      const i = ['c', 'p', 'l'].indexOf(s);
+      acc['fqW' + i] = on ? '700' : '500';
+      acc['fqC' + i] = on ? '#0a0223' : '#8a92a3';
+      acc['fqL' + i] = on ? '#0093f7' : 'transparent';
+      acc['go' + S] = () => this.setState({ activeSec: s });
+    });
+    const num = String(this.props.whatsappNumero ?? '56999098594').replace(/[^0-9]/g, '');
+    const m = this.state.menuOpen;
+    const n = this.state.narrow;
+    const step = this.state.step;
+    const er = this.state.errors || {};
+    const errVals = {};
+    ['nombre', 'email', 'telefono', 'mensaje'].forEach(k => {
+      const key = k.charAt(0).toUpperCase() + k.slice(1);
+      errVals['err' + key] = er[k] || '';
+      errVals['err' + key + 'Disp'] = er[k] ? 'inline-flex' : 'none';
+      errVals['err' + key + 'Border'] = er[k] ? '#e0374b' : '#e3e8f2';
+    });
+    return {
+      ...acc,
+      ...errVals,
+      mapBoxRef: el => { this._box = el; if (el) this._wire(el); },
+      mapImgRef: el => { this._img = el; if (el) this._applyMap(false); },
+      mapPinRef: el => { this._pin = el; if (el) this._applyMap(false); },
+      mapDown: e => {
+        if (e.target.closest && e.target.closest('[data-zoom]')) return;
+        if (this._level() <= 1) return;
+        const s = this._mapState();
+        this._drag = { x: e.clientX, y: e.clientY, tx: s.tx, ty: s.ty };
+        e.currentTarget.style.cursor = 'grabbing';
+        if (e.currentTarget.setPointerCapture) e.currentTarget.setPointerCapture(e.pointerId);
+      },
+      mapMove: e => {
+        if (!this._drag) return;
+        const s = this._mapState();
+        s.tx = this._drag.tx + (e.clientX - this._drag.x);
+        s.ty = this._drag.ty + (e.clientY - this._drag.y);
+        this._applyMap(false);
+      },
+      mapUp: e => {
+        if (!this._drag) return;
+        this._drag = null;
+        e.currentTarget.style.cursor = this._level() > 1 ? 'grab' : 'default';
+      },
+      onField: e => {
+        const name = e.target.name;
+        if (!this.state.errors || !this.state.errors[name]) return;
+        const next = Object.assign({}, this.state.errors);
+        delete next[name];
+        this.setState({ errors: next });
+      },
+      navDesk: n ? 'none' : 'flex',
+      navMob: n ? 'inline-flex' : 'none',
+      openMenu: () => this.setState({ menuOpen: true }),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      servColor: m ? '#0093f7' : '#0a0223',
+      chevRot: m ? '180deg' : '0deg',
+      menuOpacity: m ? '1' : '0',
+      menuVis: m ? 'visible' : 'hidden',
+      menuY: m ? '0' : '-8px',
+      toggleDrawer: () => this.setState({ drawer: !this.state.drawer }),
+      closeDrawer: () => this.setState({ drawer: false }),
+      burgerPath: this.state.drawer ? 'M6 6l12 12M18 6L6 18' : 'M3 6h18M3 12h18M3 18h18',
+      drawerX: this.state.drawer ? '0' : '-102%',
+      drawerVis: this.state.drawer ? 'visible' : 'hidden',
+      drawerShade: this.state.drawer ? 1 : 0,
+      toggleMServ: () => this.setState({ mServ: !this.state.mServ }),
+      mServDisplay: this.state.mServ ? 'flex' : 'none',
+      mServRot: this.state.mServ ? '180deg' : '0deg',
+      mServBg: this.state.mServ ? '#ffffff' : 'transparent',
+      contactCols: n ? 'minmax(0,1fr)' : 'minmax(0,.85fr) minmax(0,1.15fr)',
+      formDisp: step === 'form' ? 'block' : 'none',
+      sendingDisp: step === 'sending' ? 'flex' : 'none',
+      doneDisp: step === 'done' ? 'flex' : 'none',
+      onSubmit: e => this._submit(e),
+      resetForm: () => this.setState({ step: 'form', errors: {} }),
+      respuesta: this.props.respuestaEstimada ?? '2hrs.',
+      decEllR: n ? '-150px' : '-60px',
+      decEllT: n ? '-40px' : '20px',
+      decEllW: n ? '240px' : '420px',
+      decDashR: n ? '-60px' : '2%',
+      decDashT: n ? '60px' : '210px',
+      decDashW: n ? '120px' : '200px',
+      decTriR: n ? '-14px' : '3%',
+      decTriT: n ? '30px' : '150px',
+      decTriW: n ? '48px' : '86px',
+      ctaFx: (this.state.subWide == null ? (typeof window !== 'undefined' && window.innerWidth < 1080) : this.state.subWide) ? 'none' : 'block',
+      ctaDashT: n ? '8%' : '12%',
+      ctaDashL: n ? '-40px' : '6%',
+      ctaDashW: n ? '130px' : '190px',
+      ctaA1L: n ? '-20px' : '9%',
+      ctaA1T: n ? '68%' : '58%',
+      ctaA1W: n ? '54px' : '86px',
+      ctaA2R: n ? '-16px' : '10%',
+      ctaA2T: n ? '14%' : '20%',
+      ctaA2W: n ? '58px' : '96px',
+      showWhatsApp: this.props.showWhatsApp ?? true,
+      waHref: 'https://wa.me/' + num
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landing page Chile ¿Qué es? Servicio y Beneficios | Delta Digital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<style>
+  @font-face{font-family:'Gotham';src:url('fonts/Gotham-Book.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Gotham';src:url('fonts/Gotham-Medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Gotham';src:url('fonts/Gotham-Bold.otf') format('opentype');font-weight:600 700;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Gotham';src:url('fonts/Gotham-Black.otf') format('opentype');font-weight:800 900;font-style:normal;font-display:swap;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:110px;}
+  body{font-family:'Gotham',system-ui,sans-serif;color:#0a0223;background:#ffffff;-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.5;}
+  a{color:#0093f7;text-decoration:none;}
+  a:hover{color:#0077cc;}
+  ::selection{background:rgba(0,147,247,.18);}
+  :focus-visible{outline:2px solid #0093f7;outline-offset:2px;}
+  ::-webkit-scrollbar{height:0;width:0;}
+  @keyframes ddSpin{to{transform:rotate(360deg);}}
+  @keyframes ddDrift{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-26px,-22px) scale(1.06);}}
+  @keyframes ddFloatA{0%,100%{transform:translateY(0) rotate(-8deg);}50%{transform:translateY(-22px) rotate(-8deg);}}
+  @keyframes ddFloatB{0%,100%{transform:translateY(0) rotate(10deg);}50%{transform:translateY(20px) rotate(10deg);}}
+  @keyframes ddHoloFoil{0%,100%{background-position:0% 50%;}50%{background-position:100% 50%;}}
+  @keyframes ddHoloGlare{0%,100%{background-position:140% 0;}50%{background-position:-40% 0;}}
+  @keyframes ddReveal{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:none;}}
+  .dd-rv{opacity:0;}
+  .dd-rv-in{animation:ddReveal .6s cubic-bezier(.2,.7,.2,1) forwards;}
+  @media (prefers-reduced-motion:reduce){.dd-rv,.dd-rv-in{opacity:1;animation:none;}*{animation:none!important;}}
+</style>
+</helmet>
+
+<div style="position:relative;width:100%;overflow-x:clip;background:#f4f6fa">
+
+<nav id="ddnav" style="position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px max(5vw,20px);background:#ffffff;border-bottom:1px solid #e7eaf2;box-shadow:0 8px 26px -22px rgba(16,24,40,.7)">
+  <div style="display:flex;align-items:center;gap:14px;flex:none">
+    <button type="button" onClick="{{ toggleDrawer }}" aria-label="Menú" style="display:{{ navMob }};align-items:center;justify-content:center;flex:none;width:44px;height:44px;margin-left:-10px;border:0;background:transparent;cursor:pointer;color:#0a0223">
+      <svg viewBox="0 0 24 24" style="width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round"><path d="{{ burgerPath }}"></path></svg>
+    </button>
+    <a href="index.html#top" aria-label="Delta Digital" style="display:block;flex:none;height:38px">
+      <img src="assets/delta-logo.svg" alt="Delta Digital" style="height:38px;width:auto;display:block">
+    </a>
+  </div>
+  <div style="display:{{ navDesk }};align-items:center;gap:38px">
+    <a href="index.html#top" style="color:#0a0223;font-size:.95rem;font-weight:400;text-decoration:none;transition:color .15s" style-hover="color:#0093f7">Inicio</a>
+    <div onMouseEnter="{{ openMenu }}" onMouseLeave="{{ closeMenu }}" style="position:relative;display:flex;align-items:center">
+      <a href="index.html#servicios" style="display:inline-flex;align-items:center;gap:6px;color:{{ servColor }};font-size:.95rem;font-weight:400;text-decoration:none;transition:color .15s">Servicios
+        <svg viewBox="0 0 12 8" style="width:11px;height:8px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s;transform:rotate({{ chevRot }})"><path d="M1 1l5 5 5-5"></path></svg>
+      </a>
+      <div style="position:absolute;top:100%;left:min(-64px, calc(100vw - 100% - 680px - max(5vw,20px)));margin-top:44px;width:min(680px, calc(100vw - 2 * max(5vw,20px)));background:#ffffff;border-radius:18px;padding:22px 26px;box-shadow:0 26px 60px -26px rgba(16,24,40,.26), 0 2px 6px rgba(16,24,40,.05);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 22px;transition:opacity .22s ease, transform .22s ease, visibility .22s;transform:translate(0,{{ menuY }});opacity:{{ menuOpacity }};visibility:{{ menuVis }}">
+        <a href="index.html#servicios" style="display:flex;gap:4px;align-items:flex-start;text-decoration:none;padding:10px;border-radius:12px;transition:background .18s" style-hover="background:#f2f7fe">
+          <img src="assets/menu/publicidad.svg" alt="" style="width:76px;height:76px;flex:none;margin:-22px 0 0 -22px">
+          <span style="display:block"><b style="display:block;font-size:.9rem;font-weight:500;color:#0a0223;margin-bottom:4px">Publicidad pagada</b><span style="display:block;font-size:.8rem;line-height:1.45;color:#98a0b0">Campañas con alta segmentación y escalabilidad.</span></span>
+        </a>
+        <a href="posicionamiento-seo.html#top" style="display:flex;gap:4px;align-items:flex-start;text-decoration:none;padding:10px;border-radius:12px;transition:background .18s" style-hover="background:#f2f7fe">
+          <img src="assets/menu/seo.svg" alt="" style="width:76px;height:76px;flex:none;margin:-22px 0 0 -22px">
+          <span style="display:block"><b style="display:block;font-size:.9rem;font-weight:500;color:#0a0223;margin-bottom:4px">Posicionamiento web</b><span style="display:block;font-size:.8rem;line-height:1.45;color:#98a0b0">Mejora tu posición en los resultados de búsqueda de Google.</span></span>
+        </a>
+        <a href="index.html#servicios" style="display:flex;gap:4px;align-items:flex-start;text-decoration:none;padding:10px;border-radius:12px;transition:background .18s" style-hover="background:#f2f7fe">
+          <img src="assets/menu/redes.svg" alt="" style="width:76px;height:76px;flex:none;margin:-22px 0 0 -22px">
+          <span style="display:block"><b style="display:block;font-size:.9rem;font-weight:500;color:#0a0223;margin-bottom:4px">Gestión de redes sociales</b><span style="display:block;font-size:.8rem;line-height:1.45;color:#98a0b0">Amplía tu alcance y presencia online con contenido atractivo y gestión activa.</span></span>
+        </a>
+        <a href="email-marketing.html#top" style="display:flex;gap:4px;align-items:flex-start;text-decoration:none;padding:10px;border-radius:12px;transition:background .18s" style-hover="background:#f2f7fe">
+          <img src="assets/menu/email.svg" alt="" style="width:76px;height:76px;flex:none;margin:-22px 0 0 -22px">
+          <span style="display:block"><b style="display:block;font-size:.9rem;font-weight:500;color:#0a0223;margin-bottom:4px">Email marketing</b><span style="display:block;font-size:.8rem;line-height:1.45;color:#98a0b0">Convierte suscriptores en clientes recurrentes con emails.</span></span>
+        </a>
+        <a href="desarrollo-web.html#top" style="display:flex;gap:4px;align-items:flex-start;text-decoration:none;padding:10px;border-radius:12px;transition:background .18s" style-hover="background:#f2f7fe">
+          <img src="assets/menu/web.svg" alt="" style="width:76px;height:76px;flex:none;margin:-22px 0 0 -22px">
+          <span style="display:block"><b style="display:block;font-size:.9rem;font-weight:500;color:#0a0223;margin-bottom:4px">Desarrollo web</b><span style="display:block;font-size:.8rem;line-height:1.45;color:#98a0b0">Diseñamos sitios web estéticos y funcionales para tu empresa.</span></span>
+        </a>
+        <a href="index.html#servicios" style="display:flex;gap:4px;align-items:flex-start;text-decoration:none;padding:10px;border-radius:12px;transition:background .18s" style-hover="background:#f2f7fe">
+          <img src="assets/menu/video.svg" alt="" style="width:76px;height:76px;flex:none;margin:-22px 0 0 -22px">
+          <span style="display:block"><b style="display:block;font-size:.9rem;font-weight:500;color:#0a0223;margin-bottom:4px">Creación de video</b><span style="display:block;font-size:.8rem;line-height:1.45;color:#98a0b0">Creamos estrategias audiovisuales que convierten ideas en historias.</span></span>
+        </a>
+      </div>
+    </div>
+    <a href="index.html#portafolio" style="color:#0a0223;font-size:.95rem;font-weight:400;text-decoration:none;transition:color .15s" style-hover="color:#0093f7">Portafolio</a>
+    <a href="blog.html#articulos" aria-current="page" style="position:relative;color:#0093f7;font-size:.95rem;font-weight:500;text-decoration:none;transition:color .15s">Blog<span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:-9px;height:2.5px;border-radius:2px;background:#0093f7"></span></a>
+  </div>
+  <a href="contacto.html#formulario" style="flex:none;display:inline-flex;align-items:center;justify-content:center;background:#0093f7;color:#fff;font-weight:600;font-size:.9rem;padding:11px 24px;border-radius:10px;text-decoration:none;box-shadow:0 10px 24px -10px rgba(0,147,247,.8), inset 0 1px 0 rgba(255,255,255,.2);transition:background .2s, transform .15s, box-shadow .2s" style-hover="background:#0077cc;transform:translateY(-1px);box-shadow:0 16px 32px -10px rgba(0,147,247,.85), inset 0 1px 0 rgba(255,255,255,.2)">Contacto</a>
+</nav>
+
+<div aria-hidden="true" style="position:fixed;top:70px;left:0;right:0;z-index:199;height:3px;background:transparent;pointer-events:none">
+  <div style="height:100%;width:{{ progW }};background:linear-gradient(90deg,#0093f7,#2e9bff);transition:width .12s linear"></div>
+</div>
+
+<div onClick="{{ closeDrawer }}" aria-hidden="true" style="position:fixed;inset:0;z-index:180;background:rgba(8,2,26,.45);opacity:{{ drawerShade }};visibility:{{ drawerVis }};transition:opacity .3s ease, visibility .3s"></div>
+<aside style="position:fixed;top:0;left:0;bottom:0;z-index:190;width:min(100%,440px);display:flex;flex-direction:column;background:#f4f6fa;transform:translateX({{ drawerX }});transition:transform .34s cubic-bezier(.2,.7,.2,1);visibility:{{ drawerVis }};box-shadow:24px 0 60px -30px rgba(8,2,26,.6)">
+  <div style="flex:none;height:71px"></div>
+  <div style="flex:1;overflow-y:auto;padding:0 max(5vw,20px)">
+    <a href="index.html#top" onClick="{{ closeDrawer }}" style="display:block;padding:20px 4px;font-size:1.05rem;color:#0a0223;text-decoration:none;border-bottom:1px solid #e3e6ee">Inicio</a>
+    <button type="button" onClick="{{ toggleMServ }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 4px;font-size:1.05rem;color:#0a0223;background:{{ mServBg }};border:0;border-bottom:1px solid #e3e6ee;cursor:pointer;font-family:inherit;text-align:left">Servicios
+      <svg viewBox="0 0 12 8" style="width:13px;height:9px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s;transform:rotate({{ mServRot }})"><path d="M1 1l5 5 5-5"></path></svg>
+    </button>
+    <div style="display:{{ mServDisplay }};flex-direction:column;padding:10px 0 16px">
+      <a href="index.html#servicios" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+        <img src="assets/menu/publicidad.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+        <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Publicidad pagada</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Campañas con alta segmentación y escalabilidad.</span></span>
+      </a>
+      <a href="index.html#servicios" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+        <img src="assets/menu/redes.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+        <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Gestión de redes sociales</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Amplía tu alcance y presencia online con contenido atractivo y gestión activa.</span></span>
+      </a>
+      <a href="desarrollo-web.html#top" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+        <img src="assets/menu/web.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+        <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Desarrollo web</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Diseñamos sitios web estéticos y funcionales para tu empresa.</span></span>
+      </a>
+      <a href="posicionamiento-seo.html#top" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+        <img src="assets/menu/seo.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+        <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Posicionamiento web</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Mejora tu posición en los resultados de búsqueda de Google.</span></span>
+      </a>
+      <a href="email-marketing.html#top" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+        <img src="assets/menu/email.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+        <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Email marketing</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Convierte suscriptores en clientes recurrentes con emails.</span></span>
+      </a>
+      <a href="index.html#servicios" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+        <img src="assets/menu/video.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+        <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Creación de video</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Creamos estrategias audiovisuales que convierten ideas en historias.</span></span>
+      </a>
+    </div>
+    <a href="index.html#portafolio" onClick="{{ closeDrawer }}" style="display:block;padding:20px 4px;font-size:1.05rem;color:#0a0223;text-decoration:none;border-bottom:1px solid #e3e6ee">Portafolio</a>
+    <a href="blog.html#articulos" onClick="{{ closeDrawer }}" aria-current="page" style="display:block;padding:20px 4px;font-size:1.05rem;color:#0093f7;font-weight:500;text-decoration:none;border-bottom:1px solid #e3e6ee">Blog</a>
+    <a href="contacto.html#formulario" onClick="{{ closeDrawer }}" style="display:block;padding:20px 4px;font-size:1.05rem;color:#0a0223;text-decoration:none;border-bottom:1px solid #e3e6ee">Agendar reunión</a>
+  </div>
+  <div style="flex:none;background:#0a0820;color:#ffffff;padding:22px max(5vw,20px);display:flex;align-items:center;justify-content:space-between;gap:18px">
+    <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
+      <a href="tel:+56999098594" style="display:flex;align-items:center;gap:11px;color:rgba(255,255,255,.9);font-size:.9rem;text-decoration:none">
+        <svg viewBox="0 0 24 24" style="flex:none;width:17px;height:17px;color:#2e9bff;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>+56 9 9909 8594</a>
+      <a href="mailto:contacto@deltadigital.cl" style="display:flex;align-items:center;gap:11px;color:rgba(255,255,255,.9);font-size:.9rem;text-decoration:none;min-width:0">
+        <svg viewBox="0 0 24 24" style="flex:none;width:17px;height:17px;color:#2e9bff;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg><span style="overflow:hidden;text-overflow:ellipsis">contacto@deltadigital.cl</span></a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;flex:none">
+      <a href="#" aria-label="LinkedIn" style="width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#ffffff;color:#0a0820"><svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21h-4z"></path></svg></a>
+      <a href="#" aria-label="Instagram" style="width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#ffffff;color:#0a0820"><svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"></circle></svg></a>
+    </div>
+  </div>
+</aside>
+
+<section data-screen-label="Artículo hero" style="background:#ffffff;padding:clamp(110px,11vw,150px) max(5vw,20px) clamp(46px,5vw,72px)">
+  <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(32px,5vw,64px);align-items:center">
+    <div>
+      <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:22px;color:#6b7385;font-size:.85rem">
+        <a href="blog.html#articulos" style="color:#6b7385;text-decoration:none" style-hover="color:#0093f7">Blog</a>
+        <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:none;stroke:#0093f7;stroke-width:2;stroke-linecap:round"><path d="M5 12h13M13 6l6 6-6 6"></path></svg>
+        <a href="blog.html#articulos" style="color:#6b7385;text-decoration:none" style-hover="color:#0093f7">Desarrollo web</a>
+        <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:none;stroke:#0093f7;stroke-width:2;stroke-linecap:round"><path d="M5 12h13M13 6l6 6-6 6"></path></svg>
+        <span style="color:#0a0223;font-weight:600">Artículo</span>
+      </div>
+      <h1 style="font-weight:700;font-size:clamp(2rem,3.4vw,2.85rem);line-height:1.16;letter-spacing:-.03em;color:#0a0223;margin-bottom:36px;text-wrap:pretty;max-width:14ch">Landing page Chile ¿Qué es? Servicio y Beneficios</h1>
+      <div style="display:flex;flex-direction:column;align-items:flex-start;gap:14px">
+      <div style="display:flex;align-items:center;flex-wrap:wrap;gap:14px 18px">
+        <img src="assets/blog/claudia.png" alt="Claudia Agurto" style="width:68px;height:68px;flex:none;object-fit:contain">
+        <div style="display:flex;flex-direction:column;gap:2px">
+          <span style="color:#6b7385;font-size:.88rem">Escrito por</span>
+          <a href="#autor" style="color:#0a0223;font-size:1rem;font-weight:500;text-decoration:underline;text-underline-offset:4px;text-decoration-color:#c9cfdb" style-hover="text-decoration-color:#0093f7">Claudia Agurto</a>
+        </div>
+        <div style="display:flex;align-items:stretch;gap:18px">
+        <span aria-hidden="true" style="width:1px;flex:none;margin:6px 0;background:#e3e6ee"></span>
+        <div style="display:flex;flex-direction:column;justify-content:center;gap:2px">
+          <span style="color:#6b7385;font-size:.88rem">Publicado el</span>
+          <time datetime="2024-08-14" style="color:#0a0223;font-size:1rem;font-weight:500">14 de agosto, 2024</time>
+        </div>
+        </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:7px;color:#8a92a3;font-size:.85rem;font-weight:400">
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.2 2"></path></svg>8 min de lectura
+        </div>
+      </div>
+    </div>
+    <div style="position:relative;border-radius:16px;overflow:hidden;aspect-ratio:1.85/1;box-shadow:0 2px 4px rgba(16,24,40,.04), 0 30px 64px -34px rgba(16,24,40,.32)">
+      <img src="assets/blog/blog-2.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Cuerpo del artículo" style="background:#f4f6fa;padding:clamp(52px,6vw,84px) max(5vw,20px) clamp(40px,5vw,60px)">
+  <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:{{ bodyCols }};gap:clamp(26px,3.4vw,48px);align-items:start">
+
+    <div style="order:{{ shareOrder }};position:{{ sharePos }};top:112px;display:flex;flex-direction:{{ shareDir }};align-items:center;gap:10px">
+      <span style="color:#8a92a3;font-size:.68rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;writing-mode:{{ shareWM }};transform:rotate({{ shareLblRot }});margin-bottom:{{ shareLblMb }}">Compartir</span>
+      <a href="{{ shareLinkedIn }}" target="_blank" rel="noopener" aria-label="Compartir en LinkedIn" style="width:40px;height:40px;flex:none;border-radius:11px;display:grid;place-items:center;background:#ffffff;color:#3a4254;box-shadow:0 2px 4px rgba(16,24,40,.05), 0 10px 24px -16px rgba(16,24,40,.5);transition:background .2s, color .2s, transform .2s" style-hover="background:#0093f7;color:#ffffff;transform:translateY(-2px)">
+        <svg viewBox="0 0 24 24" style="width:17px;height:17px;fill:currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21h-4z"></path></svg>
+      </a>
+      <a href="{{ shareWhats }}" target="_blank" rel="noopener" aria-label="Compartir por WhatsApp" style="width:40px;height:40px;flex:none;border-radius:11px;display:grid;place-items:center;background:#ffffff;color:#3a4254;box-shadow:0 2px 4px rgba(16,24,40,.05), 0 10px 24px -16px rgba(16,24,40,.5);transition:background .2s, color .2s, transform .2s" style-hover="background:#25d366;color:#ffffff;transform:translateY(-2px)">
+        <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.46 3.44 1.32 4.94L2 22l5.36-1.4a9.8 9.8 0 0 0 4.68 1.2h.01c5.43 0 9.84-4.4 9.84-9.84S17.47 2 12.04 2zm0 17.98a8.2 8.2 0 0 1-4.16-1.14l-.3-.18-3.18.83.85-3.1-.2-.32a8.13 8.13 0 0 1-1.25-4.35c0-4.51 3.68-8.18 8.2-8.18 2.19 0 4.24.85 5.79 2.4a8.13 8.13 0 0 1 2.4 5.79c0 4.51-3.68 8.25-8.15 8.25zm4.5-6.14c-.25-.13-1.45-.72-1.68-.8-.22-.08-.39-.12-.55.13-.16.24-.63.79-.77.96-.14.16-.28.18-.53.06-.24-.13-1.03-.38-1.97-1.22-.73-.65-1.22-1.45-1.36-1.7-.14-.24-.02-.37.11-.5.11-.11.24-.28.37-.43.12-.14.16-.24.24-.4.08-.17.04-.31-.02-.44-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.25-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.5.58.19 1.1.16 1.51.1.46-.07 1.45-.59 1.65-1.17.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.47-.29z"></path></svg>
+      </a>
+      <button type="button" onClick="{{ copyLink }}" aria-label="Copiar enlace" style="position:relative;width:40px;height:40px;flex:none;border:0;border-radius:11px;display:grid;place-items:center;background:{{ copyBg }};color:{{ copyColor }};box-shadow:0 2px 4px rgba(16,24,40,.05), 0 10px 24px -16px rgba(16,24,40,.5);cursor:pointer;transition:background .2s, color .2s, transform .2s" style-hover="transform:translateY(-2px)">
+        <svg viewBox="0 0 24 24" style="width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"></path><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"></path></svg>
+      </button>
+      <span aria-hidden="true" style="display:{{ copiedDisp }};color:#0093f7;font-size:.74rem;font-weight:700;writing-mode:{{ shareWM }}">¡Copiado!</span>
+    </div>
+
+    <div id="ddArticleBody" style="min-width:0;max-width:760px;order:{{ bodyOrder }}">
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:18px">El marketing consta de muchas partes, pero nunca deba faltar: una <b style="color:#0a0223;font-weight:700">landing page</b>, un producto/servicio y alguien a quien vendérselo.</p>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:30px">Se podría decir que es una ciencia, aunque si dependiera de Jesse Pinkman, seguro diría que:</p>
+      <blockquote style="background:#eceff6;border-left:3px solid #c9d2e2;border-radius:0 10px 10px 0;padding:22px 26px;margin-bottom:30px;color:#3a4254;font-size:1rem;font-style:italic">This is art!</blockquote>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:18px">Porque a fin de cuentas el arte es algo subjetivo, pero aquí hablaremos sobre <b style="color:#0a0223;font-weight:700">landing pages o páginas de aterrizaje</b>, una herramienta utilizada en el marketing, importante para <b style="color:#0a0223;font-weight:700">apartar el trigo de la paja.</b></p>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:18px">¿Quieres saber qué queremos decir con eso? Entonces, continúa leyendo, porque lo que te contaremos te interesa.</p>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:0">Comencemos aclarando…</p>
+
+      <h2 id="s1" style="font-weight:700;font-size:clamp(1.5rem,2.4vw,2rem);letter-spacing:-.025em;color:#0a0223;margin:clamp(48px,5vw,68px) 0 26px;scroll-margin-top:120px">¿Qué es una Landing Page?</h2>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:18px">También conocidas como <b style="color:#0a0223;font-weight:700">páginas de aterrizaje o destino</b>, son eso, una página que se pone de forma intencional dentro de una web o cualquier otro sitio, con la finalidad de que la persona que la lea haga una acción en ella.</p>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:18px">Una landing page debe estar bien estructurada y no tener elementos que distraigan al lector o los lleve a hacer algo que no queremos que haga.</p>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:30px">Algo muy común en las landing pages es despojarlas de menús, enlaces o entradas sugeridas para que el lector no haga más que leerla y dar clic en los call to action que se agreguen dentro de esta.</p>
+      <blockquote style="background:#eceff6;border-left:3px solid #c9d2e2;border-radius:0 10px 10px 0;padding:22px 26px;margin-bottom:30px;color:#3a4254;font-size:1rem;font-style:italic">Call to action = CTA = Llamada a la acción</blockquote>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:0">El call to action que más se utiliza es el de <b style="color:#0a0223;font-weight:700">formulario de contacto</b>: una vez que llenen el formulario se les puede dar algo a cambio, como un eBook, guía o cualquier cosa referente a tu sector y que pueda interesarle mucho a tus visitantes.</p>
+
+      <figure style="margin:clamp(40px,4.5vw,58px) 0;border-radius:14px;overflow:hidden;aspect-ratio:1.72/1;box-shadow:0 2px 4px rgba(16,24,40,.05), 0 24px 50px -30px rgba(16,24,40,.3)">
+        <img src="assets/blog/blog-1.png" alt="Diseñamos tu plataforma o sitio web" style="width:100%;height:100%;object-fit:cover;display:block">
+      </figure>
+
+      <h2 id="s2" style="font-weight:700;font-size:clamp(1.5rem,2.4vw,2rem);letter-spacing:-.025em;color:#0a0223;margin:0 0 26px;scroll-margin-top:120px">¿Para qué sirven las landing page o páginas de aterrizaje?</h2>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:18px">Una página de aterrizaje sirve para convertir a alguien que llega a un sitio web en algo más: un lead, un suscriptor, un cliente.</p>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:18px">Sin embargo, lo importante es entender que el formulario no es la meta: es solo el paso previo a la conversación que viene después.</p>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:18px">Al obtener el correo de un visitante y su consentimiento, ya puedes contactarlo y así ampliar el rango de clientes potenciales. Marca el desarrollo de una relación duradera con tu marca.</p>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:18px">En resumen, la landing page es una herramienta con la que puedes captar, nutrir y convertir. Todo esto de forma medible.</p>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:0">Este es un salto que se puede dar de manera muy grande gracias a la calidad de la oferta que hagas y la persuasión de tus textos.</p>
+
+      <h2 id="s3" style="font-weight:700;font-size:clamp(1.5rem,2.4vw,2rem);letter-spacing:-.025em;color:#0a0223;margin:clamp(48px,5vw,68px) 0 34px;scroll-margin-top:120px">Tipos de landing page Chile ¿Cuál es mejor?</h2>
+
+      <figure style="margin:0 0 22px;border-radius:14px;overflow:hidden;aspect-ratio:2.3/1;background:#e9edf5">
+        <img src="assets/blog/blog-3.jpg" alt="Landing page comprimida" style="width:100%;height:100%;object-fit:cover;display:block">
+      </figure>
+      <h3 style="font-size:1.06rem;font-weight:700;color:#0a0223;margin-bottom:14px">Landing page comprimida</h3>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:18px">Es una página corta y de poco peso: un titular claro, un par de líneas que expliquen la oferta y una llamada a la acción bien visible.</p>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:40px">Tienen como finalidad hacer <b style="color:#0a0223;font-weight:700">acciones simples</b>, como suscribirse a la newsletter y ser medible, informarse todo un tema.</p>
+
+      <figure style="margin:0 0 22px;border-radius:14px;overflow:hidden;aspect-ratio:2.3/1;background:#e9edf5">
+        <img src="assets/blog/blog-1.png" alt="Landing page para captar leads" style="width:100%;height:100%;object-fit:cover;display:block">
+      </figure>
+      <h3 style="font-size:1.06rem;font-weight:700;color:#0a0223;margin-bottom:14px">Landing page para captar leads</h3>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:18px">Este tipo de página es la más buscada y con un <b style="color:#0a0223;font-weight:700">contenido extenso</b> que se le exige a apagar cuando se trata de reunir información y llevarlos a hacer una acción.</p>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:40px">Lo habitual es acompañarla de un incentivo: una guía, un descuento o una demo que el visitante recibe a cambio de dejar su correo o su teléfono.</p>
+
+      <figure style="margin:0 0 22px;border-radius:14px;overflow:hidden;aspect-ratio:2.3/1;background:#e9edf5">
+        <img src="assets/blog/blog-2.jpg" alt="Landing page de ventas" style="width:100%;height:100%;object-fit:cover;display:block">
+      </figure>
+      <h3 style="font-size:1.06rem;font-weight:700;color:#0a0223;margin-bottom:14px">Landing page de ventas</h3>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:18px">Una landing page de ventas se centra en un solo objetivo: <b style="color:#0a0223;font-weight:700">vender productos o servicios</b> y demostrar por qué el tuyo es la mejor opción.</p>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:0">Aquí se necesita más trabajo: la estructura, el orden de los bloques y la prueba social importan tanto como el precio, porque el objetivo es cerrar la compra.</p>
+
+      <h2 id="s4" style="font-weight:700;font-size:clamp(1.5rem,2.4vw,2rem);letter-spacing:-.025em;color:#0a0223;margin:clamp(48px,5vw,68px) 0 26px;scroll-margin-top:120px">Por qué tu web necesita una página de aterrizaje</h2>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:18px">Si tienes una web con tu contenido bien escrito, pero no logras conversiones, el problema casi nunca está en el tráfico: está en dónde aterriza ese tráfico.</p>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:24px">Por eso aquí te resumimos las razones por las que una landing puede <b style="color:#0a0223;font-weight:700">mejorar tu web y tus ingresos</b>:</p>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:30px">
+        <li style="display:flex;gap:14px;color:#3a4254;font-size:1rem;line-height:1.7"><span style="flex:none;width:7px;height:7px;margin-top:11px;border-radius:50%;background:#0093f7"></span><span>Aumenta la conversión porque toda la página apunta a una sola acción, sin menús ni salidas laterales.</span></li>
+        <li style="display:flex;gap:14px;color:#3a4254;font-size:1rem;line-height:1.7"><span style="flex:none;width:7px;height:7px;margin-top:11px;border-radius:50%;background:#0093f7"></span><span>Permite medir con precisión qué campaña, qué anuncio y qué mensaje están trayendo clientes reales.</span></li>
+        <li style="display:flex;gap:14px;color:#3a4254;font-size:1rem;line-height:1.7"><span style="flex:none;width:7px;height:7px;margin-top:11px;border-radius:50%;background:#0093f7"></span><span>Baja el costo por lead: el mismo presupuesto de publicidad rinde más cuando la página está alineada al anuncio.</span></li>
+        <li style="display:flex;gap:14px;color:#3a4254;font-size:1rem;line-height:1.7"><span style="flex:none;width:7px;height:7px;margin-top:11px;border-radius:50%;background:#0093f7"></span><span>Te deja probar variantes: dos titulares, dos ofertas, dos formularios, y quedarte con el que funciona.</span></li>
+      </ul>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:0">El caso de una tienda pequeña lo resume bien: dejaron de enviar su publicidad a la home y la enviaron a una landing con una sola oferta. Mismo presupuesto, el triple de contactos.</p>
+
+      <div style="display:flex;align-items:center;flex-wrap:wrap;gap:20px;margin:clamp(40px,4.5vw,56px) 0 0;padding:26px 28px;border-radius:14px;background:#ffffff;border:1px solid #e3e8f2">
+        <div style="flex:1;min-width:200px">
+          <span style="display:block;color:#0a0223;font-size:1.02rem;font-weight:700;margin-bottom:6px">¿Quieres una landing que convierta?</span>
+          <span style="display:block;color:#6b7385;font-size:.9rem;line-height:1.6">Revisamos tu caso sin costo y te decimos qué cambiar primero.</span>
+        </div>
+        <a href="contacto.html#formulario" style="flex:none;display:inline-flex;align-items:center;gap:10px;background:#0093f7;color:#ffffff;font-weight:600;font-size:.9rem;padding:13px 24px;border-radius:10px;text-decoration:none;box-shadow:0 10px 24px -10px rgba(0,147,247,.8);transition:background .2s, transform .15s" style-hover="background:#0077cc;transform:translateY(-1px)">Hablemos
+          <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M5 12h13M13 6l6 6-6 6"></path></svg>
+        </a>
+      </div>
+
+      <h2 id="s5" style="font-weight:700;font-size:clamp(1.5rem,2.4vw,2rem);letter-spacing:-.025em;color:#0a0223;margin:clamp(48px,5vw,68px) 0 26px;scroll-margin-top:120px">Formas de hacer que las personas entren a tu landing</h2>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:30px">Una vez que tienes lista la <b style="color:#0a0223;font-weight:700">página de aterrizaje</b> hay que llevar gente hasta ella. Estas son las cuatro vías que mejor funcionan.</p>
+      <h3 style="font-size:1.06rem;font-weight:700;color:#0a0223;margin-bottom:12px">Tráfico interno</h3>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:26px">Tu web tiene visitas: enlaza la landing desde los artículos relacionados, desde el blog y desde los lugares donde ya hay atención.</p>
+      <h3 style="font-size:1.06rem;font-weight:700;color:#0a0223;margin-bottom:12px">Publicidad en páginas web relacionadas</h3>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:26px">Si tienes presupuesto, invierte en medios y sitios de tu sector: llegas al público correcto en el momento correcto.</p>
+      <h3 style="font-size:1.06rem;font-weight:700;color:#0a0223;margin-bottom:12px">Posicionamiento orgánico</h3>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:26px">El trabajo de SEO es más lento, pero sostenido: una landing bien optimizada aparece sin pagar por cada clic.</p>
+      <h3 style="font-size:1.06rem;font-weight:700;color:#0a0223;margin-bottom:12px">Ads en redes sociales</h3>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:0">Meta, LinkedIn o TikTok permiten segmentar por interés, cargo y comportamiento. Es la vía más rápida para validar si tu oferta funciona.</p>
+
+      <figure style="margin:clamp(44px,5vw,64px) 0;border-radius:14px;overflow:hidden;aspect-ratio:1.72/1;box-shadow:0 2px 4px rgba(16,24,40,.05), 0 24px 50px -30px rgba(16,24,40,.3)">
+        <img src="assets/blog/blog-3.jpg" alt="Crecimiento estimado" style="width:100%;height:100%;object-fit:cover;display:block">
+      </figure>
+
+      <h2 id="s6" style="font-weight:700;font-size:clamp(1.5rem,2.4vw,2rem);letter-spacing:-.025em;color:#0a0223;margin:0 0 26px;scroll-margin-top:120px">Conclusión sobre las landing pages</h2>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:18px">Ya has visto lo buenas que pueden ser las landing pages cuando son hechas por profesionales.</p>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:18px">Claro, todo el mundo puede hacer un landing, otra cosa es que funcione; incluso hay herramientas para hacer páginas de aterrizaje fácil y rápido.</p>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:18px">Esta página puede servir cómo guía a la hora de hacer una página de aterrizaje, aunque es mejor, sobre todo cuando se trata de un negocio serio, dejar este trabajo a los expertos.</p>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.75;margin-bottom:34px">Si buscas una agencia de diseño web en Chile, <b style="color:#0a0223;font-weight:700">Delta Digital es todo lo que buscas.</b></p>
+      <a href="contacto.html#formulario" style="display:inline-block;background:#cfe6fb;color:#0093f7;font-weight:700;font-size:1.06rem;padding:22px 34px;border-radius:12px;text-decoration:none;transition:background .2s, transform .18s" style-hover="background:#b9dbfa;color:#0077cc;transform:translateY(-2px)">Quiero que hagan las landing pages de mi web</a>
+
+      <div style="position:relative;overflow:hidden;margin:clamp(56px,6vw,84px) 0 0;border-radius:18px;background:#0b1c3e url('assets/cta-bg.png') center/cover no-repeat;padding:clamp(30px,3.4vw,42px) clamp(26px,3vw,40px);display:grid;grid-template-columns:{{ nlCols }};gap:clamp(22px,3vw,36px);align-items:center">
+        <div style="position:relative;z-index:2">
+          <h3 style="color:#ffffff;font-size:1.22rem;font-weight:700;letter-spacing:-.01em;margin-bottom:14px">Suscríbete a nuestro newsletter</h3>
+          <p style="color:rgba(255,255,255,.72);font-size:.92rem;line-height:1.6;max-width:30ch">Nuestro equipo de profesionales cuenta con experiencia en distintas especialidades.</p>
+        </div>
+        <div style="position:relative;z-index:2">
+          <form onSubmit="{{ onSubscribe }}" style="display:flex;gap:10px;flex-wrap:wrap">
+            <input type="email" required="required" placeholder="Tu correo electrónico" aria-label="Tu correo electrónico" style="flex:1;min-width:190px;padding:14px 16px;border-radius:9px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);color:#ffffff;font-family:inherit;font-size:.92rem;outline:none">
+            <button type="submit" style="flex:none;padding:14px 22px;border-radius:9px;border:0;background:#0093f7;color:#ffffff;font-family:inherit;font-weight:700;font-size:.92rem;cursor:pointer;transition:background .2s" style-hover="background:#0077cc">Suscribirte</button>
+          </form>
+          <label style="display:flex;align-items:center;gap:9px;margin-top:14px;color:rgba(255,255,255,.6);font-size:.74rem;cursor:pointer">
+            <input type="checkbox" style="width:14px;height:14px;accent-color:#0093f7;cursor:pointer">
+            <span>Al enviar el formulario estoy de acuerdo con la <a href="#" style="color:rgba(255,255,255,.85);text-decoration:underline">Política de privacidad</a></span>
+          </label>
+        </div>
+      </div>
+
+      <div id="autor" style="margin-top:clamp(52px,6vw,78px);padding-top:34px;border-top:1px solid #dfe4ee">
+        <div style="display:flex;align-items:center;gap:20px;margin-bottom:24px">
+          <img src="assets/blog/claudia.png" alt="Claudia Agurto" style="width:74px;height:74px;flex:none;object-fit:contain">
+          <div>
+            <span style="display:block;color:#8a92a3;font-size:.88rem;margin-bottom:6px">Escrito por:</span>
+            <div style="display:flex;align-items:center;gap:12px">
+              <a href="#" aria-label="LinkedIn de Claudia Agurto" style="flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#20293a;color:#ffffff;transition:background .2s" style-hover="background:#0093f7"><svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21h-4z"></path></svg></a>
+              <div>
+                <span style="display:block;color:#0a0223;font-size:1rem;font-weight:500">Claudia Agurto</span>
+                <span style="display:block;color:#6b7385;font-size:.92rem">Senior account manager</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p style="color:#3a4254;font-size:.98rem;line-height:1.75;font-style:italic;max-width:64ch">Claudia ha sido redactora profesional desde 2014. Su amplia experiencia escribiendo para empresas de marketing, comercio electrónico, tecnología financiera y farmacéutica en B2B y B2C le permite crear contenido resonante de cualquier complejidad.</p>
+      </div>
+    </div>
+
+    <aside style="display:{{ tocDisp }};order:{{ tocOrder }};position:{{ tocPos }};top:106px;background:rgba(255,255,255,.58);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);border:1px solid rgba(255,255,255,.85);border-radius:24px;padding:{{ tocPadding }};box-shadow:5px 6px 16px rgba(20,33,80,.06), -6px -6px 14px rgba(255,255,255,.75), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35)">
+      <button type="button" onClick="{{ toggleToc }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0;border:0;background:transparent;font-family:inherit;text-align:left;cursor:{{ tocCursor }};margin-bottom:{{ tocHeadMb }}">
+        <span style="color:#8a92a3;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase">Índice</span>
+        <svg viewBox="0 0 12 8" style="display:{{ tocChevDisp }};width:13px;height:9px;flex:none;fill:none;stroke:#8a92a3;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s;transform:rotate({{ tocChevRot }})"><path d="M1 1l5 5 5-5"></path></svg>
+      </button>
+      <nav style="display:{{ tocNavDisp }};flex-direction:column;gap:18px" aria-label="Índice del artículo">
+        <a href="#s1" style="position:relative;display:block;padding-left:{{ tocPad0 }};color:{{ tocC0 }};font-weight:{{ tocW0 }};font-size:.87rem;line-height:1.45;text-decoration:none;transition:color .2s, padding-left .2s">
+          <svg viewBox="0 0 24 24" style="position:absolute;left:0;top:3px;width:14px;height:14px;fill:none;stroke:#0093f7;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;opacity:{{ tocO0 }};transition:opacity .2s"><path d="M5 12h13M13 6l6 6-6 6"></path></svg>¿Qué es una Landing Page?</a>
+        <a href="#s2" style="position:relative;display:block;padding-left:{{ tocPad1 }};color:{{ tocC1 }};font-weight:{{ tocW1 }};font-size:.87rem;line-height:1.45;text-decoration:none;transition:color .2s, padding-left .2s">
+          <svg viewBox="0 0 24 24" style="position:absolute;left:0;top:3px;width:14px;height:14px;fill:none;stroke:#0093f7;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;opacity:{{ tocO1 }};transition:opacity .2s"><path d="M5 12h13M13 6l6 6-6 6"></path></svg>¿Para qué sirven las landing page o páginas de aterrizaje?</a>
+        <a href="#s3" style="position:relative;display:block;padding-left:{{ tocPad2 }};color:{{ tocC2 }};font-weight:{{ tocW2 }};font-size:.87rem;line-height:1.45;text-decoration:none;transition:color .2s, padding-left .2s">
+          <svg viewBox="0 0 24 24" style="position:absolute;left:0;top:3px;width:14px;height:14px;fill:none;stroke:#0093f7;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;opacity:{{ tocO2 }};transition:opacity .2s"><path d="M5 12h13M13 6l6 6-6 6"></path></svg>Tipos de landing page Chile ¿Cuál es mejor?</a>
+        <a href="#s4" style="position:relative;display:block;padding-left:{{ tocPad3 }};color:{{ tocC3 }};font-weight:{{ tocW3 }};font-size:.87rem;line-height:1.45;text-decoration:none;transition:color .2s, padding-left .2s">
+          <svg viewBox="0 0 24 24" style="position:absolute;left:0;top:3px;width:14px;height:14px;fill:none;stroke:#0093f7;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;opacity:{{ tocO3 }};transition:opacity .2s"><path d="M5 12h13M13 6l6 6-6 6"></path></svg>Por qué tu web necesita una página de aterrizaje</a>
+        <a href="#s5" style="position:relative;display:block;padding-left:{{ tocPad4 }};color:{{ tocC4 }};font-weight:{{ tocW4 }};font-size:.87rem;line-height:1.45;text-decoration:none;transition:color .2s, padding-left .2s">
+          <svg viewBox="0 0 24 24" style="position:absolute;left:0;top:3px;width:14px;height:14px;fill:none;stroke:#0093f7;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;opacity:{{ tocO4 }};transition:opacity .2s"><path d="M5 12h13M13 6l6 6-6 6"></path></svg>Formas de hacer que las personas entren a tu landing</a>
+        <a href="#s6" style="position:relative;display:block;padding-left:{{ tocPad5 }};color:{{ tocC5 }};font-weight:{{ tocW5 }};font-size:.87rem;line-height:1.45;text-decoration:none;transition:color .2s, padding-left .2s">
+          <svg viewBox="0 0 24 24" style="position:absolute;left:0;top:3px;width:14px;height:14px;fill:none;stroke:#0093f7;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;opacity:{{ tocO5 }};transition:opacity .2s"><path d="M5 12h13M13 6l6 6-6 6"></path></svg>Conclusión sobre las landing pages</a>
+      </nav>
+    </aside>
+  </div>
+</section>
+
+<section data-screen-label="Artículos relacionados" style="background:#f4f6fa;padding:clamp(30px,4vw,50px) max(5vw,20px) clamp(70px,8vw,110px)">
+  <div style="max-width:1180px;margin:0 auto">
+    <h2 style="font-weight:700;font-size:clamp(1.7rem,2.8vw,2.3rem);letter-spacing:-.025em;color:#0a0223;margin-bottom:clamp(28px,3.4vw,44px)">Artículos Relacionados</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:clamp(34px,4vw,54px) clamp(22px,2.6vw,34px)">
+      <article style="display:flex;flex-direction:column">
+        <div style="position:relative;border-radius:14px;overflow:hidden;aspect-ratio:1.62/1;margin-bottom:22px;box-shadow:0 2px 4px rgba(16,24,40,.05), 0 20px 44px -26px rgba(16,24,40,.28)">
+          <img src="assets/blog/blog-1.png" alt="" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.07)">
+          <span style="position:absolute;left:14px;top:14px;background:#ffffff;color:#0a0223;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:7px 12px;border-radius:8px;box-shadow:0 6px 16px -8px rgba(16,24,40,.5)">Noticias</span>
+        </div>
+        <span style="color:#6b7385;font-size:.82rem;margin-bottom:10px">Abril 09, 2024</span>
+        <h3 style="font-size:1.06rem;font-weight:700;line-height:1.4;letter-spacing:-.015em;color:#0a0223;margin-bottom:20px;text-wrap:pretty">Estrategias comprobadas para mejorar tus resultados</h3>
+        <a href="articulo.html" style="display:inline-flex;align-items:center;gap:12px;margin-top:auto;color:#0a0223;font-weight:700;font-size:.92rem;text-decoration:none">
+          <span style="width:38px;height:38px;flex:none;border-radius:50%;border:1.6px solid #0093f7;display:grid;place-items:center;color:#0093f7;transition:background .2s, color .2s" style-hover="background:#0093f7;color:#ffffff">
+            <svg viewBox="0 0 24 24" style="width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M5 12h13M13 6l6 6-6 6"></path></svg>
+          </span>Ver más</a>
+      </article>
+      <article style="display:flex;flex-direction:column">
+        <div style="position:relative;border-radius:14px;overflow:hidden;aspect-ratio:1.62/1;margin-bottom:22px;box-shadow:0 2px 4px rgba(16,24,40,.05), 0 20px 44px -26px rgba(16,24,40,.28)">
+          <img src="assets/blog/blog-2.jpg" alt="" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.07)">
+          <span style="position:absolute;left:14px;top:14px;background:#ffffff;color:#0a0223;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:7px 12px;border-radius:8px;box-shadow:0 6px 16px -8px rgba(16,24,40,.5)">Noticias</span>
+        </div>
+        <span style="color:#6b7385;font-size:.82rem;margin-bottom:10px">Mayo 02, 2024</span>
+        <h3 style="font-size:1.06rem;font-weight:700;line-height:1.4;letter-spacing:-.015em;color:#0a0223;margin-bottom:20px;text-wrap:pretty">¿Por qué elegirnos como agencia de marketing en Chile?</h3>
+        <a href="articulo.html" style="display:inline-flex;align-items:center;gap:12px;margin-top:auto;color:#0a0223;font-weight:700;font-size:.92rem;text-decoration:none">
+          <span style="width:38px;height:38px;flex:none;border-radius:50%;border:1.6px solid #0093f7;display:grid;place-items:center;color:#0093f7;transition:background .2s, color .2s" style-hover="background:#0093f7;color:#ffffff">
+            <svg viewBox="0 0 24 24" style="width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M5 12h13M13 6l6 6-6 6"></path></svg>
+          </span>Ver más</a>
+      </article>
+      <article style="display:flex;flex-direction:column">
+        <div style="position:relative;border-radius:14px;overflow:hidden;aspect-ratio:1.62/1;margin-bottom:22px;box-shadow:0 2px 4px rgba(16,24,40,.05), 0 20px 44px -26px rgba(16,24,40,.28)">
+          <img src="assets/blog/blog-3.jpg" alt="" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.07)">
+          <span style="position:absolute;left:14px;top:14px;background:#ffffff;color:#0a0223;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:7px 12px;border-radius:8px;box-shadow:0 6px 16px -8px rgba(16,24,40,.5)">Reviews</span>
+        </div>
+        <span style="color:#6b7385;font-size:.82rem;margin-bottom:10px">Agosto 14, 2024</span>
+        <h3 style="font-size:1.06rem;font-weight:700;line-height:1.4;letter-spacing:-.015em;color:#0a0223;margin-bottom:20px;text-wrap:pretty">Nuestros servicios como agencia de Marketing Digital</h3>
+        <a href="articulo.html" style="display:inline-flex;align-items:center;gap:12px;margin-top:auto;color:#0a0223;font-weight:700;font-size:.92rem;text-decoration:none">
+          <span style="width:38px;height:38px;flex:none;border-radius:50%;border:1.6px solid #0093f7;display:grid;place-items:center;color:#0093f7;transition:background .2s, color .2s" style-hover="background:#0093f7;color:#ffffff">
+            <svg viewBox="0 0 24 24" style="width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M5 12h13M13 6l6 6-6 6"></path></svg>
+          </span>Ver más</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div id="contacto" data-screen-label="Footer" style="position:relative;background:#0a0820;color:#ffffff">
+  <section style="position:relative;overflow:hidden;background:#0b1c3e url('assets/cta-bg.png') center/cover no-repeat;padding:clamp(54px,6vw,88px) max(5vw,20px)">
+    <img src="assets/fx-dashed.svg" alt="" aria-hidden="true" style="position:absolute;top:{{ ctaDashT }};left:{{ ctaDashL }};width:{{ ctaDashW }};opacity:.5;z-index:1;pointer-events:none;animation:ddSpin 40s linear infinite">
+    <img src="assets/fx-circle.svg" alt="" aria-hidden="true" style="position:absolute;left:-110px;top:22%;width:280px;opacity:.4;z-index:0;pointer-events:none;animation:ddDrift 30s ease-in-out infinite reverse">
+    <img src="assets/fx-circle2.svg" alt="" aria-hidden="true" style="position:absolute;right:-90px;bottom:-200px;width:440px;opacity:.9;z-index:0;pointer-events:none;animation:ddDrift 24s ease-in-out infinite">
+    <img src="assets/fx-arrow1.svg" alt="" aria-hidden="true" style="position:absolute;left:{{ ctaA1L }};top:{{ ctaA1T }};width:{{ ctaA1W }};z-index:1;pointer-events:none;filter:drop-shadow(0 12px 22px rgba(0,90,180,.5));animation:ddFloatA 9s ease-in-out infinite">
+    <img src="assets/fx-arrow2.svg" alt="" aria-hidden="true" style="position:absolute;right:{{ ctaA2R }};top:{{ ctaA2T }};width:{{ ctaA2W }};z-index:1;pointer-events:none;filter:drop-shadow(0 14px 26px rgba(0,120,240,.45));animation:ddFloatB 11s ease-in-out infinite">
+    <div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(90,160,255,.55),transparent);z-index:5"></div>
+    <div style="position:relative;z-index:4;max-width:620px;margin:0 auto;text-align:center">
+      <h2 style="font-size:clamp(1.65rem,3.2vw,2.5rem);font-weight:700;line-height:1.1;letter-spacing:-.02em;margin:0 0 16px;color:#ffffff;text-wrap:balance">Descubre lo que podemos hacer <span style="color:#2e9bff">por ti</span></h2>
+      <p style="max-width:470px;margin:0 auto 28px;color:rgba(255,255,255,.62);font-size:.95rem;line-height:1.6">Nuestro equipo de profesionales cuenta con experiencia en distintas especialidades e industrias, juntos encontraremos la mejor solución para tu negocio.</p>
+      <a href="contacto.html#formulario" style="display:inline-block;color:#ffffff;font-weight:600;font-size:.9rem;padding:13px 34px;border-radius:13px;text-decoration:none;background:linear-gradient(180deg,rgba(124,144,184,.42),rgba(58,74,110,.5));border:1px solid rgba(255,255,255,.26);box-shadow:0 12px 32px -12px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.35);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:transform .25s, background .25s, box-shadow .25s" style-hover="transform:translateY(-2px);background:linear-gradient(180deg,rgba(46,155,255,.62),rgba(0,103,180,.62));box-shadow:0 18px 44px -12px rgba(0,120,240,.6), inset 0 1px 0 rgba(255,255,255,.4)">Contacto</a>
+    </div>
+  </section>
+
+  <footer style="position:relative;z-index:2;background:#0a0820;padding:clamp(40px,4.5vw,58px) max(5vw,20px) 24px">
+    <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,max(230px,26%)),1fr));gap:40px;align-items:start">
+      <div>
+        <a href="index.html#top" aria-label="Delta Digital"><img src="assets/delta-logo-light.svg" alt="Delta Digital" style="height:34px;width:auto;display:block"></a>
+        <ul style="list-style:none;padding:0;margin:22px 0 18px;display:flex;flex-direction:column;gap:11px">
+          <li style="display:flex;align-items:center;gap:11px">
+            <svg viewBox="0 0 24 24" style="flex:none;width:16px;height:16px;color:#2e9bff;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <a href="tel:+56999098594" style="color:rgba(255,255,255,.82);font-size:.875rem;text-decoration:none;transition:color .15s;white-space:nowrap" style-hover="color:#ffffff">+56 9 9909 8594</a>
+          </li>
+          <li style="display:flex;align-items:center;gap:11px">
+            <svg viewBox="0 0 24 24" style="flex:none;width:16px;height:16px;color:#2e9bff;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg>
+            <a href="mailto:contacto@deltadigital.cl" style="color:rgba(255,255,255,.82);font-size:.875rem;text-decoration:none;transition:color .15s" style-hover="color:#ffffff">contacto@deltadigital.cl</a>
+          </li>
+          <li style="display:flex;align-items:center;gap:11px">
+            <svg viewBox="0 0 24 24" style="flex:none;width:16px;height:16px;color:#2e9bff;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span style="color:rgba(255,255,255,.82);font-size:.875rem">Dr. Manuel Barros Borgoño N°71 OF 1105</span>
+          </li>
+        </ul>
+        <div style="display:flex;gap:10px">
+          <a href="#" aria-label="LinkedIn" style="width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);color:#cfe3ff;transition:background .2s, transform .2s, color .2s" style-hover="background:#0093f7;color:#ffffff;transform:translateY(-2px)">
+            <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21h-4z"></path></svg>
+          </a>
+          <a href="#" aria-label="Instagram" style="width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);color:#cfe3ff;transition:background .2s, transform .2s, color .2s" style-hover="background:#0093f7;color:#ffffff;transform:translateY(-2px)">
+            <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"></circle></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav style="display:flex;flex-direction:column;gap:13px;padding-top:2px" aria-label="Footer">
+        <a href="index.html#top" style="color:rgba(255,255,255,.78);text-decoration:none;font-size:.9rem;font-weight:500;width:max-content;transition:color .15s, transform .2s" style-hover="color:#ffffff;transform:translateX(3px)">Inicio</a>
+        <a href="index.html#servicios" style="color:rgba(255,255,255,.78);text-decoration:none;font-size:.9rem;font-weight:500;width:max-content;transition:color .15s, transform .2s" style-hover="color:#ffffff;transform:translateX(3px)">Servicios</a>
+        <a href="index.html#portafolio" style="color:rgba(255,255,255,.78);text-decoration:none;font-size:.9rem;font-weight:500;width:max-content;transition:color .15s, transform .2s" style-hover="color:#ffffff;transform:translateX(3px)">Portafolio</a>
+        <a href="blog.html#articulos" style="color:rgba(255,255,255,.78);text-decoration:none;font-size:.9rem;font-weight:500;width:max-content;transition:color .15s, transform .2s" style-hover="color:#ffffff;transform:translateX(3px)">Blog</a>
+        <a href="contacto.html#formulario" style="color:rgba(255,255,255,.78);text-decoration:none;font-size:.9rem;font-weight:500;width:max-content;transition:color .15s, transform .2s" style-hover="color:#ffffff;transform:translateX(3px)">Contacto</a>
+      </nav>
+
+      <div style="display:flex;flex-direction:column;gap:11px">
+        <div style="position:relative;display:block;border-radius:10px;overflow:hidden;isolation:isolate;width:100%;max-width:268px;aspect-ratio:260/61;box-shadow:0 12px 28px -12px rgba(0,0,0,.5);transition:transform .28s, box-shadow .28s" style-hover="transform:translateY(-3px);box-shadow:0 20px 40px -14px rgba(0,90,210,.55)" style-before="content:'';position:absolute;inset:0;z-index:2;border-radius:inherit;pointer-events:none;mix-blend-mode:color-dodge;opacity:.4;background:repeating-linear-gradient(115deg, rgba(255,0,128,.5) 0%, rgba(255,196,0,.5) 7%, rgba(0,255,170,.5) 15%, rgba(0,170,255,.5) 23%, rgba(170,0,255,.5) 31%, rgba(255,0,128,.5) 40%);background-size:320% 320%;animation:ddHoloFoil 7s ease-in-out infinite" style-after="content:'';position:absolute;inset:0;z-index:3;border-radius:inherit;pointer-events:none;mix-blend-mode:overlay;background:linear-gradient(115deg, transparent 30%, rgba(255,255,255,.85) 48%, transparent 66%);background-size:280% 100%;animation:ddHoloGlare 7s ease-in-out infinite"><img src="assets/badges/google-partner.svg" alt="Google Partner" style="display:block;width:100%;height:100%"></div>
+        <div style="position:relative;display:block;border-radius:10px;overflow:hidden;isolation:isolate;width:100%;max-width:268px;aspect-ratio:260/61;box-shadow:0 12px 28px -12px rgba(0,0,0,.5);transition:transform .28s, box-shadow .28s" style-hover="transform:translateY(-3px);box-shadow:0 20px 40px -14px rgba(0,90,210,.55)" style-before="content:'';position:absolute;inset:0;z-index:2;border-radius:inherit;pointer-events:none;mix-blend-mode:color-dodge;opacity:.4;background:repeating-linear-gradient(115deg, rgba(255,0,128,.5) 0%, rgba(255,196,0,.5) 7%, rgba(0,255,170,.5) 15%, rgba(0,170,255,.5) 23%, rgba(170,0,255,.5) 31%, rgba(255,0,128,.5) 40%);background-size:320% 320%;animation:ddHoloFoil 7s ease-in-out infinite;animation-delay:-2.6s" style-after="content:'';position:absolute;inset:0;z-index:3;border-radius:inherit;pointer-events:none;mix-blend-mode:overlay;background:linear-gradient(115deg, transparent 30%, rgba(255,255,255,.85) 48%, transparent 66%);background-size:280% 100%;animation:ddHoloGlare 7s ease-in-out infinite;animation-delay:-2.6s"><img src="assets/badges/meta-partner.svg" alt="Meta Business Partner" style="display:block;width:100%;height:100%"></div>
+        <div style="position:relative;display:block;border-radius:10px;overflow:hidden;isolation:isolate;width:100%;max-width:268px;aspect-ratio:260/61;box-shadow:0 12px 28px -12px rgba(0,0,0,.5);transition:transform .28s, box-shadow .28s" style-hover="transform:translateY(-3px);box-shadow:0 20px 40px -14px rgba(0,90,210,.55)" style-before="content:'';position:absolute;inset:0;z-index:2;border-radius:inherit;pointer-events:none;mix-blend-mode:color-dodge;opacity:.4;background:repeating-linear-gradient(115deg, rgba(255,0,128,.5) 0%, rgba(255,196,0,.5) 7%, rgba(0,255,170,.5) 15%, rgba(0,170,255,.5) 23%, rgba(170,0,255,.5) 31%, rgba(255,0,128,.5) 40%);background-size:320% 320%;animation:ddHoloFoil 7s ease-in-out infinite;animation-delay:-4.7s" style-after="content:'';position:absolute;inset:0;z-index:3;border-radius:inherit;pointer-events:none;mix-blend-mode:overlay;background:linear-gradient(115deg, transparent 30%, rgba(255,255,255,.85) 48%, transparent 66%);background-size:280% 100%;animation:ddHoloGlare 7s ease-in-out infinite;animation-delay:-4.7s"><img src="assets/badges/hubspot-partner.svg" alt="HubSpot Partner" style="display:block;width:100%;height:100%"></div>
+      </div>
+    </div>
+
+    <div style="max-width:1180px;margin:32px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
+      <span style="color:rgba(255,255,255,.5);font-size:.8rem">© 2025 Delta Digital. Todos los derechos reservados.</span>
+      <div style="display:flex;gap:28px;flex-wrap:wrap">
+        <a href="preguntas-frecuentes.html#faq-l" style="color:rgba(255,255,255,.62);font-size:.84rem;text-decoration:none;transition:color .15s" style-hover="color:#ffffff">Aviso legal</a>
+        <a href="preguntas-frecuentes.html#faq-p" style="color:rgba(255,255,255,.62);font-size:.84rem;text-decoration:none;transition:color .15s" style-hover="color:#ffffff">Política de privacidad</a>
+        <a href="preguntas-frecuentes.html#faq-c" style="color:rgba(255,255,255,.62);font-size:.84rem;text-decoration:none;transition:color .15s" style-hover="color:#ffffff">Política de cookies</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<sc-if value="{{ showWhatsApp }}" hint-placeholder-val="{{ true }}">
+<a href="{{ waHref }}" target="_blank" rel="noopener" aria-label="WhatsApp" style="position:fixed;right:26px;bottom:26px;z-index:180;width:73px;height:73px;border-radius:50%;display:grid;place-items:center;backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);background:rgba(255,255,255,.14);box-shadow:0 18px 40px -16px rgba(16,24,40,.45);transition:transform .2s" style-hover="transform:translateY(-3px)">
+  <img src="assets/whatsapp.svg" alt="" aria-hidden="true" style="width:100%;height:100%;display:block">
+</a>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showWhatsApp&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Contacto&quot;},&quot;whatsappNumero&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;56999098594&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contacto&quot;},&quot;mostrarIndice&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Artículo&quot;}}">
+class Component extends DCLogic {
+  state = { menuOpen: false, drawer: false, mServ: false, toc: 0, tocOpen: false, copied: false, prog: 0, narrow: typeof window !== 'undefined' && window.innerWidth <= 900 };
+
+  componentDidMount() {
+    this._ids = ['s1', 's2', 's3', 's4', 's5', 's6'];
+    this._onScroll = () => {
+      if (this._raf) return;
+      this._raf = requestAnimationFrame(() => {
+        this._raf = null;
+        let active = 0;
+        this._ids.forEach((id, i) => {
+          const el = document.getElementById(id);
+          if (el && el.getBoundingClientRect().top <= 220) active = i;
+        });
+        let prog = 0;
+        const body = document.getElementById('ddArticleBody');
+        if (body) {
+          const r = body.getBoundingClientRect();
+          const span = r.height - window.innerHeight * 0.6;
+          prog = span > 0 ? Math.min(1, Math.max(0, (110 - r.top) / span)) : (r.bottom < window.innerHeight ? 1 : 0);
+          prog = Math.round(prog * 100);
+        }
+        if (active !== this.state.toc || prog !== this.state.prog) this.setState({ toc: active, prog });
+      });
+    };
+    this._onResize = () => {
+      const n = window.innerWidth <= 900;
+      if (n !== this.state.narrow) this.setState({ narrow: n, drawer: n ? this.state.drawer : false });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    window.addEventListener('resize', this._onResize, { passive: true });
+    this._onScroll();
+    this._initReveal();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('resize', this._onResize);
+    if (this._revealPoll) cancelAnimationFrame(this._revealPoll);
+  }
+
+  _initReveal() {
+    const targets = [];
+    document.querySelectorAll('section h1, section h2, section figure, section article, section blockquote').forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.height > 30 && !targets.some(t => t.contains(el))) targets.push(el);
+    });
+    targets.forEach(el => el.classList.add('dd-rv'));
+    let pending = targets.slice();
+    const done = el => { el.classList.remove('dd-rv', 'dd-rv-in'); el.style.animationDelay = ''; };
+    const sweep = () => {
+      if (!pending.length) return;
+      const vh = window.innerHeight;
+      let shown = 0;
+      pending = pending.filter(el => {
+        const r = el.getBoundingClientRect();
+        if (r.top > vh * 0.94 || r.bottom < 0) return true;
+        el.style.animationDelay = (shown++ * 70) + 'ms';
+        el.classList.add('dd-rv-in');
+        el.addEventListener('animationend', () => done(el), { once: true });
+        setTimeout(() => done(el), 1600);
+        return false;
+      });
+    };
+    let t = 0;
+    const poll = () => { this._revealPoll = requestAnimationFrame(poll); if (++t % 8 === 0) sweep(); };
+    this._revealPoll = requestAnimationFrame(poll);
+    sweep();
+  }
+
+  renderVals() {
+    const num = String(this.props.whatsappNumero ?? '56999098594').replace(/[^0-9]/g, '');
+    const m = this.state.menuOpen;
+    const n = this.state.narrow;
+    const showToc = this.props.mostrarIndice ?? true;
+    const tocOpen = !n || this.state.tocOpen;
+    const url = typeof window !== 'undefined' ? window.location.href : '';
+    const title = 'Landing page Chile ¿Qué es? Servicio y Beneficios';
+    const out = {
+      tocPos: n ? 'static' : 'sticky',
+      tocPadding: n ? '20px 22px' : '26px 24px 28px',
+      tocCursor: n ? 'pointer' : 'default',
+      tocChevDisp: n ? 'block' : 'none',
+      tocChevRot: tocOpen ? '180deg' : '0deg',
+      tocNavDisp: tocOpen ? 'flex' : 'none',
+      tocHeadMb: tocOpen ? '20px' : '0px',
+      toggleToc: () => { if (this.state.narrow) this.setState({ tocOpen: !this.state.tocOpen }); },
+      shareOrder: n ? 3 : 1,
+      sharePos: n ? 'static' : 'sticky',
+      shareDir: n ? 'row' : 'column',
+      shareWM: n ? 'horizontal-tb' : 'vertical-rl',
+      shareLblMb: n ? '0' : '4px',
+      shareLblRot: n ? '0deg' : '180deg',
+      shareLinkedIn: 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url),
+      shareWhats: 'https://wa.me/?text=' + encodeURIComponent(title + ' ' + url),
+      copyBg: this.state.copied ? '#0093f7' : '#ffffff',
+      copyColor: this.state.copied ? '#ffffff' : '#3a4254',
+      copiedDisp: this.state.copied ? 'inline' : 'none',
+      copyLink: () => {
+        const href = window.location.href;
+        const done = () => {
+          this.setState({ copied: true });
+          clearTimeout(this._copyT);
+          this._copyT = setTimeout(() => this.setState({ copied: false }), 1800);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(href).then(done, done);
+        else done();
+      },
+      progW: this.state.prog + '%',
+      narrow: n,
+      navDesk: n ? 'none' : 'flex',
+      navMob: n ? 'inline-flex' : 'none',
+      openMenu: () => this.setState({ menuOpen: true }),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      servColor: m ? '#0093f7' : '#0a0223',
+      chevRot: m ? '180deg' : '0deg',
+      menuOpacity: m ? '1' : '0',
+      menuVis: m ? 'visible' : 'hidden',
+      menuY: m ? '0' : '-8px',
+      toggleDrawer: () => this.setState({ drawer: !this.state.drawer }),
+      closeDrawer: () => this.setState({ drawer: false }),
+      burgerPath: this.state.drawer ? 'M6 6l12 12M18 6L6 18' : 'M3 6h18M3 12h18M3 18h18',
+      drawerX: this.state.drawer ? '0' : '-102%',
+      drawerVis: this.state.drawer ? 'visible' : 'hidden',
+      drawerShade: this.state.drawer ? 1 : 0,
+      toggleMServ: () => this.setState({ mServ: !this.state.mServ }),
+      mServDisplay: this.state.mServ ? 'flex' : 'none',
+      mServRot: this.state.mServ ? '180deg' : '0deg',
+      mServBg: this.state.mServ ? '#ffffff' : 'transparent',
+      bodyCols: n ? 'minmax(0,1fr)' : (showToc ? '52px minmax(0,1fr) 272px' : '52px minmax(0,1fr)'),
+      bodyOrder: 2,
+      tocOrder: n ? 1 : 3,
+      tocDisp: showToc ? 'block' : 'none',
+      nlCols: n ? '1fr' : 'minmax(0,1fr) minmax(0,1.05fr)',
+      ctaDashT: n ? '8%' : '12%',
+      ctaDashL: n ? '-40px' : '6%',
+      ctaDashW: n ? '130px' : '190px',
+      ctaA1L: n ? '-20px' : '9%',
+      ctaA1T: n ? '68%' : '58%',
+      ctaA1W: n ? '54px' : '86px',
+      ctaA2R: n ? '-16px' : '10%',
+      ctaA2T: n ? '14%' : '20%',
+      ctaA2W: n ? '58px' : '96px',
+      onSubscribe: e => { e.preventDefault(); },
+      showWhatsApp: this.props.showWhatsApp ?? true,
+      waHref: 'https://wa.me/' + num
+    };
+    for (let i = 0; i < 6; i++) {
+      const on = this.state.toc === i;
+      out['tocC' + i] = on ? '#0a0223' : '#6b7385';
+      out['tocW' + i] = on ? 700 : 400;
+      out['tocO' + i] = on ? '1' : '0';
+      out['tocPad' + i] = on ? '22px' : '0px';
+    }
+    return out;
+  }
+}
+</script>
+</body>
+</html>

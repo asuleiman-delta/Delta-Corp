@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delta Digital | Agencia de Marketing Digital en Chile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  @font-face{font-family:'Gotham';src:url('fonts/Gotham-Book.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Gotham';src:url('fonts/Gotham-Medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Gotham';src:url('fonts/Gotham-Bold.otf') format('opentype');font-weight:600 700;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Gotham';src:url('fonts/Gotham-Black.otf') format('opentype');font-weight:800 900;font-style:normal;font-display:swap;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:92px;}
+  body{scroll-behavior:smooth;font-family:'Gotham',system-ui,sans-serif;color:#0a0223;background:#ffffff;-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.5;}
+  a{color:#0093f7;text-decoration:none;}
+  a:hover{color:#0077cc;}
+  ::selection{background:rgba(0,147,247,.18);}
+  :focus-visible{outline:2px solid #0093f7;outline-offset:2px;}
+  ::-webkit-scrollbar{height:0;width:0;}
+  @keyframes ddMarquee{from{transform:translateX(0);}to{transform:translateX(calc(-50% - 38px));}}
+  @keyframes ddMarqueeRev{from{transform:translateX(calc(-50% - 38px));}to{transform:translateX(0);}}
+  @keyframes ddSpin{to{transform:rotate(360deg);}}
+  @keyframes ddXfadeA{from{opacity:0;}to{opacity:1;}}
+  @keyframes ddXfadeB{from{opacity:0;}to{opacity:1;}}
+  @keyframes ddFadeA{from{opacity:0;transform:translateX(34px);}to{opacity:1;transform:none;}}
+  @keyframes ddFadeB{from{opacity:0;transform:translateX(34px);}to{opacity:1;transform:none;}}
+  @keyframes ddReveal{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:none;}}
+  .dd-rv{opacity:0;}
+  .dd-rv-in{animation:ddReveal .6s cubic-bezier(.2,.7,.2,1) forwards;}
+  @media (prefers-reduced-motion:reduce){.dd-rv,.dd-rv-in{opacity:1;animation:none;}}
+  @keyframes ddSpinRev{to{transform:rotate(-360deg);}}
+  @keyframes ddSticker{0%,100%{transform:translateY(0) rotate(-1.5deg);}50%{transform:translateY(-5px) rotate(1.5deg);}}
+  @keyframes ddStickerHolo{0%,100%{opacity:.14;transform:translateX(-38%) rotate(8deg);}50%{opacity:.4;transform:translateX(38%) rotate(8deg);}}
+  @keyframes ddDrift{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-26px,-22px) scale(1.06);}}
+  @keyframes ddFloatA{0%,100%{transform:translateY(0) rotate(-8deg);}50%{transform:translateY(-22px) rotate(-8deg);}}
+  @keyframes ddFloatB{0%,100%{transform:translateY(0) rotate(10deg);}50%{transform:translateY(20px) rotate(10deg);}}
+  @keyframes ddFloatLg{0%,100%{transform:translateY(0);}50%{transform:translateY(-16px);}}
+  @keyframes ddFloatSm{0%,100%{transform:translateY(0) rotate(18deg);}50%{transform:translateY(13px) rotate(18deg);}}
+  @keyframes ddOrbit{0%,100%{transform:translateY(0);}50%{transform:translateY(-18px);}}
+  @keyframes ddHoloFoil{0%,100%{background-position:0% 50%;}50%{background-position:100% 50%;}}
+  @keyframes ddHoloGlare{0%,100%{background-position:140% 0;}50%{background-position:-40% 0;}}
+  @keyframes ddPulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.45);}70%{box-shadow:0 0 0 18px rgba(37,211,102,0);}100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;}}
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div style="position:relative;width:100%;overflow-x:clip;background:#f4f6fa">
+
+<nav id="ddnav" style="position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px max(5vw,20px);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);transition:background .3s, box-shadow .3s, border-color .3s;background:{{ navBg }};border-bottom:1px solid {{ navBorder }};box-shadow:{{ navShadow }}">
+  <div style="display:flex;align-items:center;gap:14px;flex:none">
+    <button type="button" onClick="{{ toggleDrawer }}" aria-label="Menú" style="display:{{ navMob }};align-items:center;justify-content:center;flex:none;width:44px;height:44px;margin-left:-10px;border:0;background:transparent;cursor:pointer;color:{{ navLink }}">
+      <svg viewBox="0 0 24 24" style="width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round"><path d="{{ burgerPath }}"></path></svg>
+    </button>
+    <a href="index.html#top" aria-label="Delta Digital" style="position:relative;display:block;flex:none;height:38px">
+      <img src="assets/delta-logo-light.svg" alt="Delta Digital" style="height:38px;width:auto;display:block;transition:opacity .3s;opacity:{{ navLogoLight }}">
+      <img src="assets/delta-logo.svg" alt="" aria-hidden="true" style="position:absolute;top:0;left:0;height:38px;width:auto;display:block;transition:opacity .3s;opacity:{{ navLogoDark }}">
+    </a>
+  </div>
+  <div style="display:{{ navDesk }};align-items:center;gap:38px">
+    <a href="index.html#top" style="color:{{ navLink }};font-size:.95rem;font-weight:400;text-decoration:none;transition:color .15s" style-hover="color:{{ navLinkHover }}">Inicio</a>
+    <div onMouseEnter="{{ openMenu }}" onMouseLeave="{{ closeMenu }}" style="position:relative;display:flex;align-items:center">
+      <a href="index.html#servicios" style="display:inline-flex;align-items:center;gap:6px;color:{{ servColor }};font-size:.95rem;font-weight:400;text-decoration:none;transition:color .15s">Servicios
+        <svg viewBox="0 0 12 8" style="width:11px;height:8px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s;transform:rotate({{ chevRot }})"><path d="M1 1l5 5 5-5"></path></svg>
+      </a>
+      <div style="position:absolute;top:100%;left:min(-64px, calc(100vw - 100% - 680px - max(5vw,20px)));margin-top:44px;width:min(680px, calc(100vw - 2 * max(5vw,20px)));background:#ffffff;border-radius:18px;padding:22px 26px;box-shadow:0 26px 60px -26px rgba(16,24,40,.26), 0 2px 6px rgba(16,24,40,.05);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 22px;transition:opacity .22s ease, transform .22s ease, visibility .22s;transform:translate(0,{{ menuY }});opacity:{{ menuOpacity }};visibility:{{ menuVis }}">
+        <a href="index.html#servicios" style="display:flex;gap:4px;align-items:flex-start;text-decoration:none;padding:10px;border-radius:12px;transition:background .18s" style-hover="background:#f2f7fe">
+          <img src="assets/menu/publicidad.svg" alt="" style="width:76px;height:76px;flex:none;margin:-22px 0 0 -22px">
+          <span style="display:block"><b style="display:block;font-size:.9rem;font-weight:500;color:#0a0223;margin-bottom:4px">Publicidad pagada</b><span style="display:block;font-size:.8rem;line-height:1.45;color:#98a0b0">Campañas con alta segmentación y escalabilidad.</span></span>
+        </a>
+        <a href="posicionamiento-seo.html#top" style="display:flex;gap:4px;align-items:flex-start;text-decoration:none;padding:10px;border-radius:12px;transition:background .18s" style-hover="background:#f2f7fe">
+          <img src="assets/menu/seo.svg" alt="" style="width:76px;height:76px;flex:none;margin:-22px 0 0 -22px">
+          <span style="display:block"><b style="display:block;font-size:.9rem;font-weight:500;color:#0a0223;margin-bottom:4px">Posicionamiento web</b><span style="display:block;font-size:.8rem;line-height:1.45;color:#98a0b0">Mejora tu posición en los resultados de búsqueda de Google.</span></span>
+        </a>
+        <a href="index.html#servicios" style="display:flex;gap:4px;align-items:flex-start;text-decoration:none;padding:10px;border-radius:12px;transition:background .18s" style-hover="background:#f2f7fe">
+          <img src="assets/menu/redes.svg" alt="" style="width:76px;height:76px;flex:none;margin:-22px 0 0 -22px">
+          <span style="display:block"><b style="display:block;font-size:.9rem;font-weight:500;color:#0a0223;margin-bottom:4px">Gestión de redes sociales</b><span style="display:block;font-size:.8rem;line-height:1.45;color:#98a0b0">Amplía tu alcance y presencia online con contenido atractivo y gestión activa.</span></span>
+        </a>
+        <a href="email-marketing.html#top" style="display:flex;gap:4px;align-items:flex-start;text-decoration:none;padding:10px;border-radius:12px;transition:background .18s" style-hover="background:#f2f7fe">
+          <img src="assets/menu/email.svg" alt="" style="width:76px;height:76px;flex:none;margin:-22px 0 0 -22px">
+          <span style="display:block"><b style="display:block;font-size:.9rem;font-weight:500;color:#0a0223;margin-bottom:4px">Email marketing</b><span style="display:block;font-size:.8rem;line-height:1.45;color:#98a0b0">Convierte suscriptores en clientes recurrentes con emails.</span></span>
+        </a>
+        <a href="desarrollo-web.html#top" style="display:flex;gap:4px;align-items:flex-start;text-decoration:none;padding:10px;border-radius:12px;transition:background .18s" style-hover="background:#f2f7fe">
+          <img src="assets/menu/web.svg" alt="" style="width:76px;height:76px;flex:none;margin:-22px 0 0 -22px">
+          <span style="display:block"><b style="display:block;font-size:.9rem;font-weight:500;color:#0a0223;margin-bottom:4px">Desarrollo web</b><span style="display:block;font-size:.8rem;line-height:1.45;color:#98a0b0">Diseñamos sitios web estéticos y funcionales para tu empresa.</span></span>
+        </a>
+        <a href="index.html#servicios" style="display:flex;gap:4px;align-items:flex-start;text-decoration:none;padding:10px;border-radius:12px;transition:background .18s" style-hover="background:#f2f7fe">
+          <img src="assets/menu/video.svg" alt="" style="width:76px;height:76px;flex:none;margin:-22px 0 0 -22px">
+          <span style="display:block"><b style="display:block;font-size:.9rem;font-weight:500;color:#0a0223;margin-bottom:4px">Creación de video</b><span style="display:block;font-size:.8rem;line-height:1.45;color:#98a0b0">Creamos estrategias audiovisuales que convierten ideas en historias.</span></span>
+        </a>
+      </div>
+    </div>
+    <a href="#proyectos" aria-current="page" style="position:relative;color:{{ navLink }};font-size:.95rem;font-weight:500;text-decoration:none;transition:color .15s" style-hover="color:{{ navLinkHover }}">Portafolio<span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:-9px;height:2.5px;border-radius:2px;background:#0093f7"></span></a>
+    <a href="blog.html#articulos" style="color:{{ navLink }};font-size:.95rem;font-weight:400;text-decoration:none;transition:color .15s" style-hover="color:{{ navLinkHover }}">Blog</a>
+  </div>
+  <a href="contacto.html#formulario" style="flex:none;display:inline-flex;align-items:center;justify-content:center;background:#0093f7;color:#fff;font-weight:600;font-size:.9rem;padding:11px 24px;border-radius:10px;text-decoration:none;box-shadow:0 10px 24px -10px rgba(0,147,247,.8), inset 0 1px 0 rgba(255,255,255,.2);transition:background .2s, transform .15s, box-shadow .2s" style-hover="background:#0077cc;transform:translateY(-1px);box-shadow:0 16px 32px -10px rgba(0,147,247,.85), inset 0 1px 0 rgba(255,255,255,.2)">Contacto</a>
+</nav>
+
+<div onClick="{{ closeDrawer }}" aria-hidden="true" style="position:fixed;inset:0;z-index:180;background:rgba(8,2,26,.45);opacity:{{ drawerShade }};visibility:{{ drawerVis }};transition:opacity .3s ease, visibility .3s"></div>
+<aside style="position:fixed;top:0;left:0;bottom:0;z-index:190;width:min(100%,440px);display:flex;flex-direction:column;background:#f4f6fa;transform:translateX({{ drawerX }});transition:transform .34s cubic-bezier(.2,.7,.2,1);visibility:{{ drawerVis }};box-shadow:24px 0 60px -30px rgba(8,2,26,.6)">
+  <div style="flex:none;height:71px"></div>
+  <div style="flex:1;overflow-y:auto;padding:0 max(5vw,20px)">
+        <a href="index.html#top" onClick="{{ closeDrawer }}" style="display:block;padding:20px 4px;font-size:1.05rem;color:#0a0223;text-decoration:none;border-bottom:1px solid #e3e6ee">Inicio</a>
+    <button type="button" onClick="{{ toggleMServ }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 4px;font-size:1.05rem;color:#0a0223;background:{{ mServBg }};border:0;border-bottom:1px solid #e3e6ee;cursor:pointer;font-family:inherit;text-align:left">Servicios
+      <svg viewBox="0 0 12 8" style="width:13px;height:9px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s;transform:rotate({{ mServRot }})"><path d="M1 1l5 5 5-5"></path></svg>
+    </button>
+    <div style="display:{{ mServDisplay }};flex-direction:column;padding:10px 0 16px">
+          <a href="index.html#servicios" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+            <img src="assets/menu/publicidad.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+            <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Publicidad pagada</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Campañas con alta segmentación y escalabilidad.</span></span>
+          </a>
+          <a href="index.html#servicios" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+            <img src="assets/menu/redes.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+            <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Gestión de redes sociales</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Amplía tu alcance y presencia online con contenido atractivo y gestión activa.</span></span>
+          </a>
+          <a href="desarrollo-web.html#top" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+            <img src="assets/menu/web.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+            <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Desarrollo web</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Diseñamos sitios web estéticos y funcionales para tu empresa.</span></span>
+          </a>
+          <a href="posicionamiento-seo.html#top" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+            <img src="assets/menu/seo.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+            <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Posicionamiento web</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Mejora tu posición en los resultados de búsqueda de Google.</span></span>
+          </a>
+          <a href="email-marketing.html#top" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+            <img src="assets/menu/email.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+            <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Email marketing</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Convierte suscriptores en clientes recurrentes con emails.</span></span>
+          </a>
+          <a href="index.html#servicios" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+            <img src="assets/menu/video.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+            <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Creación de video</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Creamos estrategias audiovisuales que convierten ideas en historias.</span></span>
+          </a>
+    </div>
+        <a href="#proyectos" onClick="{{ closeDrawer }}" aria-current="page" style="display:block;padding:20px 4px;font-size:1.05rem;color:#0093f7;font-weight:500;text-decoration:none;border-bottom:1px solid #e3e6ee">Portafolio</a>
+        <a href="blog.html#articulos" onClick="{{ closeDrawer }}" style="display:block;padding:20px 4px;font-size:1.05rem;color:#0a0223;text-decoration:none;border-bottom:1px solid #e3e6ee">Blog</a>
+        <a href="contacto.html#formulario" onClick="{{ closeDrawer }}" style="display:block;padding:20px 4px;font-size:1.05rem;color:#0a0223;text-decoration:none;border-bottom:1px solid #e3e6ee">Agendar reunión</a>
+  </div>
+  <div style="flex:none;background:#0a0820;color:#ffffff;padding:22px max(5vw,20px);display:flex;align-items:center;justify-content:space-between;gap:18px">
+    <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
+      <a href="tel:+56999098594" style="display:flex;align-items:center;gap:11px;color:rgba(255,255,255,.9);font-size:.9rem;text-decoration:none">
+        <svg viewBox="0 0 24 24" style="flex:none;width:17px;height:17px;color:#2e9bff;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>+56 9 9909 8594</a>
+      <a href="mailto:contacto@deltadigital.cl" style="display:flex;align-items:center;gap:11px;color:rgba(255,255,255,.9);font-size:.9rem;text-decoration:none;min-width:0">
+        <svg viewBox="0 0 24 24" style="flex:none;width:17px;height:17px;color:#2e9bff;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg><span style="overflow:hidden;text-overflow:ellipsis">contacto@deltadigital.cl</span></a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;flex:none">
+      <a href="#" aria-label="LinkedIn" style="width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#ffffff;color:#0a0820"><svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21h-4z"></path></svg></a>
+      <a href="#" aria-label="Instagram" style="width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#ffffff;color:#0a0820"><svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"></circle></svg></a>
+    </div>
+  </div>
+</aside>
+
+<section data-screen-label="Portafolio hero" style="position:relative;overflow:visible;padding:clamp(120px,12vw,170px) max(5vw,20px) clamp(30px,4vw,54px)">
+  <img src="assets/fx-dashed.svg" alt="" aria-hidden="true" style="position:absolute;top:100px;right:{{ bhDashR }};width:{{ bhDashW }};opacity:.45;pointer-events:none;animation:ddSpin 40s linear infinite">
+  <img src="assets/method/bg-ellipse.svg" alt="" aria-hidden="true" style="position:absolute;right:{{ bhEllR }};bottom:{{ bhEllB }};width:{{ bhEllW }};height:auto;pointer-events:none">
+  <div aria-hidden="true" style="position:absolute;right:{{ bhBallR }};bottom:{{ bhBallB }};width:{{ bhBallW }};aspect-ratio:1/1;border-radius:50%;pointer-events:none;background:radial-gradient(circle at 34% 28%, #eaf4ff 0%, #cfe6fb 44%, #9ecdf6 100%);opacity:.85"></div>
+  <div style="position:relative;z-index:1;max-width:1180px;margin:0 auto;display:grid;grid-template-columns:{{ heroCols }};gap:clamp(32px,5vw,64px);align-items:center">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;color:#6b7385;font-size:.85rem">
+        <a href="index.html" style="color:#6b7385;text-decoration:none">Inicio</a>
+        <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round"><path d="M5 12h13M13 6l6 6-6 6"></path></svg>
+        <span style="color:#0a0223;font-weight:600">Portafolio</span>
+      </div>
+      <h1 style="font-weight:700;font-size:clamp(2.1rem,3.6vw,3rem);letter-spacing:-.03em;line-height:1.1;color:#0a0223;margin-bottom:20px">Nuestro <span style="color:#0093f7">trabajo</span> habla por nosotros</h1>
+      <p style="color:#3a4254;font-size:1rem;line-height:1.7;font-weight:500;max-width:420px">Tener un sitio web profesional aumentará la confianza de tus clientes y es clave en tu estrategia de marketing para impulsar tus ventas tanto online como offline.</p>
+    </div>
+    <div style="position:relative">
+      <img src="assets/method/bg-triangle.svg" alt="" aria-hidden="true" style="position:absolute;left:{{ bhTriL }};top:{{ bhTriT }};width:{{ bhTriW }};height:auto;z-index:0;pointer-events:none;animation:ddFloatB 11s ease-in-out infinite">
+      <div style="position:relative;z-index:1;border-radius:24px;overflow:hidden;padding:12px;background:rgba(255,255,255,.58);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);border:1px solid rgba(255,255,255,.85);box-shadow:5px 6px 16px rgba(20,33,80,.06), -6px -6px 14px rgba(255,255,255,.75), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35)">
+        <div style="display:flex;align-items:center;gap:8px;padding:2px 4px 10px">
+          <span aria-hidden="true" style="width:9px;height:9px;border-radius:50%;background:#ff5f57;flex:none"></span>
+          <span aria-hidden="true" style="width:9px;height:9px;border-radius:50%;background:#febc2e;flex:none"></span>
+          <span aria-hidden="true" style="width:9px;height:9px;border-radius:50%;background:#28c840;flex:none"></span>
+          <span style="flex:1;max-width:300px;margin:0 auto;text-align:center;background:#eef1f7;border-radius:999px;padding:4px 12px;color:#6b7385;font-size:.72rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ heroUrl }}</span>
+        </div>
+        <div onClick="{{ heroOpen }}" style="position:relative;aspect-ratio:1.62/1;border-radius:10px;overflow:hidden;background:#0a0223;cursor:pointer;container-type:size">
+          <img ref="{{ heroPrevRef }}" alt="" aria-hidden="true" decoding="async" style="position:absolute;top:0;left:0;width:100%;height:auto">
+          <img ref="{{ heroImgRef }}" alt="" decoding="async" style="position:absolute;top:0;left:0;width:100%;height:auto;animation:{{ heroXfade }} .55s ease both">
+          <div style="position:absolute;right:10px;bottom:10px;z-index:2;display:flex;align-items:center;gap:8px">
+            <span aria-hidden="true" style="width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:rgba(10,2,35,.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#ffffff"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"></path><circle cx="12" cy="12" r="2.6"></circle></svg></span>
+            <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:999px;background:rgba(10,2,35,.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#ffffff;font-size:.72rem"><svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round"><path d="M10 13a5 5 0 0 0 7.07 0l2.12-2.12a5 5 0 0 0-7.07-7.07L11 5"></path><path d="M14 11a5 5 0 0 0-7.07 0L4.8 13.12a5 5 0 0 0 7.07 7.07L13 19"></path></svg>{{ heroUrl }}</span>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 8px 12px;animation:{{ heroFade }} .5s cubic-bezier(.2,.7,.2,1) both">
+          <span style="font-size:1.08rem;font-weight:700;letter-spacing:-.015em;color:#0a0223">{{ heroName }}</span>
+          <span style="color:#6b7385;font-size:.86rem">{{ heroType }}</span>
+        </div>
+        <div style="display:flex;justify-content:center;gap:8px;padding:0 8px 6px">
+          <sc-for list="{{ heroDots }}" as="d" hint-placeholder-count="5">
+            <button type="button" aria-label="Proyecto" onClick="{{ d.onClick }}" style="width:{{ d.w }};height:5px;border-radius:999px;border:0;padding:0;cursor:pointer;background:{{ d.bg }};transition:width .25s, background .25s"></button>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proyectos" data-screen-label="Proyectos" style="position:relative;padding:0 max(5vw,20px) clamp(70px,8vw,110px)">
+  <div style="position:relative;z-index:1;max-width:1180px;margin:0 auto">
+    <div id="ddTabs" style="position:sticky;top:88px;z-index:150;display:flex;flex-direction:{{ tabDir }};transition:max-width .25s;max-width:{{ tabMax }};margin:0 auto clamp(40px,5vw,64px);background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 2px 4px rgba(16,24,40,.05), 0 22px 50px -30px rgba(16,24,40,.3)">
+      <button type="button" onClick="{{ catSet0 }}" style="flex:{{ tabFlex0 }};min-width:0;overflow:hidden;display:flex;align-items:center;justify-content:{{ tabJustify }};gap:10px;padding:{{ tabPad }};border:0;background:transparent;cursor:pointer;font-family:inherit;font-size:.95rem;font-weight:{{ tabW0 }};color:{{ tabC0 }};transition:color .2s">
+        <span aria-hidden="true" style="width:34px;height:34px;flex:none;display:grid;place-items:center;border-radius:11px;background:#f1f7fe;color:#0093f7"><svg viewBox="0 0 24 24" style="width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round"><rect x="3" y="4" width="18" height="16" rx="2.5"></rect><path d="M3 9h18"></path><circle cx="6.6" cy="6.6" r=".6" fill="currentColor"></circle></svg></span>
+        <span style="display:{{ tabLbl0 }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:relative">Corporativo<span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:-14px;height:2.5px;border-radius:2px;background:{{ tabL0 }};transition:background .2s"></span></span>
+      </button>
+      <span aria-hidden="true" style="flex:none;align-self:stretch;width:1px;margin:18px 0;background:#e7eaf2;display:{{ tabSepDisp }}"></span>
+      <button type="button" onClick="{{ catSet1 }}" style="flex:{{ tabFlex1 }};min-width:0;overflow:hidden;display:flex;align-items:center;justify-content:{{ tabJustify }};gap:10px;padding:{{ tabPad }};border:0;background:transparent;cursor:pointer;font-family:inherit;font-size:.95rem;font-weight:{{ tabW1 }};color:{{ tabC1 }};transition:color .2s">
+        <span aria-hidden="true" style="width:34px;height:34px;flex:none;display:grid;place-items:center;border-radius:11px;background:#f1f7fe;color:#0093f7"><svg viewBox="0 0 24 24" style="width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round"><path d="M3 4h2.2l2.2 10.4h9.9l2.1-7.4H6"></path><circle cx="9.4" cy="19" r="1.4"></circle><circle cx="16.6" cy="19" r="1.4"></circle></svg></span>
+        <span style="display:{{ tabLbl1 }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:relative">Ecommerce<span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:-14px;height:2.5px;border-radius:2px;background:{{ tabL1 }};transition:background .2s"></span></span>
+      </button>
+      <span aria-hidden="true" style="flex:none;align-self:stretch;width:1px;margin:18px 0;background:#e7eaf2;display:{{ tabSepDisp }}"></span>
+      <button type="button" onClick="{{ catSet2 }}" style="flex:{{ tabFlex2 }};min-width:0;overflow:hidden;display:flex;align-items:center;justify-content:{{ tabJustify }};gap:10px;padding:{{ tabPad }};border:0;background:transparent;cursor:pointer;font-family:inherit;font-size:.95rem;font-weight:{{ tabW2 }};color:{{ tabC2 }};transition:color .2s">
+        <span aria-hidden="true" style="width:34px;height:34px;flex:none;display:grid;place-items:center;border-radius:11px;background:#f1f7fe;color:#0093f7"><svg viewBox="0 0 24 24" style="width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round"><path d="M7 22V11l4.2-8a2 2 0 0 1 2.8 2.3L13 9h5.4a2.4 2.4 0 0 1 2.3 3l-1.8 8a2.4 2.4 0 0 1-2.3 2H7z"></path><rect x="2.5" y="11" width="4.5" height="11" rx="1.2"></rect></svg></span>
+        <span style="display:{{ tabLbl2 }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:relative">Social media<span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:-14px;height:2.5px;border-radius:2px;background:{{ tabL2 }};transition:background .2s"></span></span>
+      </button>
+    </div>
+
+    <div style="animation:{{ catAnim }} .45s cubic-bezier(.2,.7,.2,1) both;margin-bottom:clamp(30px,3.6vw,46px)">
+      <h2 style="font-weight:700;font-size:clamp(1.7rem,2.8vw,2.3rem);letter-spacing:-.025em;color:#0a0223;margin-bottom:16px">Proyectos <span style="color:#0093f7">{{ catWord }}</span></h2>
+      <p style="color:#3a4254;font-size:.98rem;line-height:1.7;font-weight:500;max-width:430px">{{ catDesc }}</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:{{ gridCols }};gap:clamp(22px,2.6vw,32px)">
+      <sc-for list="{{ items }}" as="it" hint-placeholder-count="6">
+        <article onClick="{{ it.open }}" style="display:flex;flex-direction:column;padding:12px;border-radius:20px;cursor:pointer;transition:transform .28s, box-shadow .28s;background:rgba(255,255,255,.58);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);border:1px solid rgba(255,255,255,.85);box-shadow:5px 6px 16px rgba(20,33,80,.06), -6px -6px 14px rgba(255,255,255,.75), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35)" style-hover="transform:translateY(-5px);box-shadow:9px 11px 26px -8px rgba(20,33,80,.13), -7px -7px 18px rgba(255,255,255,.85), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35)">
+          <div style="position:relative;border-radius:8px;overflow:hidden;aspect-ratio:{{ it.ratio }};background:#e9edf5;container-type:size">
+            <sc-if value="{{ it.isSlot }}" hint-placeholder-val="{{ false }}">
+              <image-slot id="{{ it.slot }}" shape="rect" placeholder="{{ it.slotHint }}" style="position:absolute;inset:0;width:100%;height:100%"></image-slot>
+            </sc-if>
+            <sc-if value="{{ it.isCover }}" hint-placeholder-val="{{ false }}">
+              <img src="{{ it.cover }}" alt="{{ it.name }}" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.6,.2,1)" style-hover="transform:scale(1.04)">
+            </sc-if>
+            <sc-if value="{{ it.isImg }}" hint-placeholder-val="{{ true }}">
+              <img ref="{{ it.imgRef }}" src="{{ it.img }}" alt="{{ it.name }}" loading="lazy" decoding="async" style="position:absolute;top:0;left:0;width:100%;height:auto;transition-property:transform;transition-timing-function:cubic-bezier(.2,.6,.2,1);transition-duration:{{ it.dur }}" style-hover="transform:translateY(calc(100cqh - 100%))">
+            </sc-if>
+            <div style="position:absolute;right:9px;bottom:9px;z-index:3;display:flex;align-items:center;gap:7px;pointer-events:none">
+              <span aria-hidden="true" style="width:25px;height:25px;border-radius:50%;display:grid;place-items:center;background:rgba(10,2,35,.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#ffffff"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"></path><circle cx="12" cy="12" r="2.6"></circle></svg></span>
+              <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:rgba(10,2,35,.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#ffffff;font-size:.7rem"><svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round"><path d="M10 13a5 5 0 0 0 7.07 0l2.12-2.12a5 5 0 0 0-7.07-7.07L11 5"></path><path d="M14 11a5 5 0 0 0-7.07 0L4.8 13.12a5 5 0 0 0 7.07 7.07L13 19"></path></svg>{{ it.url }}</span>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;flex-wrap:wrap;gap:9px;padding:18px 6px 0">
+            <h3 style="font-size:1.05rem;font-weight:700;letter-spacing:-.02em;color:#0a0223">{{ it.name }}</h3>
+            <span aria-hidden="true" style="width:3px;height:3px;border-radius:50%;background:#c3c9d6"></span>
+            <span style="color:#6b7385;font-size:.86rem">{{ it.type }}</span>
+          </div>
+          <p style="padding:10px 6px 8px;color:#6b7385;font-size:.88rem;line-height:1.65;text-wrap:pretty">{{ it.desc }}</p>
+          <p style="padding:0 6px 6px;color:#98a0b0;font-size:.76rem;letter-spacing:.01em">{{ it.meta }}</p>
+        </article>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<sc-if value="{{ mOpen }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ mClose }}" style="position:fixed;inset:0;z-index:400;display:flex;align-items:center;justify-content:center;padding:clamp(16px,3vw,40px);background:rgba(8,2,26,.78);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)">
+    <div onClick="{{ mStop }}" style="position:relative;width:min(1080px,100%);height:100%;display:flex;flex-direction:column;background:#0f0730;border-radius:16px;overflow:hidden;box-shadow:0 40px 90px -30px rgba(0,0,0,.9)">
+      <div style="flex:none;display:flex;align-items:center;gap:12px;padding:14px 18px;background:rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.1)">
+        <div style="display:flex;gap:7px">
+          <span style="width:11px;height:11px;border-radius:50%;background:#ff5f57"></span>
+          <span style="width:11px;height:11px;border-radius:50%;background:#febc2e"></span>
+          <span style="width:11px;height:11px;border-radius:50%;background:#28c840"></span>
+        </div>
+        <span style="flex:1;display:flex;align-items:center;justify-content:center;gap:9px;color:rgba(255,255,255,.72);font-size:.85rem;font-weight:600">{{ mName }}</span>
+        <a href="{{ mHref }}" target="_blank" rel="noopener" style="flex:none;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.82);font-size:.74rem;text-decoration:none;transition:background .2s, color .2s" style-hover="background:rgba(255,255,255,.22);color:#ffffff"><svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round"><path d="M10 13a5 5 0 0 0 7.07 0l2.12-2.12a5 5 0 0 0-7.07-7.07L11 5"></path><path d="M14 11a5 5 0 0 0-7.07 0L4.8 13.12a5 5 0 0 0 7.07 7.07L13 19"></path></svg>{{ mUrl }}</a>
+        <button type="button" onClick="{{ mClose }}" aria-label="Cerrar" style="flex:none;width:30px;height:30px;border:0;border-radius:8px;background:rgba(255,255,255,.1);color:#ffffff;font-size:1rem;line-height:1;cursor:pointer;transition:background .2s" style-hover="background:rgba(255,255,255,.22)">×</button>
+      </div>
+      <button type="button" onClick="{{ mPrev }}" aria-label="Anterior" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);z-index:5;width:46px;height:46px;border:0;border-radius:50%;cursor:pointer;background:rgba(15,7,48,.62);color:#ffffff;display:grid;place-items:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 10px 26px -10px rgba(0,0,0,.8);transition:background .2s, transform .2s" style-hover="background:#0093f7;transform:translateY(-50%) scale(1.06)"><svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round"><path d="M15 5l-7 7 7 7"></path></svg></button>
+      <button type="button" onClick="{{ mNext }}" aria-label="Siguiente" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);z-index:5;width:46px;height:46px;border:0;border-radius:50%;cursor:pointer;background:rgba(15,7,48,.62);color:#ffffff;display:grid;place-items:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 10px 26px -10px rgba(0,0,0,.8);transition:background .2s, transform .2s" style-hover="background:#0093f7;transform:translateY(-50%) scale(1.06)"><svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round"><path d="M9 5l7 7-7 7"></path></svg></button>
+      <div onTouchStart="{{ mTouchStart }}" onTouchEnd="{{ mTouchEnd }}" style="flex:1;overflow-y:auto;overflow-x:hidden;background:#ffffff">
+        <sc-if value="{{ mIsImg }}" hint-placeholder-val="{{ true }}">
+          <img ref="{{ mImgRef }}" alt="{{ mName }}" decoding="async" style="display:block;width:100%;height:auto">
+        </sc-if>
+        <sc-if value="{{ mIsSlot }}" hint-placeholder-val="{{ false }}">
+          <div style="min-height:100%;display:grid;place-items:center;padding:18px">
+            <image-slot id="{{ mSlotView }}" shape="rect" placeholder="{{ mSlotHint }}" style="width:min(100%,560px);height:auto;aspect-ratio:1/1"></image-slot>
+          </div>
+        </sc-if>
+        <sc-if value="{{ mIsCar }}" hint-placeholder-val="{{ false }}">
+          <div style="min-height:100%;display:flex;flex-direction:{{ mCarDir }};align-items:center;justify-content:center;gap:12px;padding:16px">
+            <img ref="{{ mSlideRef }}" alt="{{ mName }}" decoding="async" style="flex:0 1 auto;display:block;width:auto;max-width:min(100%,560px);max-height:{{ mImgMaxH }};border-radius:10px;box-shadow:0 18px 40px -22px rgba(10,2,35,.5)">
+            <div style="flex:none;width:{{ mThumbBoxW }};display:flex;flex-direction:{{ mThumbDir }};gap:10px">
+              <sc-for list="{{ mThumbs }}" as="t" hint-placeholder-count="4">
+                <img ref="{{ t.ref }}" onClick="{{ t.onClick }}" alt="" decoding="async" style="flex:1 1 0;min-width:0;display:block;width:100%;border-radius:8px;cursor:pointer;opacity:{{ t.op }};outline:{{ t.ring }};outline-offset:2px;transition:opacity .2s">
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+      <div style="flex:none;display:flex;align-items:center;flex-wrap:wrap;gap:10px 14px;padding:12px 18px;background:rgba(255,255,255,.06);border-top:1px solid rgba(255,255,255,.1)">
+        <span style="color:rgba(255,255,255,.55);font-size:.78rem">{{ mMeta }}</span>
+        <span aria-hidden="true" style="width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.3)"></span>
+        <span style="color:#ffffff;font-size:.8rem;font-weight:600">{{ mMetric }}</span>
+        <a href="contacto.html#formulario" style="margin-left:auto;display:inline-flex;align-items:center;gap:7px;background:#0093f7;color:#ffffff;font-size:.8rem;font-weight:600;padding:9px 18px;border-radius:11px;text-decoration:none;transition:background .2s, transform .2s" style-hover="background:#0a7ed4;transform:translateY(-1px)">{{ mCta }}<svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"><path d="M5 12h13M13 6l6 6-6 6"></path></svg></a>
+      </div>
+    </div>
+  </div>
+</sc-if>
+
+<div id="contacto" data-screen-label="Footer" style="position:relative;background:#0a0820;color:#ffffff">
+  <section style="position:relative;overflow:hidden;background:#0b1c3e url('assets/cta-bg.png') center/cover no-repeat;padding:clamp(54px,6vw,88px) max(5vw,20px)">
+    <img src="assets/fx-dashed.svg" alt="" aria-hidden="true" style="display: {{ ctaFx }}; position: absolute; top: -47px; left: 143px; width: {{ ctaDashW }}; opacity: .5; z-index: 1; pointer-events: none; will-change: transform; animation: ddSpin 40s linear infinite">
+    <img src="assets/fx-circle.svg" alt="" aria-hidden="true" style="display:{{ ctaFx }};position:absolute;left:-110px;top:22%;width:280px;opacity:.4;z-index:0;pointer-events:none;will-change:transform;animation:ddDrift 30s ease-in-out infinite reverse">
+    <span aria-hidden="true" style="display: {{ ctaFx }}; position: absolute; width: 544px; height: 544px; z-index: 2; pointer-events: none; right: -129px; top: 165px; backdrop-filter: blur(16px) saturate(120%); -webkit-backdrop-filter: blur(16px) saturate(120%); border-radius: 50%; opacity: 0.9"></span><span aria-hidden="true" style="display: {{ ctaFx }}; position: absolute; right: -211px; top: 92px; z-index: 2; pointer-events: none; transform: scaleX(-1); line-height: 0"><img src="assets/fx-circle2.svg" alt="" aria-hidden="true" style="display: block; opacity: .9; pointer-events: none"></span><img src="assets/fx-circle2.svg" alt="" aria-hidden="true" style="display: {{ ctaFx }}; position: absolute; width: 592px; opacity: .9; z-index: 0; pointer-events: none; will-change: transform; animation: ddDrift 24s ease-in-out infinite; left: -227px; top: -77px; height: 592px">
+    <img src="assets/fx-arrow1.svg" alt="" aria-hidden="true" style="display:{{ ctaFx }};position:absolute;left:{{ ctaA1L }};top:{{ ctaA1T }};width:{{ ctaA1W }};z-index:1;pointer-events:none;filter:drop-shadow(0 12px 22px rgba(0,90,180,.5));will-change:transform;animation:ddFloatA 9s ease-in-out infinite">
+    <img src="assets/fx-arrow2.svg" alt="" aria-hidden="true" style="display:{{ ctaFx }};position:absolute;right:{{ ctaA2R }};top:{{ ctaA2T }};width:{{ ctaA2W }};z-index:1;pointer-events:none;filter:drop-shadow(0 14px 26px rgba(0,120,240,.45));will-change:transform;animation:ddFloatB 11s ease-in-out infinite">
+    <div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(90,160,255,.55),transparent);z-index:5"></div>
+    <div style="position:relative;z-index:4;max-width:620px;margin:0 auto;text-align:center">
+      <h2 style="font-size:clamp(1.65rem,3.2vw,2.5rem);font-weight:700;line-height:1.1;letter-spacing:-.02em;margin:0 0 16px;color:#ffffff;text-wrap:balance">Descubre lo que podemos hacer <span style="color:#2e9bff">por ti</span></h2>
+      <p style="max-width:470px;margin:0 auto 28px;color:rgba(255,255,255,.62);font-size:.95rem;line-height:1.6">Nuestro equipo de profesionales cuenta con experiencia en distintas especialidades e industrias, juntos encontraremos la mejor solución para tu negocio.</p>
+      <a href="contacto.html#formulario" style="display:inline-block;color:#ffffff;font-weight:600;font-size:.9rem;padding:13px 34px;border-radius:13px;text-decoration:none;background:linear-gradient(180deg,rgba(124,144,184,.42),rgba(58,74,110,.5));border:1px solid rgba(255,255,255,.26);box-shadow:0 12px 32px -12px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.35);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:transform .25s, background .25s, box-shadow .25s" style-hover="transform:translateY(-2px);background:linear-gradient(180deg,rgba(46,155,255,.62),rgba(0,103,180,.62));box-shadow:0 18px 44px -12px rgba(0,120,240,.6), inset 0 1px 0 rgba(255,255,255,.4)">Contacto</a>
+    </div>
+  </section>
+
+  <footer style="position:relative;z-index:2;background:#0a0820;padding:clamp(40px,4.5vw,58px) max(5vw,20px) 24px">
+    <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,max(230px,26%)),1fr));gap:40px;align-items:start">
+      <div>
+        <a href="index.html#top" aria-label="Delta Digital"><img src="assets/delta-logo-light.svg" alt="Delta Digital" style="height:34px;width:auto;display:block"></a>
+        <ul style="list-style:none;padding:0;margin:22px 0 18px;display:flex;flex-direction:column;gap:11px">
+          <li style="display:flex;align-items:center;gap:11px">
+            <svg viewBox="0 0 24 24" style="flex:none;width:16px;height:16px;color:#2e9bff;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <a href="tel:+56999098594" style="color:rgba(255,255,255,.82);font-size:.875rem;text-decoration:none;transition:color .15s;white-space:nowrap" style-hover="color:#ffffff">+56 9 9909 8594</a>
+          </li>
+          <li style="display:flex;align-items:center;gap:11px">
+            <svg viewBox="0 0 24 24" style="flex:none;width:16px;height:16px;color:#2e9bff;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg>
+            <a href="mailto:contacto@deltadigital.cl" style="color:rgba(255,255,255,.82);font-size:.875rem;text-decoration:none;transition:color .15s" style-hover="color:#ffffff">contacto@deltadigital.cl</a>
+          </li>
+          <li style="display:flex;align-items:center;gap:11px">
+            <svg viewBox="0 0 24 24" style="flex:none;width:16px;height:16px;color:#2e9bff;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span style="color:rgba(255,255,255,.82);font-size:.875rem">Dr. Manuel Barros Borgoño N°71 OF 1105</span>
+          </li>
+        </ul>
+        <div style="display:flex;gap:10px">
+          <a href="#" aria-label="LinkedIn" style="width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);color:#cfe3ff;transition:background .2s, transform .2s, color .2s" style-hover="background:#0093f7;color:#ffffff;transform:translateY(-2px)">
+            <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21h-4z"></path></svg>
+          </a>
+          <a href="#" aria-label="Instagram" style="width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);color:#cfe3ff;transition:background .2s, transform .2s, color .2s" style-hover="background:#0093f7;color:#ffffff;transform:translateY(-2px)">
+            <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"></circle></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav style="display:flex;flex-direction:column;gap:13px;padding-top:2px" aria-label="Footer">
+        <a href="index.html#top" style="color:rgba(255,255,255,.78);text-decoration:none;font-size:.9rem;font-weight:500;width:max-content;transition:color .15s, transform .2s" style-hover="color:#ffffff;transform:translateX(3px)">Inicio</a>
+        <a href="index.html#servicios" style="color:rgba(255,255,255,.78);text-decoration:none;font-size:.9rem;font-weight:500;width:max-content;transition:color .15s, transform .2s" style-hover="color:#ffffff;transform:translateX(3px)">Servicios</a>
+        <a href="#proyectos" style="color:rgba(255,255,255,.78);text-decoration:none;font-size:.9rem;font-weight:500;width:max-content;transition:color .15s, transform .2s" style-hover="color:#ffffff;transform:translateX(3px)">Portafolio</a>
+        <a href="blog.html#articulos" style="color:rgba(255,255,255,.78);text-decoration:none;font-size:.9rem;font-weight:500;width:max-content;transition:color .15s, transform .2s" style-hover="color:#ffffff;transform:translateX(3px)">Blog</a>
+        <a href="contacto.html#formulario" style="color:rgba(255,255,255,.78);text-decoration:none;font-size:.9rem;font-weight:500;width:max-content;transition:color .15s, transform .2s" style-hover="color:#ffffff;transform:translateX(3px)">Contacto</a>
+      </nav>
+
+<div onClick="{{ closeDrawer }}" aria-hidden="true" style="position:fixed;inset:0;z-index:180;background:rgba(8,2,26,.45);opacity:{{ drawerShade }};visibility:{{ drawerVis }};transition:opacity .3s ease, visibility .3s"></div>
+<aside style="position:fixed;top:0;left:0;bottom:0;z-index:190;width:min(100%,440px);display:flex;flex-direction:column;background:#f4f6fa;transform:translateX({{ drawerX }});transition:transform .34s cubic-bezier(.2,.7,.2,1);visibility:{{ drawerVis }};box-shadow:24px 0 60px -30px rgba(8,2,26,.6)">
+  <div style="flex:none;height:71px"></div>
+  <div style="flex:1;overflow-y:auto;padding:0 max(5vw,20px)">
+        <a href="index.html#top" onClick="{{ closeDrawer }}" style="display:block;padding:20px 4px;font-size:1.05rem;color:#0a0223;text-decoration:none;border-bottom:1px solid #e3e6ee">Inicio</a>
+    <button type="button" onClick="{{ toggleMServ }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 4px;font-size:1.05rem;color:#0a0223;background:{{ mServBg }};border:0;border-bottom:1px solid #e3e6ee;cursor:pointer;font-family:inherit;text-align:left">Servicios
+      <svg viewBox="0 0 12 8" style="width:13px;height:9px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s;transform:rotate({{ mServRot }})"><path d="M1 1l5 5 5-5"></path></svg>
+    </button>
+    <div style="display:{{ mServDisplay }};flex-direction:column;padding:10px 0 16px">
+          <a href="index.html#servicios" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+            <img src="assets/menu/publicidad.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+            <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Publicidad pagada</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Campañas con alta segmentación y escalabilidad.</span></span>
+          </a>
+          <a href="index.html#servicios" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+            <img src="assets/menu/redes.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+            <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Gestión de redes sociales</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Amplía tu alcance y presencia online con contenido atractivo y gestión activa.</span></span>
+          </a>
+          <a href="desarrollo-web.html#top" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+            <img src="assets/menu/web.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+            <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Desarrollo web</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Diseñamos sitios web estéticos y funcionales para tu empresa.</span></span>
+          </a>
+          <a href="posicionamiento-seo.html#top" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+            <img src="assets/menu/seo.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+            <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Posicionamiento web</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Mejora tu posición en los resultados de búsqueda de Google.</span></span>
+          </a>
+          <a href="email-marketing.html#top" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+            <img src="assets/menu/email.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+            <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Email marketing</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Convierte suscriptores en clientes recurrentes con emails.</span></span>
+          </a>
+          <a href="index.html#servicios" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+            <img src="assets/menu/video.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+            <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Creación de video</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Creamos estrategias audiovisuales que convierten ideas en historias.</span></span>
+          </a>
+    </div>
+        <a href="#proyectos" onClick="{{ closeDrawer }}" aria-current="page" style="display:block;padding:20px 4px;font-size:1.05rem;color:#0093f7;font-weight:500;text-decoration:none;border-bottom:1px solid #e3e6ee">Portafolio</a>
+        <a href="blog.html#articulos" onClick="{{ closeDrawer }}" style="display:block;padding:20px 4px;font-size:1.05rem;color:#0a0223;text-decoration:none;border-bottom:1px solid #e3e6ee">Blog</a>
+        <a href="contacto.html#formulario" onClick="{{ closeDrawer }}" style="display:block;padding:20px 4px;font-size:1.05rem;color:#0a0223;text-decoration:none;border-bottom:1px solid #e3e6ee">Agendar reunión</a>
+  </div>
+  <div style="flex:none;background:#0a0820;color:#ffffff;padding:22px max(5vw,20px);display:flex;align-items:center;justify-content:space-between;gap:18px">
+    <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
+      <a href="tel:+56999098594" style="display:flex;align-items:center;gap:11px;color:rgba(255,255,255,.9);font-size:.9rem;text-decoration:none">
+        <svg viewBox="0 0 24 24" style="flex:none;width:17px;height:17px;color:#2e9bff;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>+56 9 9909 8594</a>
+      <a href="mailto:contacto@deltadigital.cl" style="display:flex;align-items:center;gap:11px;color:rgba(255,255,255,.9);font-size:.9rem;text-decoration:none;min-width:0">
+        <svg viewBox="0 0 24 24" style="flex:none;width:17px;height:17px;color:#2e9bff;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg><span style="overflow:hidden;text-overflow:ellipsis">contacto@deltadigital.cl</span></a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;flex:none">
+      <a href="#" aria-label="LinkedIn" style="width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#ffffff;color:#0a0820"><svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21h-4z"></path></svg></a>
+      <a href="#" aria-label="Instagram" style="width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#ffffff;color:#0a0820"><svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"></circle></svg></a>
+    </div>
+  </div>
+</aside>
+
+      <div style="display:flex;flex-direction:column;gap:11px">
+        <div style="position:relative;display:block;border-radius:10px;overflow:hidden;isolation:isolate;width:100%;max-width:268px;aspect-ratio:260/61;box-shadow:0 12px 28px -12px rgba(0,0,0,.5);transition:transform .28s, box-shadow .28s" style-hover="transform:translateY(-3px);box-shadow:0 20px 40px -14px rgba(0,90,210,.55)" style-before="content:'';position:absolute;inset:0;z-index:2;border-radius:inherit;pointer-events:none;mix-blend-mode:color-dodge;opacity:.4;background:repeating-linear-gradient(115deg, rgba(255,0,128,.5) 0%, rgba(255,196,0,.5) 7%, rgba(0,255,170,.5) 15%, rgba(0,170,255,.5) 23%, rgba(170,0,255,.5) 31%, rgba(255,0,128,.5) 40%);background-size:320% 320%;animation:ddHoloFoil 7s ease-in-out infinite" style-after="content:'';position:absolute;inset:0;z-index:3;border-radius:inherit;pointer-events:none;mix-blend-mode:overlay;background:linear-gradient(115deg, transparent 30%, rgba(255,255,255,.85) 48%, transparent 66%);background-size:280% 100%;animation:ddHoloGlare 7s ease-in-out infinite"><img src="assets/badges/google-partner.svg" alt="Google Partner" style="display:block;width:100%;height:100%"></div>
+        <div style="position:relative;display:block;border-radius:10px;overflow:hidden;isolation:isolate;width:100%;max-width:268px;aspect-ratio:260/61;box-shadow:0 12px 28px -12px rgba(0,0,0,.5);transition:transform .28s, box-shadow .28s" style-hover="transform:translateY(-3px);box-shadow:0 20px 40px -14px rgba(0,90,210,.55)" style-before="content:'';position:absolute;inset:0;z-index:2;border-radius:inherit;pointer-events:none;mix-blend-mode:color-dodge;opacity:.4;background:repeating-linear-gradient(115deg, rgba(255,0,128,.5) 0%, rgba(255,196,0,.5) 7%, rgba(0,255,170,.5) 15%, rgba(0,170,255,.5) 23%, rgba(170,0,255,.5) 31%, rgba(255,0,128,.5) 40%);background-size:320% 320%;animation:ddHoloFoil 7s ease-in-out infinite;animation-delay:-2.6s" style-after="content:'';position:absolute;inset:0;z-index:3;border-radius:inherit;pointer-events:none;mix-blend-mode:overlay;background:linear-gradient(115deg, transparent 30%, rgba(255,255,255,.85) 48%, transparent 66%);background-size:280% 100%;animation:ddHoloGlare 7s ease-in-out infinite;animation-delay:-2.6s"><img src="assets/badges/meta-partner.svg" alt="Meta Business Partner" style="display:block;width:100%;height:100%"></div>
+        <div style="position:relative;display:block;border-radius:10px;overflow:hidden;isolation:isolate;width:100%;max-width:268px;aspect-ratio:260/61;box-shadow:0 12px 28px -12px rgba(0,0,0,.5);transition:transform .28s, box-shadow .28s" style-hover="transform:translateY(-3px);box-shadow:0 20px 40px -14px rgba(0,90,210,.55)" style-before="content:'';position:absolute;inset:0;z-index:2;border-radius:inherit;pointer-events:none;mix-blend-mode:color-dodge;opacity:.4;background:repeating-linear-gradient(115deg, rgba(255,0,128,.5) 0%, rgba(255,196,0,.5) 7%, rgba(0,255,170,.5) 15%, rgba(0,170,255,.5) 23%, rgba(170,0,255,.5) 31%, rgba(255,0,128,.5) 40%);background-size:320% 320%;animation:ddHoloFoil 7s ease-in-out infinite;animation-delay:-4.7s" style-after="content:'';position:absolute;inset:0;z-index:3;border-radius:inherit;pointer-events:none;mix-blend-mode:overlay;background:linear-gradient(115deg, transparent 30%, rgba(255,255,255,.85) 48%, transparent 66%);background-size:280% 100%;animation:ddHoloGlare 7s ease-in-out infinite;animation-delay:-4.7s"><img src="assets/badges/hubspot-partner.svg" alt="HubSpot Partner" style="display:block;width:100%;height:100%"></div>
+      </div>
+    </div>
+
+    <div style="max-width:1180px;margin:32px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
+      <span style="color:rgba(255,255,255,.5);font-size:.8rem">© 2025 Delta Digital. Todos los derechos reservados.</span>
+      <div style="display:flex;gap:28px;flex-wrap:wrap">
+        <a href="preguntas-frecuentes.html#faq-l" style="color:rgba(255,255,255,.62);font-size:.84rem;text-decoration:none;transition:color .15s" style-hover="color:#ffffff">Aviso legal</a>
+        <a href="preguntas-frecuentes.html#faq-p" style="color:rgba(255,255,255,.62);font-size:.84rem;text-decoration:none;transition:color .15s" style-hover="color:#ffffff">Política de privacidad</a>
+        <a href="preguntas-frecuentes.html#faq-c" style="color:rgba(255,255,255,.62);font-size:.84rem;text-decoration:none;transition:color .15s" style-hover="color:#ffffff">Política de cookies</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<sc-if value="{{ showWhatsApp }}" hint-placeholder-val="{{ true }}">
+<a href="{{ waHref }}" target="_blank" rel="noopener" aria-label="WhatsApp" style="position:fixed;right:26px;bottom:26px;z-index:180;width:73px;height:73px;border-radius:50%;display:grid;place-items:center;backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);background:rgba(255,255,255,.14);box-shadow:0 18px 40px -16px rgba(16,24,40,.45);transition:transform .2s" style-hover="transform:translateY(-3px)">
+  <img src="assets/whatsapp.svg" alt="" aria-hidden="true" style="width:100%;height:100%;display:block">
+</a>
+</sc-if>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showWhatsApp&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Contacto&quot;},&quot;whatsappNumero&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;56999098594&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contacto&quot;}}">
+class Component extends DCLogic {
+  state = { cat: 0, feat: 0, prev: 0, open: null, mSlot: null, navSolid: true, menuOpen: false, drawer: false, mServ: false, stuck: false, narrow: typeof window !== 'undefined' && window.innerWidth <= 900 };
+
+  static CATS = [
+    ['corporativos', 'Sitios institucionales pensados para explicar bien lo que hace tu empresa y convertir visitas en contactos.'],
+    ['ecommerce', 'Tiendas online con catálogo, fichas de producto y checkout listos para vender desde el primer día.'],
+    ['para redes sociales', 'Piezas gráficas y contenido para campañas en Instagram, Facebook y Meta Ads.']
+  ];
+
+  static P = {
+    0: [
+      ['Fundación Todo Mejora', 'Web corporativa', 'todomejora.org', 'assets/web/corp-1.png', 'Sitio institucional con programas, transparencia y canales de ayuda.', null, '2024 · Diseño + Desarrollo · WordPress', 'Carga en 1,4 s'],
+      ['Verity', 'Web corporativa', 'verity.cl', 'assets/portfolio/verity.jpg', 'Presencia digital para una empresa de calidad de software en LATAM.', null, '2023 · Diseño + Desarrollo · WordPress', 'Tráfico orgánico +52%'],
+      ['MIGA', 'Web corporativa', 'miga.cl', 'assets/portfolio/miga.jpg', 'Centro de investigación interdisciplinaria: líneas de trabajo y formación.', null, '2023 · Desarrollo · WordPress', '+38% de visitas'],
+      ['Vir Energía', 'Web corporativa', 'virenergia.cl', 'assets/portfolio/vir-energia.jpg', 'Sitio comercial para servicios de transición energética.', null, '2024 · Diseño + Desarrollo · WordPress', 'Consultas x2,1'],
+      ['Danioba', 'Web corporativa', 'danioba.cl', 'assets/portfolio/danioba.jpg', 'Academia de arte corporal con cursos, galería y contacto directo.', null, '2022 · Diseño + Desarrollo · WordPress', '+45% de inscripciones'],
+      ['Lotus Records', 'Web corporativa', 'lotusrecords.cl', 'assets/portfolio/lotus.jpg', 'Sello musical con artistas, servicios y booking.', null, '2023 · Diseño + Desarrollo · WordPress', '+30% de bookings']
+    ],
+    1: [
+      ['Ferramenta', 'Ecommerce', 'ferramenta.cl', 'assets/web/ec-1.png', 'Tienda de soluciones sostenibles para la construcción.', null, '2024 · Diseño + Desarrollo · WooCommerce', 'Checkout en 3 pasos'],
+      ['Tienda 2', 'Ecommerce', 'porcargar.cl', 'pf-ec-2', 'Espacio reservado para la segunda tienda del portafolio.', null, 'Por cargar · Ecommerce', 'Captura pendiente'],
+      ['Tienda 3', 'Ecommerce', 'porcargar.cl', 'pf-ec-3', 'Espacio reservado para la tercera tienda del portafolio.', null, 'Por cargar · Ecommerce', 'Captura pendiente']
+    ],
+    2: [
+      ['Ferramenta', 'Redes sociales', 'ferramenta.cl', 'pf-rrss-1', 'Piezas para campañas de temporada en Instagram y Meta Ads.', ['assets/social/dd-2.png', 'assets/social/dd-3.png', 'assets/social/dd-4.png', 'assets/social/dd-1.png'], '2024 · Contenido + Pauta · Instagram', 'Alcance +3,4x'],
+      ['Podero', 'Redes sociales', 'podero.cl', 'pf-rrss-2', 'Contenido de producto y activaciones para distribuidores.', ['assets/social/dd-3.png', 'assets/social/dd-4.png', 'assets/social/dd-1.png', 'assets/social/dd-2.png'], '2024 · Contenido + Pauta · Meta Ads', 'Leads +48%'],
+      ['Delta Digital', 'Redes sociales', 'deltadigital.cl', 'pf-rrss-3', 'Contenido educativo sobre marketing digital y ecommerce.', ['assets/social/dd-1.png', 'assets/social/dd-2.png', 'assets/social/dd-3.png', 'assets/social/dd-4.png'], '2024 · Contenido propio · Instagram', '4 piezas por semana'],
+      ['Lahsen', 'Redes sociales', 'lahsen.cl', 'pf-rrss-4', 'Lanzamientos de producto para la temporada de aventura.', ['assets/social/dd-4.png', 'assets/social/dd-1.png', 'assets/social/dd-2.png', 'assets/social/dd-3.png'], '2023 · Contenido + Pauta · Instagram', 'Interacción +61%']
+    ]
+  };
+
+  static FEAT = [[0, 0], [0, 1], [1, 0], [0, 3], [0, 2]];
+
+  componentDidMount() {
+    this._restart();
+    this._onResize = () => {
+      const n = window.innerWidth <= 900;
+      const mid = n && window.innerWidth > 620;
+      if (n !== this.state.narrow || mid !== this.state.mid) this.setState({ narrow: n, mid, drawer: n ? this.state.drawer : false });
+    };
+    window.addEventListener('resize', this._onResize, { passive: true });
+    this._checkStuck = () => {
+      const el = document.getElementById('ddTabs');
+      if (!el) return;
+      const stuck = el.getBoundingClientRect().top <= 90;
+      if (stuck !== this.state.stuck) this.setState({ stuck });
+    };
+    window.addEventListener('scroll', this._checkStuck, { passive: true });
+    document.addEventListener('scroll', this._checkStuck, { capture: true, passive: true });
+    this._onKey = e => {
+      if (!this.state.open) return;
+      if (e.key === 'Escape') this.setState({ open: null, mSlot: null });
+      else if (e.key === 'ArrowRight') this._mStep(1);
+      else if (e.key === 'ArrowLeft') this._mStep(-1);
+    };
+    const h = (location.hash || '').replace('#', '');
+    const byHash = { corporativo: 0, ecommerce: 1, 'social-media': 2 };
+    if (byHash[h] !== undefined) this.setState({ cat: byHash[h] });
+    window.addEventListener('keydown', this._onKey);
+    Component.FEAT.forEach(([c, i]) => { const im = new Image(); im.src = Component.P[c][i][3]; });
+  }
+
+  componentWillUnmount() {
+    if (this._timer) clearInterval(this._timer);
+    if (this._onResize) window.removeEventListener('resize', this._onResize);
+    if (this._checkStuck) {
+      window.removeEventListener('scroll', this._checkStuck);
+      document.removeEventListener('scroll', this._checkStuck, { capture: true });
+    }
+    if (this._onKey) window.removeEventListener('keydown', this._onKey);
+  }
+
+  _restart() {
+    if (this._timer) clearInterval(this._timer);
+    this._timer = setInterval(() => {
+      if (this.state.open) return;
+      this.setState(st => ({ prev: st.feat || 0, feat: ((st.feat || 0) + 1) % Component.FEAT.length }));
+    }, 5000);
+  }
+
+  _feat(i) {
+    const [c, k] = Component.FEAT[i];
+    return Component.P[c][k];
+  }
+
+  _imgDur(key, el) {
+    const par = el.parentElement; if (!par) return;
+    const fh = par.clientHeight || 232;
+    const d = Math.max(0, el.offsetHeight - fh) * (232 / fh);
+    const v = Math.min(18, Math.max(5, 8.6 * Math.sqrt(d / 600))).toFixed(2) + 's';
+    this.setState(s => {
+      const cur = s.durs || {};
+      return cur[key] === v ? null : { durs: Object.assign({}, cur, { [key]: v }) };
+    });
+  }
+
+  _mStep(d) {
+    const op = this.state.open;
+    if (!op) return;
+    const list = Component.P[op[0]];
+    const i = (op[1] + d + list.length) % list.length;
+    this.setState({ open: [op[0], i], mSlot: String(list[i][3]).indexOf('assets/') !== 0 ? list[i][3] : null, slide: 0 });
+    [1, -1].forEach(k => {
+      const nx = list[(i + k + list.length) % list.length];
+      const src = nx[5] ? nx[5][0] : nx[3];
+      if (src && src.indexOf('assets/') === 0) { const im = new Image(); im.src = src; }
+    });
+  }
+
+  renderVals() {
+    const n = this.state.narrow;
+    const mid = this.state.mid == null ? (n && typeof window !== 'undefined' && window.innerWidth > 620) : this.state.mid;
+    const cat = this.state.cat;
+    const isSocial = cat === 2;
+    const list = Component.P[cat];
+    const f = this._feat(this.state.feat);
+    const op = this.state.open;
+    const cur = op ? Component.P[op[0]][op[1]] : null;
+    const openIsSocial = op ? op[0] === 2 : false;
+    const num = String(this.props.whatsappNumero ?? '56999098594').replace(/[^0-9]/g, '');
+    const s = this.state.navSolid;
+    const m = this.state.menuOpen;
+    return {
+      narrow: n,
+      navDesk: n ? 'none' : 'flex',
+      navMob: n ? 'inline-flex' : 'none',
+      toggleDrawer: () => this.setState({ drawer: !this.state.drawer }),
+      closeDrawer: () => this.setState({ drawer: false }),
+      burgerPath: this.state.drawer ? 'M6 6l12 12M18 6L6 18' : 'M3 6h18M3 12h18M3 18h18',
+      drawerX: this.state.drawer ? '0' : '-102%',
+      drawerVis: this.state.drawer ? 'visible' : 'hidden',
+      drawerShade: this.state.drawer ? 1 : 0,
+      toggleMServ: () => this.setState({ mServ: !this.state.mServ }),
+      mServDisplay: this.state.mServ ? 'flex' : 'none',
+      mServRot: this.state.mServ ? '180deg' : '0deg',
+      mServBg: this.state.mServ ? '#ffffff' : 'transparent',
+      openMenu: () => this.setState({ menuOpen: true }),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      servColor: m ? '#0093f7' : '#0a0223',
+      chevRot: m ? '180deg' : '0deg',
+      menuOpacity: m ? '1' : '0',
+      menuVis: m ? 'visible' : 'hidden',
+      menuY: m ? '0' : '-8px',
+      navBg: '#ffffff',
+      navBorder: '#e7eaf2',
+      navShadow: '0 8px 26px -22px rgba(16,24,40,.7)',
+      navLogoLight: '0',
+      navLogoDark: '1',
+      navLink: '#0a0223',
+      navLinkHover: '#0093f7',
+      heroCols: n ? '1fr' : 'minmax(0,.92fr) minmax(0,1.08fr)',
+      bhDashR: n ? '-70px' : '2%',
+      bhDashW: n ? '150px' : '215px',
+      bhEllR: n ? '-140px' : '-70px',
+      bhEllB: n ? '-40px' : '-120px',
+      bhEllW: n ? '230px' : '360px',
+      bhBallR: n ? '-34px' : '10px',
+      bhBallB: n ? '30px' : '-56px',
+      bhBallW: n ? '86px' : '150px',
+      bhTriL: n ? '-14px' : '-58px',
+      bhTriT: n ? '30px' : '38px',
+      bhTriW: n ? '56px' : '88px',
+      heroName: f[0],
+      heroType: f[1],
+      heroUrl: f[2],
+      heroXfade: this.state.feat % 2 === 0 ? 'ddXfadeA' : 'ddXfadeB',
+      heroFade: this.state.feat % 2 === 0 ? 'ddFadeA' : 'ddFadeB',
+      heroPrevRef: el => { if (el) el.src = this._feat(this.state.prev || 0)[3]; },
+      heroImgRef: el => { if (el) el.src = f[3]; },
+      heroOpen: () => this.setState({ open: Component.FEAT[this.state.feat] }),
+      heroDots: Component.FEAT.map((_, i) => ({
+        onClick: () => { this._restart(); this.setState(st => ({ prev: st.feat || 0, feat: i })); },
+        w: this.state.feat === i ? '26px' : '10px',
+        bg: this.state.feat === i ? '#0093f7' : '#d7dce6'
+      })),
+      tabDir: n && !this.state.stuck ? 'column' : 'row',
+      tabMax: n ? '100%' : '640px',
+      tabJustify: n && !this.state.stuck ? 'flex-start' : 'center',
+      tabSepDisp: n && !this.state.stuck ? 'none' : 'block',
+      tabPad: n && this.state.stuck ? '12px 12px 14px' : '18px 10px 20px',
+      ...Object.fromEntries([0, 1, 2].map(i => ['catSet' + i, () => {
+        this.setState({ cat: i });
+        try { history.replaceState(null, '', '#' + ['corporativo', 'ecommerce', 'social-media'][i]); } catch (err) {}
+      }])),
+      ...Object.fromEntries([0, 1, 2].map(i => ['tabLbl' + i, n && this.state.stuck && cat !== i ? 'none' : 'inline'])),
+      ...Object.fromEntries([0, 1, 2].map(i => ['tabFlex' + i, n && this.state.stuck ? (cat === i ? '1 1 auto' : '0 0 auto') : '1'])),
+      ...Object.fromEntries([0, 1, 2].map(i => ['tabC' + i, cat === i ? '#0a0223' : '#6b7385'])),
+      ...Object.fromEntries([0, 1, 2].map(i => ['tabW' + i, cat === i ? 500 : 400])),
+      ...Object.fromEntries([0, 1, 2].map(i => ['tabL' + i, cat === i ? '#0093f7' : 'transparent'])),
+      catAnim: cat % 2 === 0 ? 'ddFadeA' : 'ddFadeB',
+      catWord: Component.CATS[cat][0],
+      catDesc: Component.CATS[cat][1],
+      gridCols: n ? (mid ? 'repeat(2,minmax(0,1fr))' : '1fr') : (isSocial ? 'repeat(4,minmax(0,1fr))' : 'repeat(3,minmax(0,1fr))'),
+      items: list.map((p, i) => ({
+        name: p[0], type: p[1], url: p[2], desc: p[4], meta: p[6],
+        isSlot: !p[5] && String(p[3]).indexOf('assets/') !== 0, isImg: !p[5] && String(p[3]).indexOf('assets/') === 0,
+        isCover: !!p[5], cover: p[5] ? p[5][0] : '',
+        slot: String(p[3]).indexOf('assets/') !== 0 ? p[3] : '', slotHint: (isSocial ? 'Post de ' : 'Home de ') + p[0],
+        img: isSocial ? '' : p[3],
+        dur: (this.state.durs || {})[p[3]] || '3.4s',
+        imgRef: el => {
+          if (!el) return;
+          const meas = () => this._imgDur(p[3], el);
+          if (el.complete) requestAnimationFrame(meas); else el.addEventListener('load', () => requestAnimationFrame(meas), { once: true });
+          const card = el.closest('article');
+          if (card && !card.__ddM) { card.__ddM = 1; card.addEventListener('mouseenter', meas); }
+        },
+        ratio: isSocial ? '1/1' : '1.34/1',
+        open: () => this.setState({ open: [cat, i], mSlot: String(p[3]).indexOf('assets/') !== 0 ? p[3] : null, slide: 0 })
+      })),
+      mOpen: !!op,
+      mName: cur ? cur[0] : '',
+      mType: cur ? cur[1] : '',
+      mUrl: cur ? cur[2] : '',
+      mHref: cur ? 'https://' + cur[2] : '#',
+      mImgRef: el => { if (el && cur && String(cur[3]).indexOf('assets/') === 0) el.src = cur[3]; },
+      mCount: op ? (op[1] + 1) + ' / ' + Component.P[op[0]].length : '',
+      mMeta: cur ? cur[6] : '',
+      mMetric: cur ? cur[7] : '',
+      mCta: openIsSocial ? 'Quiero contenido así' : 'Quiero un sitio así',
+      mTouchStart: e => { this._tx = e.touches[0].clientX; },
+      mTouchEnd: e => {
+        if (this._tx == null) return;
+        const dx = e.changedTouches[0].clientX - this._tx;
+        this._tx = null;
+        if (Math.abs(dx) > 55) this._mStep(dx < 0 ? 1 : -1);
+      },
+      mPrev: e => { e.stopPropagation(); this._mStep(-1); },
+      mNext: e => { e.stopPropagation(); this._mStep(1); },
+      mIsImg: !!cur && !cur[5] && String(cur[3]).indexOf('assets/') === 0,
+      mIsSlot: !!cur && !cur[5] && String(cur[3]).indexOf('assets/') !== 0,
+      mIsCar: !!(cur && cur[5]),
+      mSlideRef: el => { if (el && cur && cur[5]) el.src = cur[5][Math.min(this.state.slide || 0, cur[5].length - 1)]; },
+      mThumbs: cur && cur[5] ? cur[5].map((src, i) => ({
+        ref: el => { if (el) el.src = src; },
+        op: (this.state.slide || 0) === i ? '1' : '.5',
+        ring: (this.state.slide || 0) === i ? '2px solid #0093f7' : '2px solid transparent',
+        onClick: () => this.setState({ slide: i })
+      })) : [],
+      mW: openIsSocial ? '900px' : '880px',
+      mThumbW: n ? '84px' : '124px',
+      mCarDir: n ? 'column' : 'row',
+      mThumbDir: n ? 'row' : 'column',
+      mThumbBoxW: n ? '100%' : '124px',
+      mImgMaxH: n ? 'calc(88vh - 300px)' : 'calc(88vh - 130px)',
+      mSlotView: this.state.mSlot || '',
+      mSlotHint: cur ? (openIsSocial ? 'Post de ' : 'Captura de ') + cur[0] : 'Captura',
+      mThumbsOld: openIsSocial ? Component.P[2].map(p => ({
+        slot: p[3],
+        op: this.state.mSlot === p[3] ? '1' : '.55',
+        onClick: () => this.setState({ mSlot: p[3] })
+      })) : [],
+      mClose: () => this.setState({ open: null, mSlot: null }),
+      mStop: e => e.stopPropagation(),
+      ctaFx: (this.state.subWide == null ? (typeof window !== 'undefined' && window.innerWidth < 1080) : this.state.subWide) ? 'none' : 'block',
+      ctaDashT: n ? '-64px' : '-44px',
+      ctaDashL: n ? '-16%' : '3%',
+      ctaDashW: n ? '150px' : '170px',
+      ctaA1L: n ? '-5%' : '13%',
+      ctaA1T: n ? '76%' : '48%',
+      ctaA1W: n ? '52px' : '66px',
+      ctaA2R: n ? '-6%' : '10%',
+      ctaA2T: n ? '4%' : '16%',
+      ctaA2W: n ? '58px' : '76px',
+      showWhatsApp: this.props.showWhatsApp ?? true,
+      waHref: 'https://wa.me/' + num
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agencia de gestión de redes sociales | Delta Digital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  @font-face{font-family:'Gotham';src:url('fonts/Gotham-Book.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Gotham';src:url('fonts/Gotham-Medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Gotham';src:url('fonts/Gotham-Bold.otf') format('opentype');font-weight:600 700;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Gotham';src:url('fonts/Gotham-Black.otf') format('opentype');font-weight:800 900;font-style:normal;font-display:swap;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:92px;}
+  body{scroll-behavior:smooth;font-family:'Gotham',system-ui,sans-serif;color:#0a0223;background:#ffffff;-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.5;}
+  a{color:#0093f7;text-decoration:none;}
+  a:hover{color:#0077cc;}
+  ::selection{background:rgba(0,147,247,.18);}
+  :focus-visible{outline:2px solid #0093f7;outline-offset:2px;}
+  ::-webkit-scrollbar{height:0;width:0;}
+  @keyframes ddMarquee{from{transform:translateX(0);}to{transform:translateX(calc(-50% - 38px));}}
+  @keyframes ddMarqueeCards{from{transform:translateX(0);}to{transform:translateX(calc(-50% - 20px));}}
+  @keyframes ddMarqueeRev{from{transform:translateX(calc(-50% - 38px));}to{transform:translateX(0);}}
+  @keyframes ddSpin{to{transform:rotate(360deg);}}
+  @keyframes ddProcLine{from{transform:scaleX(0);}to{transform:scaleX(1);}}
+  @keyframes ddProcPop{from{opacity:0;transform:scale(.35);}to{opacity:1;transform:scale(1);}}
+  @keyframes ddProcUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+  @keyframes ddConf{0%{opacity:0;filter:blur(0);transform:translate(-50%,-50%) scale(.35) rotate(0deg);}12%{opacity:.75;filter:blur(0);}62%{opacity:.55;filter:blur(.6px);}100%{opacity:0;filter:blur(3.5px);transform:translate(calc(-50% + var(--tx)),calc(-50% + var(--ty))) scale(.8) rotate(var(--rot));}}
+  @keyframes ddProcArrow{0%{opacity:0;transform:translate(calc(-50% - 10px),-50%);}28%{opacity:1;}68%{opacity:1;}100%{opacity:0;transform:translate(calc(-50% + 10px),-50%);}}
+  @keyframes ddReveal{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:none;}}
+  .dd-rv{opacity:0;}
+  .dd-rv-in{animation:ddReveal .6s cubic-bezier(.2,.7,.2,1) forwards;}
+  @keyframes ddPanelIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+  @keyframes ddFaqIn{from{opacity:0;transform:translateY(-8px);}to{opacity:1;transform:none;}}
+  @keyframes ddModalIn{from{opacity:0;transform:translateY(22px) scale(.97);}to{opacity:1;transform:none;}}
+  @media (prefers-reduced-motion:reduce){.dd-rv,.dd-rv-in{opacity:1;animation:none;}}
+  @keyframes ddSpinRev{to{transform:rotate(-360deg);}}
+  @keyframes ddSticker{0%,100%{transform:translateY(0) rotate(-1.5deg);}50%{transform:translateY(-5px) rotate(1.5deg);}}
+  @keyframes ddStickerHolo{0%,100%{opacity:.14;transform:translateX(-38%) rotate(8deg);}50%{opacity:.4;transform:translateX(38%) rotate(8deg);}}
+  @keyframes ddDrift{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-26px,-22px) scale(1.06);}}
+  @keyframes ddFloatA{0%,100%{transform:translateY(0) rotate(-8deg);}50%{transform:translateY(-22px) rotate(-8deg);}}
+  @keyframes ddFloatB{0%,100%{transform:translateY(0) rotate(10deg);}50%{transform:translateY(20px) rotate(10deg);}}
+  @keyframes ddFloatLg{0%,100%{transform:translateY(0);}50%{transform:translateY(-16px);}}
+  @keyframes ddFloatSm{0%,100%{transform:translateY(0) rotate(18deg);}50%{transform:translateY(13px) rotate(18deg);}}
+  @keyframes ddOrbit{0%,100%{transform:translateY(0);}50%{transform:translateY(-18px);}}
+  @keyframes ddHoloFoil{0%,100%{background-position:0% 50%;}50%{background-position:100% 50%;}}
+  @keyframes ddHoloGlare{0%,100%{background-position:140% 0;}50%{background-position:-40% 0;}}
+  @keyframes ddPulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.45);}70%{box-shadow:0 0 0 18px rgba(37,211,102,0);}100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;}}
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div style="position:relative;width:100%;overflow-x:hidden">
+
+<nav id="ddnav" style="position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px max(5vw,20px);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);transition:background .3s, box-shadow .3s, border-color .3s;background:{{ navBg }};border-bottom:1px solid {{ navBorder }};box-shadow:{{ navShadow }}">
+  <div style="display:flex;align-items:center;gap:14px;flex:none">
+    <button type="button" onClick="{{ toggleDrawer }}" aria-label="Menú" style="display:{{ navMob }};align-items:center;justify-content:center;flex:none;width:44px;height:44px;margin-left:-10px;border:0;background:transparent;cursor:pointer;color:{{ navLink }}">
+      <svg viewBox="0 0 24 24" style="width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round"><path d="{{ burgerPath }}"></path></svg>
+    </button>
+    <a href="index.html#top" aria-label="Delta Digital" style="position:relative;display:block;flex:none;height:38px">
+      <img src="assets/delta-logo-light.svg" alt="Delta Digital" style="height:38px;width:auto;display:block;transition:opacity .3s;opacity:{{ navLogoLight }}">
+      <img src="assets/delta-logo.svg" alt="" aria-hidden="true" style="position:absolute;top:0;left:0;height:38px;width:auto;display:block;transition:opacity .3s;opacity:{{ navLogoDark }}">
+    </a>
+  </div>
+  <div style="display:{{ navDesk }};align-items:center;gap:38px">
+    <a href="index.html" style="position:relative;color:{{ navLink }};font-size:.95rem;font-weight:500;text-decoration:none;transition:color .15s" style-hover="color:{{ navLinkHover }}">Inicio<span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:-9px;height:2.5px;border-radius:2px;background:#0093f7"></span></a>
+    <div onMouseEnter="{{ openMenu }}" onMouseLeave="{{ closeMenu }}" style="position:relative;display:flex;align-items:center">
+      <a href="#servicios" style="display:inline-flex;align-items:center;gap:6px;color:{{ servColor }};font-size:.95rem;font-weight:400;text-decoration:none;transition:color .15s">Servicios
+        <svg viewBox="0 0 12 8" style="width:11px;height:8px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s;transform:rotate({{ chevRot }})"><path d="M1 1l5 5 5-5"></path></svg>
+      </a>
+      <div style="position:absolute;top:100%;left:min(-64px, calc(100vw - 100% - 680px - max(5vw,20px)));margin-top:44px;width:min(680px, calc(100vw - 2 * max(5vw,20px)));background:#ffffff;border-radius:18px;padding:22px 26px;box-shadow:0 26px 60px -26px rgba(16,24,40,.26), 0 2px 6px rgba(16,24,40,.05);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 22px;transition:opacity .22s ease, transform .22s ease, visibility .22s;transform:translate(0,{{ menuY }});opacity:{{ menuOpacity }};visibility:{{ menuVis }}">
+        <a href="#servicios" style="display:flex;gap:4px;align-items:flex-start;text-decoration:none;padding:10px;border-radius:12px;transition:background .18s" style-hover="background:#f2f7fe">
+          <img src="assets/menu/publicidad.svg" alt="" style="width:76px;height:76px;flex:none;margin:-22px 0 0 -22px">
+          <span style="display:block"><b style="display:block;font-size:.9rem;font-weight:500;color:#0a0223;margin-bottom:4px">Publicidad pagada</b><span style="display:block;font-size:.8rem;line-height:1.45;color:#98a0b0">Campañas con alta segmentación y escalabilidad.</span></span>
+        </a>
+        <a href="posicionamiento-seo.html#top" style="display:flex;gap:4px;align-items:flex-start;text-decoration:none;padding:10px;border-radius:12px;transition:background .18s" style-hover="background:#f2f7fe">
+          <img src="assets/menu/seo.svg" alt="" style="width:76px;height:76px;flex:none;margin:-22px 0 0 -22px">
+          <span style="display:block"><b style="display:block;font-size:.9rem;font-weight:500;color:#0a0223;margin-bottom:4px">Posicionamiento web</b><span style="display:block;font-size:.8rem;line-height:1.45;color:#98a0b0">Mejora tu posición en los resultados de búsqueda de Google.</span></span>
+        </a>
+        <a href="redes-sociales.html#top" style="display:flex;gap:4px;align-items:flex-start;text-decoration:none;padding:10px;border-radius:12px;transition:background .18s" style-hover="background:#f2f7fe">
+          <img src="assets/menu/redes.svg" alt="" style="width:76px;height:76px;flex:none;margin:-22px 0 0 -22px">
+          <span style="display:block"><b style="display:block;font-size:.9rem;font-weight:500;color:#0a0223;margin-bottom:4px">Gestión de redes sociales</b><span style="display:block;font-size:.8rem;line-height:1.45;color:#98a0b0">Amplía tu alcance y presencia online con contenido atractivo y gestión activa.</span></span>
+        </a>
+        <a href="email-marketing.html#top" style="display:flex;gap:4px;align-items:flex-start;text-decoration:none;padding:10px;border-radius:12px;transition:background .18s" style-hover="background:#f2f7fe">
+          <img src="assets/menu/email.svg" alt="" style="width:76px;height:76px;flex:none;margin:-22px 0 0 -22px">
+          <span style="display:block"><b style="display:block;font-size:.9rem;font-weight:500;color:#0a0223;margin-bottom:4px">Email marketing</b><span style="display:block;font-size:.8rem;line-height:1.45;color:#98a0b0">Convierte suscriptores en clientes recurrentes con emails.</span></span>
+        </a>
+        <a href="desarrollo-web.html#top" style="display:flex;gap:4px;align-items:flex-start;text-decoration:none;padding:10px;border-radius:12px;transition:background .18s" style-hover="background:#f2f7fe">
+          <img src="assets/menu/web.svg" alt="" style="width:76px;height:76px;flex:none;margin:-22px 0 0 -22px">
+          <span style="display:block"><b style="display:block;font-size:.9rem;font-weight:500;color:#0a0223;margin-bottom:4px">Desarrollo web</b><span style="display:block;font-size:.8rem;line-height:1.45;color:#98a0b0">Diseñamos sitios web estéticos y funcionales para tu empresa.</span></span>
+        </a>
+        <a href="#servicios" style="display:flex;gap:4px;align-items:flex-start;text-decoration:none;padding:10px;border-radius:12px;transition:background .18s" style-hover="background:#f2f7fe">
+          <img src="assets/menu/video.svg" alt="" style="width:76px;height:76px;flex:none;margin:-22px 0 0 -22px">
+          <span style="display:block"><b style="display:block;font-size:.9rem;font-weight:500;color:#0a0223;margin-bottom:4px">Creación de video</b><span style="display:block;font-size:.8rem;line-height:1.45;color:#98a0b0">Creamos estrategias audiovisuales que convierten ideas en historias.</span></span>
+        </a>
+      </div>
+    </div>
+    <a href="portafolio.html#top" style="color:{{ navLink }};font-size:.95rem;font-weight:400;text-decoration:none;transition:color .15s" style-hover="color:{{ navLinkHover }}">Portafolio</a>
+    <a href="blog.html#articulos" style="color:{{ navLink }};font-size:.95rem;font-weight:400;text-decoration:none;transition:color .15s" style-hover="color:{{ navLinkHover }}">Blog</a>
+  </div>
+  <a href="contacto.html#formulario" style="flex:none;display:inline-flex;align-items:center;justify-content:center;background:#0093f7;color:#fff;font-weight:600;font-size:.9rem;padding:11px 24px;border-radius:10px;text-decoration:none;box-shadow:0 10px 24px -10px rgba(0,147,247,.8), inset 0 1px 0 rgba(255,255,255,.2);transition:background .2s, transform .15s, box-shadow .2s" style-hover="background:#0077cc;transform:translateY(-1px);box-shadow:0 16px 32px -10px rgba(0,147,247,.85), inset 0 1px 0 rgba(255,255,255,.2)">Contacto</a>
+</nav>
+
+<div onClick="{{ closeDrawer }}" aria-hidden="true" style="position:fixed;inset:0;z-index:180;background:rgba(8,2,26,.45);opacity:{{ drawerShade }};visibility:{{ drawerVis }};transition:opacity .3s ease, visibility .3s"></div>
+<aside style="position:fixed;top:0;left:0;bottom:0;z-index:190;width:min(100%,440px);display:flex;flex-direction:column;background:#f4f6fa;transform:translateX({{ drawerX }});transition:transform .34s cubic-bezier(.2,.7,.2,1);visibility:{{ drawerVis }};box-shadow:24px 0 60px -30px rgba(8,2,26,.6)">
+  <div style="flex:none;height:71px"></div>
+  <div style="flex:1;overflow-y:auto;padding:0 max(5vw,20px)">
+        <a href="index.html#top" onClick="{{ closeDrawer }}" style="display:block;padding:20px 4px;font-size:1.05rem;color:#0a0223;text-decoration:none;border-bottom:1px solid #e3e6ee">Inicio</a>
+    <button type="button" onClick="{{ toggleMServ }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 4px;font-size:1.05rem;color:#0a0223;background:{{ mServBg }};border:0;border-bottom:1px solid #e3e6ee;cursor:pointer;font-family:inherit;text-align:left">Servicios
+      <svg viewBox="0 0 12 8" style="width:13px;height:9px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s;transform:rotate({{ mServRot }})"><path d="M1 1l5 5 5-5"></path></svg>
+    </button>
+    <div style="display:{{ mServDisplay }};animation:ddFaqIn .3s cubic-bezier(.2,.7,.2,1) both;flex-direction:column;padding:10px 0 16px">
+          <a href="#servicios" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+            <img src="assets/menu/publicidad.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+            <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Publicidad pagada</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Campañas con alta segmentación y escalabilidad.</span></span>
+          </a>
+          <a href="redes-sociales.html#top" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+            <img src="assets/menu/redes.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+            <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Gestión de redes sociales</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Amplía tu alcance y presencia online con contenido atractivo y gestión activa.</span></span>
+          </a>
+          <a href="desarrollo-web.html#top" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+            <img src="assets/menu/web.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+            <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Desarrollo web</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Diseñamos sitios web estéticos y funcionales para tu empresa.</span></span>
+          </a>
+          <a href="posicionamiento-seo.html#top" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+            <img src="assets/menu/seo.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+            <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Posicionamiento web</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Mejora tu posición en los resultados de búsqueda de Google.</span></span>
+          </a>
+          <a href="email-marketing.html#top" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+            <img src="assets/menu/email.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+            <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Email marketing</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Convierte suscriptores en clientes recurrentes con emails.</span></span>
+          </a>
+          <a href="#servicios" onClick="{{ closeDrawer }}" style="display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:12px 0">
+            <img src="assets/menu/video.svg" alt="" style="width:52px;height:52px;flex:none;margin:-14px 0 0 -12px">
+            <span style="display:block"><b style="display:block;font-size:1rem;font-weight:500;color:#0a0223;margin-bottom:3px">Creación de video</b><span style="display:block;font-size:.86rem;line-height:1.45;color:#98a0b0">Creamos estrategias audiovisuales que convierten ideas en historias.</span></span>
+          </a>
+    </div>
+        <a href="portafolio.html#top" onClick="{{ closeDrawer }}" style="display:block;padding:20px 4px;font-size:1.05rem;color:#0a0223;text-decoration:none;border-bottom:1px solid #e3e6ee">Portafolio</a>
+        <a href="blog.html#articulos" onClick="{{ closeDrawer }}" style="display:block;padding:20px 4px;font-size:1.05rem;color:#0a0223;text-decoration:none;border-bottom:1px solid #e3e6ee">Blog</a>
+        <a href="contacto.html#formulario" onClick="{{ closeDrawer }}" style="display:block;padding:20px 4px;font-size:1.05rem;color:#0a0223;text-decoration:none;border-bottom:1px solid #e3e6ee">Agendar reunión</a>
+  </div>
+  <div style="flex:none;background:#0a0820;color:#ffffff;padding:22px max(5vw,20px);display:flex;align-items:center;justify-content:space-between;gap:18px">
+    <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
+      <a href="tel:+56999098594" style="display:flex;align-items:center;gap:11px;color:rgba(255,255,255,.9);font-size:.9rem;text-decoration:none">
+        <svg viewBox="0 0 24 24" style="flex:none;width:17px;height:17px;color:#2e9bff;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>+56 9 9909 8594</a>
+      <a href="mailto:contacto@deltadigital.cl" style="display:flex;align-items:center;gap:11px;color:rgba(255,255,255,.9);font-size:.9rem;text-decoration:none;min-width:0">
+        <svg viewBox="0 0 24 24" style="flex:none;width:17px;height:17px;color:#2e9bff;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg><span style="overflow:hidden;text-overflow:ellipsis">contacto@deltadigital.cl</span></a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;flex:none">
+      <a href="#" aria-label="LinkedIn" style="width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#ffffff;color:#0a0820"><svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21h-4z"></path></svg></a>
+      <a href="#" aria-label="Instagram" style="width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#ffffff;color:#0a0820"><svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"></circle></svg></a>
+    </div>
+  </div>
+</aside>
+
+
+<section id="top" data-screen-label="Hero" style="position:relative;background:#f4f6fa;padding:clamp(92px,8.6vw,112px) clamp(14px,1.7vw,24px) 0">
+  <div style="position:relative;overflow:hidden;max-width:1400px;margin:0 auto;border-radius:clamp(16px,1.6vw,22px);background:radial-gradient(120% 130% at 76% 58%, #17123f 0%, #0c0930 46%, #070522 100%)">
+    <div style="position:relative;z-index:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(24px,3vw,44px);align-items:center;padding:clamp(34px,4vw,52px) clamp(22px,3vw,44px) clamp(34px,4vw,52px) clamp(24px,6.2vw,90px)">
+      <div>
+        <div style="display:flex;align-items:center;gap:9px;font-size:.86rem;margin-bottom:clamp(22px,2.6vw,34px)">
+          <a href="index.html" style="color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s" style-hover="color:#2e9bff">Inicio</a>
+          <svg viewBox="0 0 14 10" aria-hidden="true" style="width:13px;height:9px;flex:none;fill:none;stroke:rgba(255,255,255,.45);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M1 5h11M8.5 1.5 12 5l-3.5 3.5"></path></svg>
+          <span style="color:#ffffff;font-weight:500">Redes sociales</span>
+        </div>
+        <h1 style="font-weight:700;font-size:clamp(2.1rem,4.3vw,3.35rem);line-height:1.1;letter-spacing:-.03em;color:#ffffff;margin-bottom:14px;text-wrap:balance"><span style="color: rgb(46, 155, 255);">Gestión de redes</span><br>sociales para empresas en Chile</h1>
+        <p style="max-width:470px;font-size:clamp(1.05rem,1.6vw,1.3rem);font-weight:500;line-height:1.35;color:#ffffff;margin-bottom:22px">para aumentar<br>tu presencia online</p>
+        <p style="max-width:420px;font-size:.95rem;line-height:1.7;color:rgba(255,255,255,.66);margin-bottom:clamp(28px,3.2vw,42px)">Creamos y gestionamos el contenido de tus redes sociales para que tu marca crezca, converse con su audiencia y esté donde están tus clientes.</p>
+        <a href="contacto.html#formulario" style="display:inline-flex;padding:8px;border-radius:16px;text-decoration:none;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);box-shadow:0 14px 34px -16px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.18);transition:background .25s, transform .25s, box-shadow .25s" style-hover="background:rgba(58,120,220,.24);transform:translateY(-2px);box-shadow:0 18px 44px -14px rgba(0,120,240,.65), inset 0 1px 0 rgba(255,255,255,.22)"><span style="display:inline-flex;align-items:center;justify-content:center;padding:12px 34px;border-radius:10px;background:rgba(214,213,224,.88);color:#0a0223;font-weight:600;font-size:.92rem">Contáctanos</span></a>
+      </div>
+      <div style="position:relative;justify-self:end;width:100%;max-width:540px">
+        <img src="assets/rrss/hero.png" alt="Gestión de redes sociales" style="display:block;width:100%;height:auto;border-radius:14px">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Intro" style="background:#f4f6fa;padding:clamp(46px,5.4vw,78px) max(5vw,20px) clamp(24px,2.8vw,40px)">
+  <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(24px,3vw,48px);align-items:center">
+    <div>
+      <h2 style="font-weight:700;font-size:clamp(1.7rem,2.8vw,2.3rem);line-height:1.2;letter-spacing:-.025em;color:#0a0223;margin-bottom:clamp(18px,2vw,26px)">Nos encargamos<br>de tu presencia en redes</h2>
+      <p style="max-width:600px;font-size:.97rem;line-height:1.8;color:#5b6377;margin-bottom:18px">En un mundo donde todo ocurre en línea, tener presencia en redes sociales ya no es una opción: es una necesidad. Gestionamos los perfiles de tu marca con contenido, calendario y respuesta a tu comunidad.</p>
+      <p style="max-width:600px;font-size:.97rem;line-height:1.8;color:#5b6377">Diseñamos una estrategia para Instagram, Facebook, LinkedIn y TikTok según dónde está tu audiencia, con piezas pensadas para cada formato y un reporte mensual que muestra qué funcionó y qué se ajusta.</p>
+    </div>
+    <div style="justify-self:center">
+      <img src="assets/rrss/intro.png" alt="" loading="lazy" style="display:block;width:100%;max-width:540px;height:auto">
+    </div>
+  </div>
+</section>
+
+<section id="claves" data-screen-label="Por qué gestión de redes" style="background:#f4f6fa;padding:clamp(38px,4.4vw,64px) max(5vw,20px) clamp(44px,5vw,70px)">
+  <div style="max-width:1180px;margin:0 auto">
+    <h2 style="font-weight:700;font-size:clamp(1.7rem,2.8vw,2.3rem);line-height:1.2;letter-spacing:-.025em;color:#0a0223;margin-bottom:clamp(20px,2.4vw,32px)">¿Por qué es clave una buena<br>gestión de redes?</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(74px,7.6vw,100px) clamp(22px,2.6vw,34px);padding-top:clamp(44px,4.6vw,64px);margin-top:clamp(26px,3vw,40px)">
+      <article style="position:relative;background:rgba(255,255,255,.58);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);border:1px solid rgba(255,255,255,.85);border-radius:24px;box-shadow:5px 6px 16px rgba(20,33,80,.06), -6px -6px 14px rgba(255,255,255,.75), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35);transition:transform .25s, box-shadow .25s;padding:0 clamp(20px,2.2vw,28px) clamp(24px,2.8vw,32px)" style-hover="transform:translateY(-4px);box-shadow:9px 11px 26px -8px rgba(20,33,80,.13), -7px -7px 18px rgba(255,255,255,.85), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35)">
+        <img src="assets/rrss/why-visibilidad.png" alt="" loading="lazy" style="display:block;width:calc(110% - 22px);height:auto;margin:clamp(-70px,-5vw,-48px) auto clamp(18px,2.2vw,26px)">
+        <h3 style="font-size:1.12rem;font-weight:700;letter-spacing:-.02em;color:#0a0223;line-height:1.3;margin-bottom:14px">Más visibilidad de marca</h3>
+        <p style="font-size:.92rem;line-height:1.7;color:#5b6377">Aumenta el alcance de tu marca frente a nuevas audiencias con publicaciones consistentes y contenido pensado para cada red.</p>
+      </article>
+      <article style="position:relative;background:rgba(255,255,255,.58);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);border:1px solid rgba(255,255,255,.85);border-radius:24px;box-shadow:5px 6px 16px rgba(20,33,80,.06), -6px -6px 14px rgba(255,255,255,.75), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35);transition:transform .25s, box-shadow .25s;padding:0 clamp(20px,2.2vw,28px) clamp(24px,2.8vw,32px)" style-hover="transform:translateY(-4px);box-shadow:9px 11px 26px -8px rgba(20,33,80,.13), -7px -7px 18px rgba(255,255,255,.85), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35)">
+        <img src="assets/rrss/why-conversion.png" alt="" loading="lazy" style="display:block;width:calc(110% - 22px);height:auto;margin:clamp(-70px,-5vw,-48px) auto clamp(18px,2.2vw,26px)">
+        <h3 style="font-size:1.12rem;font-weight:700;letter-spacing:-.02em;color:#0a0223;line-height:1.3;margin-bottom:14px">Mejor tasa de conversión</h3>
+        <p style="font-size:.92rem;line-height:1.7;color:#5b6377">Convertimos seguidores en clientes con contenido que guía hacia la compra o el contacto directo.</p>
+      </article>
+      <article style="position:relative;background:rgba(255,255,255,.58);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);border:1px solid rgba(255,255,255,.85);border-radius:24px;box-shadow:5px 6px 16px rgba(20,33,80,.06), -6px -6px 14px rgba(255,255,255,.75), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35);transition:transform .25s, box-shadow .25s;padding:0 clamp(20px,2.2vw,28px) clamp(24px,2.8vw,32px)" style-hover="transform:translateY(-4px);box-shadow:9px 11px 26px -8px rgba(20,33,80,.13), -7px -7px 18px rgba(255,255,255,.85), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35)">
+        <img src="assets/rrss/why-reputacion.png" alt="" loading="lazy" style="display:block;width:calc(110% - 22px);height:auto;margin:clamp(-70px,-5vw,-48px) auto clamp(18px,2.2vw,26px)">
+        <h3 style="font-size:1.12rem;font-weight:700;letter-spacing:-.02em;color:#0a0223;line-height:1.3;margin-bottom:14px">Mejor reputación</h3>
+        <p style="font-size:.92rem;line-height:1.7;color:#5b6377">Una comunidad activa y bien atendida construye confianza y respalda la decisión de compra.</p>
+      </article>
+      <article style="position:relative;background:rgba(255,255,255,.58);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);border:1px solid rgba(255,255,255,.85);border-radius:24px;box-shadow:5px 6px 16px rgba(20,33,80,.06), -6px -6px 14px rgba(255,255,255,.75), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35);transition:transform .25s, box-shadow .25s;padding:0 clamp(20px,2.2vw,28px) clamp(24px,2.8vw,32px)" style-hover="transform:translateY(-4px);box-shadow:9px 11px 26px -8px rgba(20,33,80,.13), -7px -7px 18px rgba(255,255,255,.85), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35)">
+        <img src="assets/rrss/why-competitividad.png" alt="" loading="lazy" style="display:block;width:calc(110% - 22px);height:auto;margin:clamp(-70px,-5vw,-48px) auto clamp(18px,2.2vw,26px)">
+        <h3 style="font-size:1.12rem;font-weight:700;letter-spacing:-.02em;color:#0a0223;line-height:1.3;margin-bottom:14px">Mayor competitividad</h3>
+        <p style="font-size:.92rem;line-height:1.7;color:#5b6377">Destaca frente a competidores que publican sin estrategia ni continuidad en el tiempo.</p>
+      </article>
+      <article style="position:relative;background:rgba(255,255,255,.58);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);border:1px solid rgba(255,255,255,.85);border-radius:24px;box-shadow:5px 6px 16px rgba(20,33,80,.06), -6px -6px 14px rgba(255,255,255,.75), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35);transition:transform .25s, box-shadow .25s;padding:0 clamp(20px,2.2vw,28px) clamp(24px,2.8vw,32px)" style-hover="transform:translateY(-4px);box-shadow:9px 11px 26px -8px rgba(20,33,80,.13), -7px -7px 18px rgba(255,255,255,.85), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35)">
+        <img src="assets/rrss/why-analisis.png" alt="" loading="lazy" style="display:block;width:calc(110% - 22px);height:auto;margin:clamp(-70px,-5vw,-48px) auto clamp(18px,2.2vw,26px)">
+        <h3 style="font-size:1.12rem;font-weight:700;letter-spacing:-.02em;color:#0a0223;line-height:1.3;margin-bottom:14px">Análisis y monitoreo</h3>
+        <p style="font-size:.92rem;line-height:1.7;color:#5b6377">Medimos el rendimiento de cada publicación y ajustamos la estrategia según los datos.</p>
+      </article>
+      <article style="position:relative;background:rgba(255,255,255,.58);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);border:1px solid rgba(255,255,255,.85);border-radius:24px;box-shadow:5px 6px 16px rgba(20,33,80,.06), -6px -6px 14px rgba(255,255,255,.75), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35);transition:transform .25s, box-shadow .25s;padding:0 clamp(20px,2.2vw,28px) clamp(24px,2.8vw,32px)" style-hover="transform:translateY(-4px);box-shadow:9px 11px 26px -8px rgba(20,33,80,.13), -7px -7px 18px rgba(255,255,255,.85), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35)">
+        <img src="assets/rrss/why-comunicacion.png" alt="" loading="lazy" style="display:block;width:calc(110% - 22px);height:auto;margin:clamp(-70px,-5vw,-48px) auto clamp(18px,2.2vw,26px)">
+        <h3 style="font-size:1.12rem;font-weight:700;letter-spacing:-.02em;color:#0a0223;line-height:1.3;margin-bottom:14px">Comunicación directa</h3>
+        <p style="font-size:.92rem;line-height:1.7;color:#5b6377">Responder mensajes y comentarios a tiempo mejora la relación con tu audiencia y acelera las ventas.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="metodologia" data-screen-label="Qué incluye el servicio" style="position:relative;overflow:hidden;background:#f4f6fa;padding:clamp(44px,5vw,70px) max(5vw,20px) clamp(52px,6vw,84px)">
+  <div style="position:relative;max-width:1180px;margin:0 auto">
+    <h2 style="font-weight:700;font-size:clamp(1.7rem,2.8vw,2.3rem);line-height:1.2;letter-spacing:-.025em;color:#0a0223;margin-bottom:clamp(46px,5.4vw,76px)">¿Qué incluye el servicio?</h2>
+    <div style="display:{{ procWrapDisp }};grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(30px,4vw,44px) clamp(14px,4vw,20px)">
+    <div style="position:relative;display:{{ procGridDisp }};grid-template-columns:{{ procCols }};gap:clamp(30px,3.6vw,44px) clamp(10px,1.4vw,20px);margin-bottom:{{ procG1Mb }}">
+      <div aria-hidden="true" style="display:{{ deskOnly }};position:absolute;left:12.5%;right:-40vw;top:21px;height:2px;background:#1c4f92;z-index:0;transform-origin:left center;-webkit-mask-image:linear-gradient(90deg,#000 0%,#000 22%,rgba(0,0,0,.55) 52%,rgba(0,0,0,.16) 74%,transparent 92%);mask-image:linear-gradient(90deg,#000 0%,#000 22%,rgba(0,0,0,.55) 52%,rgba(0,0,0,.16) 74%,transparent 92%);animation:ddProcLine .85s cubic-bezier(.2,.8,.25,1) 0s backwards;animation-play-state:{{ procPlay }}"></div>
+      <svg viewBox="0 0 12 16" aria-hidden="true" style="display:{{ deskOnly }};position:absolute;top:21px;left:25%;transform:translate(-50%,-50%);z-index:1;animation:ddProcArrow 1.9s ease-in-out .18s infinite backwards;animation-play-state:{{ procPlay }};width:11px;height:15px;fill:none;stroke:#1c4f92;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M3 2l7 6-7 6"></path></svg>
+      <svg viewBox="0 0 12 16" aria-hidden="true" style="display:{{ deskOnly }};position:absolute;top:21px;left:50%;transform:translate(-50%,-50%);z-index:1;animation:ddProcArrow 1.9s ease-in-out .34s infinite backwards;animation-play-state:{{ procPlay }};width:11px;height:15px;fill:none;stroke:#1c4f92;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M3 2l7 6-7 6"></path></svg>
+      <svg viewBox="0 0 12 16" aria-hidden="true" style="display:{{ deskOnly }};position:absolute;top:21px;left:75%;transform:translate(-50%,-50%);z-index:1;animation:ddProcArrow 1.9s ease-in-out .5s infinite backwards;animation-play-state:{{ procPlay }};width:11px;height:15px;fill:none;stroke:#1c4f92;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M3 2l7 6-7 6"></path></svg>
+      <svg viewBox="0 0 12 16" aria-hidden="true" style="display:{{ deskOnly }};position:absolute;top:21px;left:98%;transform:translate(-50%,-50%);z-index:1;animation:ddProcArrow 1.9s ease-in-out .66s infinite backwards;animation-play-state:{{ procPlay }};width:11px;height:15px;fill:none;stroke:#1c4f92;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M3 2l7 6-7 6"></path></svg>
+      <div style="display:{{ deskFlex }};align-items:flex-start;justify-content:center">
+        <img src="assets/web/proc-start.svg" alt="" aria-hidden="true" style="display:block;flex:none;width:clamp(46px,4.6vw,60px);height:auto;margin-top:calc(21px - clamp(23px,2.3vw,30px));position:relative;z-index:2;filter:drop-shadow(0 14px 30px rgba(0,147,247,.45));transition:transform .35s cubic-bezier(.2,.8,.25,1);animation:ddProcPop .55s cubic-bezier(.2,.8,.25,1) 0s backwards;animation-play-state:{{ procPlay }}" style-hover="transform:scale(1.09)">
+      </div>
+      <div onMouseEnter="{{ procIn1 }}" onMouseLeave="{{ procOut }}" style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;animation:ddProcUp .6s cubic-bezier(.2,.8,.25,1) .15s backwards;animation-play-state:{{ procPlay }}">
+        <div aria-hidden="true" style="display:{{ mobOnly }};position:absolute;left:-7vw;right:-10px;top:21px;height:2px;background:#1c4f92;z-index:0"></div>
+        <span style="position:relative;z-index:2;display:flex;align-items:center;justify-content:center;flex:none;width:42px;height:42px;border-radius:50%;background:{{ pcBg1 }};color:#ffffff;font-size:1.02rem;font-weight:700;margin-bottom:-18px;transform:{{ pcTr1 }};box-shadow:{{ pcSh1 }};transition:background .28s ease, transform .28s cubic-bezier(.2,.8,.25,1), box-shadow .28s ease">1</span>
+        <img src="assets/rrss/s1.png" alt="" loading="lazy" style="display:block;width:{{ procImgW }};max-width:172px;height:auto">
+        <h3 style="margin-top:clamp(12px,1.5vw,20px);font-size:{{ procTitleFs }};font-weight:700;letter-spacing:-.015em;color:#0a0223;line-height:1.35">Auditoría inicial</h3>
+        <p style="margin-top:12px;max-width:280px;font-size:.9rem;line-height:1.7;color:#5b6377">Revisamos tus perfiles, el contenido publicado y el de tu competencia para definir el punto de partida</p>
+      </div>
+      <div onMouseEnter="{{ procIn2 }}" onMouseLeave="{{ procOut }}" style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;animation:ddProcUp .6s cubic-bezier(.2,.8,.25,1) .32s backwards;animation-play-state:{{ procPlay }}">
+        <div aria-hidden="true" style="display:{{ mobOnly }};position:absolute;left:-10px;right:-7vw;top:21px;height:2px;background:#1c4f92;z-index:0"></div>
+        <span style="position:relative;z-index:2;display:flex;align-items:center;justify-content:center;flex:none;width:42px;height:42px;border-radius:50%;background:{{ pcBg2 }};color:#ffffff;font-size:1.02rem;font-weight:700;margin-bottom:-18px;transform:{{ pcTr2 }};box-shadow:{{ pcSh2 }};transition:background .28s ease, transform .28s cubic-bezier(.2,.8,.25,1), box-shadow .28s ease">2</span>
+        <img src="assets/rrss/s2.png" alt="" loading="lazy" style="display:block;width:{{ procImgW }};max-width:172px;height:auto">
+        <h3 style="margin-top:clamp(12px,1.5vw,20px);font-size:{{ procTitleFs }};font-weight:700;letter-spacing:-.015em;color:#0a0223;line-height:1.35">Plan estratégico</h3>
+        <p style="margin-top:12px;max-width:280px;font-size:.9rem;line-height:1.7;color:#5b6377">Definimos objetivos, tono de comunicación, líneas de contenido y las redes en las que conviene estar presente</p>
+      </div>
+      <div onMouseEnter="{{ procIn3 }}" onMouseLeave="{{ procOut }}" style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;animation:ddProcUp .6s cubic-bezier(.2,.8,.25,1) .49s backwards;animation-play-state:{{ procPlay }}">
+        <div aria-hidden="true" style="display:{{ mobOnly }};position:absolute;left:-7vw;right:-10px;top:21px;height:2px;background:#1c4f92;z-index:0"></div>
+        <span style="position:relative;z-index:2;display:flex;align-items:center;justify-content:center;flex:none;width:42px;height:42px;border-radius:50%;background:{{ pcBg3 }};color:#ffffff;font-size:1.02rem;font-weight:700;margin-bottom:-18px;transform:{{ pcTr3 }};box-shadow:{{ pcSh3 }};transition:background .28s ease, transform .28s cubic-bezier(.2,.8,.25,1), box-shadow .28s ease">3</span>
+        <img src="assets/rrss/s3.png" alt="" loading="lazy" style="display:block;width:{{ procImgW }};max-width:172px;height:auto">
+        <h3 style="margin-top:clamp(12px,1.5vw,20px);font-size:{{ procTitleFs }};font-weight:700;letter-spacing:-.015em;color:#0a0223;line-height:1.35">Calendario editorial</h3>
+        <p style="margin-top:12px;max-width:280px;font-size:.9rem;line-height:1.7;color:#5b6377">Programamos temas, formatos y fechas de publicación de cada mes con anticipación y tu aprobación</p>
+      </div>
+    </div>
+
+    <div style="position:relative;display:{{ procGridDisp }};grid-template-columns:{{ procCols }};gap:clamp(30px,3.6vw,44px) clamp(10px,1.4vw,20px)">
+      <div aria-hidden="true" style="display:{{ deskOnly }};position:absolute;left:-40vw;right:12.5%;top:21px;height:2px;background:#1c4f92;z-index:0;transform-origin:left center;-webkit-mask-image:linear-gradient(270deg,#000 0%,#000 22%,rgba(0,0,0,.55) 52%,rgba(0,0,0,.16) 74%,transparent 92%);mask-image:linear-gradient(270deg,#000 0%,#000 22%,rgba(0,0,0,.55) 52%,rgba(0,0,0,.16) 74%,transparent 92%);animation:ddProcLine .85s cubic-bezier(.2,.8,.25,1) .95s backwards;animation-play-state:{{ procPlay }}"></div>
+      <svg viewBox="0 0 12 16" aria-hidden="true" style="display:{{ deskOnly }};position:absolute;top:21px;left:2%;transform:translate(-50%,-50%);z-index:1;animation:ddProcArrow 1.9s ease-in-out 1.05s infinite backwards;animation-play-state:{{ procPlay }};width:11px;height:15px;fill:none;stroke:#1c4f92;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M3 2l7 6-7 6"></path></svg>
+      <svg viewBox="0 0 12 16" aria-hidden="true" style="display:{{ deskOnly }};position:absolute;top:21px;left:25%;transform:translate(-50%,-50%);z-index:1;animation:ddProcArrow 1.9s ease-in-out 1.21s infinite backwards;animation-play-state:{{ procPlay }};width:11px;height:15px;fill:none;stroke:#1c4f92;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M3 2l7 6-7 6"></path></svg>
+      <svg viewBox="0 0 12 16" aria-hidden="true" style="display:{{ deskOnly }};position:absolute;top:21px;left:50%;transform:translate(-50%,-50%);z-index:1;animation:ddProcArrow 1.9s ease-in-out 1.37s infinite backwards;animation-play-state:{{ procPlay }};width:11px;height:15px;fill:none;stroke:#1c4f92;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M3 2l7 6-7 6"></path></svg>
+      <svg viewBox="0 0 12 16" aria-hidden="true" style="display:{{ deskOnly }};position:absolute;top:21px;left:75%;transform:translate(-50%,-50%);z-index:1;animation:ddProcArrow 1.9s ease-in-out 1.53s infinite backwards;animation-play-state:{{ procPlay }};width:11px;height:15px;fill:none;stroke:#1c4f92;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M3 2l7 6-7 6"></path></svg>
+      <div onMouseEnter="{{ procIn4 }}" onMouseLeave="{{ procOut }}" style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;animation:ddProcUp .6s cubic-bezier(.2,.8,.25,1) 1.1s backwards;animation-play-state:{{ procPlay }}">
+        <div aria-hidden="true" style="display:{{ mobOnly }};position:absolute;left:-10px;right:-7vw;top:21px;height:2px;background:#1c4f92;z-index:0"></div>
+        <span style="position:relative;z-index:2;display:flex;align-items:center;justify-content:center;flex:none;width:42px;height:42px;border-radius:50%;background:{{ pcBg4 }};color:#ffffff;font-size:1.02rem;font-weight:700;margin-bottom:-18px;transform:{{ pcTr4 }};box-shadow:{{ pcSh4 }};transition:background .28s ease, transform .28s cubic-bezier(.2,.8,.25,1), box-shadow .28s ease">4</span>
+        <img src="assets/rrss/s4.png" alt="" loading="lazy" style="display:block;width:{{ procImgW }};max-width:172px;height:auto">
+        <h3 style="margin-top:clamp(12px,1.5vw,20px);font-size:{{ procTitleFs }};font-weight:700;letter-spacing:-.015em;color:#0a0223;line-height:1.35">Publicación de contenido</h3>
+        <p style="margin-top:12px;max-width:280px;font-size:.9rem;line-height:1.7;color:#5b6377">Diseñamos y publicamos piezas gráficas, reels y textos optimizados para el formato de cada plataforma</p>
+      </div>
+      <div onMouseEnter="{{ procIn5 }}" onMouseLeave="{{ procOut }}" style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;animation:ddProcUp .6s cubic-bezier(.2,.8,.25,1) 1.27s backwards;animation-play-state:{{ procPlay }}">
+        <div aria-hidden="true" style="display:{{ mobOnly }};position:absolute;left:-7vw;right:-10px;top:21px;height:2px;background:#1c4f92;z-index:0"></div>
+        <span style="position:relative;z-index:2;display:flex;align-items:center;justify-content:center;flex:none;width:42px;height:42px;border-radius:50%;background:{{ pcBg5 }};color:#ffffff;font-size:1.02rem;font-weight:700;margin-bottom:-18px;transform:{{ pcTr5 }};box-shadow:{{ pcSh5 }};transition:background .28s ease, transform .28s cubic-bezier(.2,.8,.25,1), box-shadow .28s ease">5</span>
+        <img src="assets/rrss/s5.png" alt="" loading="lazy" style="display:block;width:{{ procImgW }};max-width:172px;height:auto">
+        <h3 style="margin-top:clamp(12px,1.5vw,20px);font-size:{{ procTitleFs }};font-weight:700;letter-spacing:-.015em;color:#0a0223;line-height:1.35">Interacción con audiencia</h3>
+        <p style="margin-top:12px;max-width:280px;font-size:.9rem;line-height:1.7;color:#5b6377">Respondemos mensajes y comentarios, y moderamos la conversación que ocurre en torno a tu marca</p>
+      </div>
+      <div onMouseEnter="{{ procIn6 }}" onMouseLeave="{{ procOut }}" style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;animation:ddProcUp .6s cubic-bezier(.2,.8,.25,1) 1.44s backwards;animation-play-state:{{ procPlay }}">
+        <div aria-hidden="true" style="display:{{ mobOnly }};position:absolute;left:-10px;right:-7vw;top:21px;height:2px;background:#1c4f92;z-index:0"></div>
+        <span style="position:relative;z-index:2;display:flex;align-items:center;justify-content:center;flex:none;width:42px;height:42px;border-radius:50%;background:{{ pcBg6 }};color:#ffffff;font-size:1.02rem;font-weight:700;margin-bottom:-18px;transform:{{ pcTr6 }};box-shadow:{{ pcSh6 }};transition:background .28s ease, transform .28s cubic-bezier(.2,.8,.25,1), box-shadow .28s ease">6</span>
+        <img src="assets/rrss/s6.png" alt="" loading="lazy" style="display:block;width:{{ procImgW }};max-width:172px;height:auto">
+        <h3 style="margin-top:clamp(12px,1.5vw,20px);font-size:{{ procTitleFs }};font-weight:700;letter-spacing:-.015em;color:#0a0223;line-height:1.35">Análisis de resultados</h3>
+        <p style="margin-top:12px;max-width:280px;font-size:.9rem;line-height:1.7;color:#5b6377">Entregamos un reporte mensual con métricas, aprendizajes y recomendaciones para el siguiente ciclo</p>
+      </div>
+      <div style="display:{{ deskFlex }};align-items:flex-start;justify-content:center">
+        <span onMouseEnter="{{ flagIn }}" onMouseLeave="{{ flagOut }}" style="position:relative;display:block;flex:none;width:clamp(48px,4.8vw,62px);margin-top:calc(21px - clamp(24px,2.4vw,31px));z-index:2;cursor:pointer;transform:{{ flagTr }};transition:transform .35s cubic-bezier(.2,.8,.25,1);animation:ddProcPop .55s cubic-bezier(.2,.8,.25,1) 1.65s backwards;animation-play-state:{{ procPlay }}">
+          <img src="assets/web/proc-end.svg" alt="" aria-hidden="true" style="display:block;width:100%;height:auto">
+          <img src="assets/web/proc-end-blue.svg" alt="" aria-hidden="true" style="position:absolute;left:0;top:0;display:block;width:100%;height:auto;opacity:{{ flagBlue }};transition:opacity .26s ease">
+          {{ procConf }}
+        </span>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section id="beneficios" data-screen-label="Beneficios" style="background:#f4f6fa;padding:clamp(38px,4.4vw,64px) max(5vw,20px) clamp(44px,5vw,70px)">
+  <div style="max-width:1180px;margin:0 auto">
+    <h2 style="font-weight:700;font-size:clamp(1.7rem,2.8vw,2.3rem);line-height:1.2;letter-spacing:-.025em;color:#0a0223;margin-bottom:clamp(30px,3.6vw,50px)">Beneficios de externalizar<br>el manejo de redes sociales</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:clamp(26px,3vw,40px) clamp(30px,4vw,58px)">
+      <article style="display:flex;gap:clamp(16px,1.8vw,26px);align-items:flex-start">
+        <img src="assets/rrss/ben-estrategia.png" alt="" loading="lazy" style="flex:none;display:block;width:clamp(92px,8.8vw,130px);height:auto">
+        <div>
+          <h3 style="font-size:1.06rem;font-weight:700;letter-spacing:-.015em;color:#0a0223;line-height:1.3;margin-bottom:10px">Estrategia con datos</h3>
+          <p style="font-size:.93rem;line-height:1.7;color:#5b6377">Decidimos qué publicar en base a métricas reales y no a intuición.</p>
+        </div>
+      </article>
+      <article style="display:flex;gap:clamp(16px,1.8vw,26px);align-items:flex-start">
+        <img src="assets/rrss/ben-tiempo.png" alt="" loading="lazy" style="flex:none;display:block;width:clamp(92px,8.8vw,130px);height:auto">
+        <div>
+          <h3 style="font-size:1.06rem;font-weight:700;letter-spacing:-.015em;color:#0a0223;line-height:1.3;margin-bottom:10px">Ahorra tiempo</h3>
+          <p style="font-size:.93rem;line-height:1.7;color:#5b6377">Nos encargamos de tus redes de principio a fin, para que tu equipo se dedique a lo suyo.</p>
+        </div>
+      </article>
+      <article style="display:flex;gap:clamp(16px,1.8vw,26px);align-items:flex-start">
+        <img src="assets/rrss/ben-visibilidad.png" alt="" loading="lazy" style="flex:none;display:block;width:clamp(92px,8.8vw,130px);height:auto">
+        <div>
+          <h3 style="font-size:1.06rem;font-weight:700;letter-spacing:-.015em;color:#0a0223;line-height:1.3;margin-bottom:10px">Más visibilidad</h3>
+          <p style="font-size:.93rem;line-height:1.7;color:#5b6377">Publicaciones constantes y optimizadas mantienen tu marca presente en el feed.</p>
+        </div>
+      </article>
+      <article style="display:flex;gap:clamp(16px,1.8vw,26px);align-items:flex-start">
+        <img src="assets/rrss/ben-clientes.png" alt="" loading="lazy" style="flex:none;display:block;width:clamp(92px,8.8vw,130px);height:auto">
+        <div>
+          <h3 style="font-size:1.06rem;font-weight:700;letter-spacing:-.015em;color:#0a0223;line-height:1.3;margin-bottom:10px">Más clientes</h3>
+          <p style="font-size:.93rem;line-height:1.7;color:#5b6377">El contenido bien dirigido genera consultas y nuevas oportunidades de venta.</p>
+        </div>
+      </article>
+      <article style="display:flex;gap:clamp(16px,1.8vw,26px);align-items:flex-start">
+        <img src="assets/rrss/ben-creatividad.png" alt="" loading="lazy" style="flex:none;display:block;width:clamp(92px,8.8vw,130px);height:auto">
+        <div>
+          <h3 style="font-size:1.06rem;font-weight:700;letter-spacing:-.015em;color:#0a0223;line-height:1.3;margin-bottom:10px">Creatividad que destaca</h3>
+          <p style="font-size:.93rem;line-height:1.7;color:#5b6377">Piezas gráficas y audiovisuales pensadas para detener el scroll.</p>
+        </div>
+      </article>
+      <article style="display:flex;gap:clamp(16px,1.8vw,26px);align-items:flex-start">
+        <img src="assets/rrss/ben-contenido.png" alt="" loading="lazy" style="flex:none;display:block;width:clamp(92px,8.8vw,130px);height:auto">
+        <div>
+          <h3 style="font-size:1.06rem;font-weight:700;letter-spacing:-.015em;color:#0a0223;line-height:1.3;margin-bottom:10px">Contenido optimizado</h3>
+          <p style="font-size:.93rem;line-height:1.7;color:#5b6377">Adaptamos cada pieza al formato, tamaño y lenguaje de cada red social.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="CTA Contenido" style="background:#f4f6fa;padding:clamp(30px,3.4vw,48px) max(5vw,20px) clamp(48px,5.4vw,76px)">
+  <div style="position:relative;overflow:hidden;max-width:1180px;margin:0 auto;aspect-ratio:{{ ctaRatio }};min-height:{{ ctaMinH }};border-radius:22px;background:radial-gradient(120% 140% at 82% 40%, #1b1d63 0%, #0d0d38 44%, #08061f 100%)">
+    <img src="{{ ctaSrc }}" alt="" aria-hidden="true" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:{{ ctaFit }};object-position:{{ ctaPos }};pointer-events:none">
+    <div style="position:relative;z-index:1;display:grid;grid-template-columns:{{ ctaCols }};align-items:{{ ctaAlign }};gap:clamp(24px,3vw,40px);height:100%;min-height:{{ ctaInnerMinH }};padding:clamp(32px,3.8vw,52px) clamp(24px,3vw,44px) clamp(32px,3.8vw,52px) clamp(24px,4.4vw,64px)">
+      <div style="position:relative;z-index:1">
+        <h2 style="font-weight:700;font-size:clamp(1.6rem,2.7vw,2.2rem);line-height:1.15;letter-spacing:-.025em;color:#ffffff;margin-bottom:18px">¿Necesitas ayuda<br>creando contenido?</h2>
+        <p style="max-width:430px;font-size:.95rem;line-height:1.7;color:rgba(255,255,255,.68);margin-bottom:clamp(26px,3vw,36px)">Producimos el contenido, respondemos a tu comunidad y medimos los resultados. Tú solo apruebas el calendario del mes.</p>
+        <a href="contacto.html#formulario" style="display:inline-flex;padding:8px;border-radius:16px;text-decoration:none;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);box-shadow:0 14px 34px -16px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.18);transition:background .25s, transform .25s, box-shadow .25s" style-hover="background:rgba(58,120,220,.24);transform:translateY(-2px);box-shadow:0 18px 44px -14px rgba(0,120,240,.65), inset 0 1px 0 rgba(255,255,255,.22)"><span style="display:inline-flex;align-items:center;justify-content:center;padding:12px 34px;border-radius:10px;background:rgba(214,213,224,.88);color:#0a0223;font-weight:600;font-size:.92rem">Contáctanos</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Community Managers" style="background:#f4f6fa;padding:clamp(38px,4.4vw,64px) max(5vw,20px) clamp(44px,5vw,70px)">
+  <div style="max-width:1180px;margin:0 auto">
+    <h2 style="font-weight:700;font-size:clamp(1.7rem,2.8vw,2.3rem);line-height:1.2;letter-spacing:-.025em;color:#0a0223;margin-bottom:clamp(20px,2.4vw,32px)">¿Qué entregan nuestros<br>Community Managers?</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:clamp(62px,6.2vw,84px) clamp(22px,2.6vw,34px);padding-top:clamp(40px,3.6vw,52px)">
+      <article style="position:relative;background:rgba(255,255,255,.58);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);border:1px solid rgba(255,255,255,.85);border-radius:24px;box-shadow:5px 6px 16px rgba(20,33,80,.06), -6px -6px 14px rgba(255,255,255,.75), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35);transition:transform .25s, box-shadow .25s;padding:0 clamp(24px,2.6vw,34px) clamp(28px,3vw,38px)" style-hover="transform:translateY(-4px);box-shadow:9px 11px 26px -8px rgba(20,33,80,.13), -7px -7px 18px rgba(255,255,255,.85), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35)">
+        <div style="display:flex;align-items:flex-end;gap:clamp(14px,1.5vw,20px);margin:clamp(-48px,-3.5vw,-36px) 0 clamp(20px,2.4vw,28px) 0">
+          <img src="assets/web/ag-1.png" alt="" loading="lazy" style="flex:none;display:block;width:clamp(108px,10.6vw,150px);height:auto">
+          <h3 style="padding-bottom:8px;font-size:1.1rem;font-weight:700;letter-spacing:-.02em;color:#0a0223;line-height:1.32">Experticia</h3>
+        </div>
+        <p style="font-size:.92rem;line-height:1.7;color:#5b6377">Nuestro equipo cuenta con años de experiencia gestionando redes sociales, colocando a tu disposición sus conocimientos para ayudar al crecimiento de tu negocio</p>
+      </article>
+      <article style="position:relative;background:rgba(255,255,255,.58);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);border:1px solid rgba(255,255,255,.85);border-radius:24px;box-shadow:5px 6px 16px rgba(20,33,80,.06), -6px -6px 14px rgba(255,255,255,.75), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35);transition:transform .25s, box-shadow .25s;padding:0 clamp(24px,2.6vw,34px) clamp(28px,3vw,38px)" style-hover="transform:translateY(-4px);box-shadow:9px 11px 26px -8px rgba(20,33,80,.13), -7px -7px 18px rgba(255,255,255,.85), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35)">
+        <div style="display:flex;align-items:flex-end;gap:clamp(14px,1.5vw,20px);margin:clamp(-48px,-3.5vw,-36px) 0 clamp(20px,2.4vw,28px) 0">
+          <img src="assets/web/ag-2.png" alt="" loading="lazy" style="flex:none;display:block;width:clamp(108px,10.6vw,150px);height:auto">
+          <h3 style="padding-bottom:8px;font-size:1.1rem;font-weight:700;letter-spacing:-.02em;color:#0a0223;line-height:1.32">Rigurosidad sin perder<br>flexibilidad</h3>
+        </div>
+        <p style="font-size:.92rem;line-height:1.7;color:#5b6377">Nos importa ofrecerte una gestión de redes bien organizada y planificada, sin perder de vista la flexibilidad para enfrentar imprevistos o cambios de última hora</p>
+      </article>
+      <article style="position:relative;background:rgba(255,255,255,.58);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);border:1px solid rgba(255,255,255,.85);border-radius:24px;box-shadow:5px 6px 16px rgba(20,33,80,.06), -6px -6px 14px rgba(255,255,255,.75), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35);transition:transform .25s, box-shadow .25s;padding:0 clamp(24px,2.6vw,34px) clamp(28px,3vw,38px)" style-hover="transform:translateY(-4px);box-shadow:9px 11px 26px -8px rgba(20,33,80,.13), -7px -7px 18px rgba(255,255,255,.85), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35)">
+        <div style="display:flex;align-items:flex-end;gap:clamp(14px,1.5vw,20px);margin:clamp(-48px,-3.5vw,-36px) 0 clamp(20px,2.4vw,28px) 0">
+          <img src="assets/web/ag-3.png" alt="" loading="lazy" style="flex:none;display:block;width:clamp(108px,10.6vw,150px);height:auto">
+          <h3 style="padding-bottom:8px;font-size:1.1rem;font-weight:700;letter-spacing:-.02em;color:#0a0223;line-height:1.32">Integración con tu equipo</h3>
+        </div>
+        <p style="font-size:.92rem;line-height:1.7;color:#5b6377">Nos interesa ser tu aliado estratégico, trabajando codo a codo contigo para cumplir con los objetivos y ayudar al crecimiento de tu negocio.</p>
+      </article>
+      <article style="position:relative;background:rgba(255,255,255,.58);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);border:1px solid rgba(255,255,255,.85);border-radius:24px;box-shadow:5px 6px 16px rgba(20,33,80,.06), -6px -6px 14px rgba(255,255,255,.75), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35);transition:transform .25s, box-shadow .25s;padding:0 clamp(24px,2.6vw,34px) clamp(28px,3vw,38px)" style-hover="transform:translateY(-4px);box-shadow:9px 11px 26px -8px rgba(20,33,80,.13), -7px -7px 18px rgba(255,255,255,.85), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35)">
+        <div style="display:flex;align-items:flex-end;gap:clamp(14px,1.5vw,20px);margin:clamp(-48px,-3.5vw,-36px) 0 clamp(20px,2.4vw,28px) 0">
+          <img src="assets/web/ag-4.png" alt="" loading="lazy" style="flex:none;display:block;width:clamp(108px,10.6vw,150px);height:auto">
+          <h3 style="padding-bottom:8px;font-size:1.1rem;font-weight:700;letter-spacing:-.02em;color:#0a0223;line-height:1.32">Comunicación clara<br>y directa</h3>
+        </div>
+        <p style="font-size:.92rem;line-height:1.7;color:#5b6377">Realizamos reuniones frecuentes para estar siempre al tanto de tus necesidades, y te entregamos información clara y concisa sobre nuestro manejo de redes sociales.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="portafolio" data-screen-label="Portafolio" style="background:#f4f6fa;padding:clamp(20px,2.4vw,32px) max(2vw,14px) clamp(56px,6.4vw,88px)">
+  <div style="position:relative;overflow:hidden;max-width:1560px;margin:0 auto;border-radius:26px;background:radial-gradient(110% 120% at 78% 88%, #2a1554 0%, #1a0a3c 46%, #12062c 100%);padding:clamp(34px,4vw,56px)">
+    <div aria-hidden="true" style="position:absolute;right:-8%;bottom:-30%;width:52%;aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle at 50% 50%, rgba(120,140,255,.16), transparent 66%);pointer-events:none"></div>
+    <div style="position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:38px">
+      <h2 style="font-weight:700;font-size:clamp(1.7rem,2.8vw,2.3rem);letter-spacing:-.025em;color:#ffffff;line-height:1.2">Ten más tiempo para tu negocio,<br>conoce cómo trabajamos.</h2>
+      <a href="portafolio.html#social" style="display:{{ pfBtnTop }};align-items:center;justify-content:center;color:#ffffff;font-weight:600;font-size:.92rem;padding:13px 34px;border-radius:12px;text-decoration:none;background:linear-gradient(180deg,rgba(146,160,196,.5),rgba(74,88,128,.45));border:1px solid rgba(255,255,255,.24);box-shadow:0 12px 30px -14px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.34);white-space:nowrap;transition:transform .25s, background .25s" style-hover="transform:translateY(-2px);background:linear-gradient(180deg,rgba(46,155,255,.6),rgba(0,103,180,.6))">Ver más</a>
+    </div>
+    <div style="position:relative;z-index:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:clamp(18px,2.2vw,28px)">
+      <a href="portafolio.html#social" style="display:flex;flex-direction:column;padding:12px;border-radius:20px;text-decoration:none;transition:transform .28s, box-shadow .28s;background:rgba(255,255,255,.055);-webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);border:1px solid rgba(255,255,255,.13);box-shadow:0 20px 44px -22px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.14)" style-hover="transform:translateY(-5px);box-shadow:0 30px 60px -20px rgba(0,0,0,.8), inset 0 1px 0 rgba(255,255,255,.2)">
+        <div style="position:relative;border-radius:8px;overflow:hidden;aspect-ratio:1/1;background:rgba(255,255,255,.06)">
+          <img src="assets/social/dd-2.png" alt="Ferramenta" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.6,.2,1)" style-hover="transform:scale(1.04)">
+          <div style="position:absolute;right:9px;bottom:9px;z-index:3;display:flex;align-items:center;gap:7px;pointer-events:none">
+            <span aria-hidden="true" style="width:25px;height:25px;border-radius:50%;display:grid;place-items:center;background:rgba(10,2,35,.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#ffffff"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"></path><circle cx="12" cy="12" r="2.6"></circle></svg></span>
+            <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:rgba(10,2,35,.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#ffffff;font-size:.7rem"><svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round"><path d="M10 13a5 5 0 0 0 7.07 0l2.12-2.12a5 5 0 0 0-7.07-7.07L11 5"></path><path d="M14 11a5 5 0 0 0-7.07 0L4.8 13.12a5 5 0 0 0 7.07 7.07L13 19"></path></svg>ferramenta.cl</span>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;flex-wrap:wrap;gap:9px;padding:18px 6px 0">
+          <h3 style="font-size:1.05rem;font-weight:700;letter-spacing:-.02em;color:#ffffff">Ferramenta</h3>
+          <span aria-hidden="true" style="width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.35)"></span>
+          <span style="color:rgba(255,255,255,.62);font-size:.86rem">Redes sociales</span>
+        </div>
+        <p style="padding:10px 6px 8px;color:rgba(255,255,255,.62);font-size:.88rem;line-height:1.65;text-wrap:pretty">Piezas para campañas de temporada en Instagram y Meta Ads.</p>
+        <p style="padding:0 6px 6px;color:rgba(255,255,255,.42);font-size:.76rem;letter-spacing:.01em">2024 · Contenido + Pauta · Instagram</p>
+      </a>
+      <a href="portafolio.html#social" style="display:flex;flex-direction:column;padding:12px;border-radius:20px;text-decoration:none;transition:transform .28s, box-shadow .28s;background:rgba(255,255,255,.055);-webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);border:1px solid rgba(255,255,255,.13);box-shadow:0 20px 44px -22px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.14)" style-hover="transform:translateY(-5px);box-shadow:0 30px 60px -20px rgba(0,0,0,.8), inset 0 1px 0 rgba(255,255,255,.2)">
+        <div style="position:relative;border-radius:8px;overflow:hidden;aspect-ratio:1/1;background:rgba(255,255,255,.06)">
+          <img src="assets/social/dd-3.png" alt="Podero" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.6,.2,1)" style-hover="transform:scale(1.04)">
+          <div style="position:absolute;right:9px;bottom:9px;z-index:3;display:flex;align-items:center;gap:7px;pointer-events:none">
+            <span aria-hidden="true" style="width:25px;height:25px;border-radius:50%;display:grid;place-items:center;background:rgba(10,2,35,.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#ffffff"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"></path><circle cx="12" cy="12" r="2.6"></circle></svg></span>
+            <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:rgba(10,2,35,.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#ffffff;font-size:.7rem"><svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round"><path d="M10 13a5 5 0 0 0 7.07 0l2.12-2.12a5 5 0 0 0-7.07-7.07L11 5"></path><path d="M14 11a5 5 0 0 0-7.07 0L4.8 13.12a5 5 0 0 0 7.07 7.07L13 19"></path></svg>podero.cl</span>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;flex-wrap:wrap;gap:9px;padding:18px 6px 0">
+          <h3 style="font-size:1.05rem;font-weight:700;letter-spacing:-.02em;color:#ffffff">Podero</h3>
+          <span aria-hidden="true" style="width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.35)"></span>
+          <span style="color:rgba(255,255,255,.62);font-size:.86rem">Redes sociales</span>
+        </div>
+        <p style="padding:10px 6px 8px;color:rgba(255,255,255,.62);font-size:.88rem;line-height:1.65;text-wrap:pretty">Contenido de producto y activaciones para distribuidores.</p>
+        <p style="padding:0 6px 6px;color:rgba(255,255,255,.42);font-size:.76rem;letter-spacing:.01em">2024 · Contenido + Pauta · Meta Ads</p>
+      </a>
+      <a href="portafolio.html#social" style="display:flex;flex-direction:column;padding:12px;border-radius:20px;text-decoration:none;transition:transform .28s, box-shadow .28s;background:rgba(255,255,255,.055);-webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);border:1px solid rgba(255,255,255,.13);box-shadow:0 20px 44px -22px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.14)" style-hover="transform:translateY(-5px);box-shadow:0 30px 60px -20px rgba(0,0,0,.8), inset 0 1px 0 rgba(255,255,255,.2)">
+        <div style="position:relative;border-radius:8px;overflow:hidden;aspect-ratio:1/1;background:rgba(255,255,255,.06)">
+          <img src="assets/social/dd-1.png" alt="Delta Digital" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.6,.2,1)" style-hover="transform:scale(1.04)">
+          <div style="position:absolute;right:9px;bottom:9px;z-index:3;display:flex;align-items:center;gap:7px;pointer-events:none">
+            <span aria-hidden="true" style="width:25px;height:25px;border-radius:50%;display:grid;place-items:center;background:rgba(10,2,35,.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#ffffff"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"></path><circle cx="12" cy="12" r="2.6"></circle></svg></span>
+            <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:rgba(10,2,35,.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#ffffff;font-size:.7rem"><svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round"><path d="M10 13a5 5 0 0 0 7.07 0l2.12-2.12a5 5 0 0 0-7.07-7.07L11 5"></path><path d="M14 11a5 5 0 0 0-7.07 0L4.8 13.12a5 5 0 0 0 7.07 7.07L13 19"></path></svg>deltadigital.cl</span>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;flex-wrap:wrap;gap:9px;padding:18px 6px 0">
+          <h3 style="font-size:1.05rem;font-weight:700;letter-spacing:-.02em;color:#ffffff">Delta Digital</h3>
+          <span aria-hidden="true" style="width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.35)"></span>
+          <span style="color:rgba(255,255,255,.62);font-size:.86rem">Redes sociales</span>
+        </div>
+        <p style="padding:10px 6px 8px;color:rgba(255,255,255,.62);font-size:.88rem;line-height:1.65;text-wrap:pretty">Contenido educativo sobre marketing digital y ecommerce.</p>
+        <p style="padding:0 6px 6px;color:rgba(255,255,255,.42);font-size:.76rem;letter-spacing:.01em">2024 · Contenido propio · Instagram</p>
+      </a>
+      <a href="portafolio.html#social" style="display:flex;flex-direction:column;padding:12px;border-radius:20px;text-decoration:none;transition:transform .28s, box-shadow .28s;background:rgba(255,255,255,.055);-webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);border:1px solid rgba(255,255,255,.13);box-shadow:0 20px 44px -22px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.14)" style-hover="transform:translateY(-5px);box-shadow:0 30px 60px -20px rgba(0,0,0,.8), inset 0 1px 0 rgba(255,255,255,.2)">
+        <div style="position:relative;border-radius:8px;overflow:hidden;aspect-ratio:1/1;background:rgba(255,255,255,.06)">
+          <img src="assets/social/dd-4.png" alt="Lahsen" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.6,.2,1)" style-hover="transform:scale(1.04)">
+          <div style="position:absolute;right:9px;bottom:9px;z-index:3;display:flex;align-items:center;gap:7px;pointer-events:none">
+            <span aria-hidden="true" style="width:25px;height:25px;border-radius:50%;display:grid;place-items:center;background:rgba(10,2,35,.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#ffffff"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"></path><circle cx="12" cy="12" r="2.6"></circle></svg></span>
+            <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:rgba(10,2,35,.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#ffffff;font-size:.7rem"><svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round"><path d="M10 13a5 5 0 0 0 7.07 0l2.12-2.12a5 5 0 0 0-7.07-7.07L11 5"></path><path d="M14 11a5 5 0 0 0-7.07 0L4.8 13.12a5 5 0 0 0 7.07 7.07L13 19"></path></svg>lahsen.cl</span>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;flex-wrap:wrap;gap:9px;padding:18px 6px 0">
+          <h3 style="font-size:1.05rem;font-weight:700;letter-spacing:-.02em;color:#ffffff">Lahsen</h3>
+          <span aria-hidden="true" style="width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.35)"></span>
+          <span style="color:rgba(255,255,255,.62);font-size:.86rem">Redes sociales</span>
+        </div>
+        <p style="padding:10px 6px 8px;color:rgba(255,255,255,.62);font-size:.88rem;line-height:1.65;text-wrap:pretty">Lanzamientos de producto para la temporada de aventura.</p>
+        <p style="padding:0 6px 6px;color:rgba(255,255,255,.42);font-size:.76rem;letter-spacing:.01em">2023 · Contenido + Pauta · Instagram</p>
+      </a>
+    </div>
+    <div style="position:relative;z-index:1;display:{{ pfFootDisp }};justify-content:center;margin-top:clamp(26px,3vw,34px)">
+      <a href="portafolio.html#social" style="display:inline-flex;align-items:center;justify-content:center;color:#ffffff;font-weight:600;font-size:.92rem;padding:13px 34px;border-radius:12px;text-decoration:none;background:linear-gradient(180deg,rgba(146,160,196,.5),rgba(74,88,128,.45));border:1px solid rgba(255,255,255,.24);box-shadow:0 12px 30px -14px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.34);white-space:nowrap;transition:transform .25s, background .25s" style-hover="transform:translateY(-2px);background:linear-gradient(180deg,rgba(46,155,255,.6),rgba(0,103,180,.6))">Ver más</a>
+    </div>
+
+  </div>
+</section>
+
+<section id="clientes" data-screen-label="Clientes" style="background:#f4f6fa;padding:clamp(40px,5vw,64px) 0 clamp(60px,7vw,90px)">
+  <div style="max-width:1180px;margin:0 auto;padding:0 max(5vw,20px)">
+    <h2 style="font-weight:700;font-size:clamp(1.7rem,2.8vw,2.3rem);letter-spacing:-.025em;color:#0a0223;margin-bottom:46px">Han confiado en nosotros</h2>
+  </div>
+  <div style="position:relative;overflow:hidden;width:100%;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);display:flex;flex-direction:column;gap:44px">
+    <div style="display:flex;align-items:center;gap:76px;width:max-content;animation:ddMarquee 64s linear infinite;will-change:transform">
+      <div style="display:flex;align-items:center;gap:40px;flex:none">
+        <img src="assets/logos/humans.png" alt="Humans" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/amity.png" alt="Amity" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/uai.png" alt="Universidad Adolfo Ibáñez" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/odis.png" alt="Odis" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/hotel-parada.png" alt="Hotel Parada" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/domani.png" alt="Domani" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/carval.png" alt="Carnal" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/humans.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/amity.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/uai.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/odis.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/hotel-parada.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/domani.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/carval.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+      </div>
+      <div aria-hidden="true" style="display:flex;align-items:center;gap:40px;flex:none">
+        <img src="assets/logos/humans.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/amity.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/uai.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/odis.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/hotel-parada.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/domani.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/carval.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/humans.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/amity.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/uai.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/odis.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/hotel-parada.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/domani.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/carval.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:76px;width:max-content;animation:ddMarqueeRev 74s linear infinite;will-change:transform">
+      <div style="display:flex;align-items:center;gap:40px;flex:none">
+        <img src="assets/logos/sack.png" alt="Sack" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/santo-tomas.png" alt="Santo Tomás" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/braloy.png" alt="Braloy" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/bravery.png" alt="Bravery" style="height:43px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/la-cabrera.png" alt="La Cabrera" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/puerto-coquimbo.png" alt="Puerto Coquimbo" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/sack.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/santo-tomas.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/braloy.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/bravery.png" alt="" style="height:43px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/la-cabrera.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/puerto-coquimbo.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+      </div>
+      <div aria-hidden="true" style="display:flex;align-items:center;gap:40px;flex:none">
+        <img src="assets/logos/sack.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/santo-tomas.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/braloy.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/bravery.png" alt="" style="height:43px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/la-cabrera.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/puerto-coquimbo.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/sack.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/santo-tomas.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/braloy.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/bravery.png" alt="" style="height:43px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/la-cabrera.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+        <img src="assets/logos/puerto-coquimbo.png" alt="" style="height:62px;width:auto;object-fit:contain;flex:none;filter:grayscale(1);opacity:.55">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Testimonios" style="position:relative;overflow:hidden;background:#f4f6fa;padding:clamp(44px,5vw,70px) max(5vw,20px) clamp(56px,6.5vw,96px)">
+  <div style="position:relative;z-index:1;max-width:1180px;margin:0 auto">
+    <h2 style="font-weight:700;font-size:clamp(1.7rem,2.8vw,2.3rem);letter-spacing:-.025em;color:#0a0223;margin-bottom:clamp(38px,4.4vw,54px)">Experiencias que reflejan nuestro compromiso</h2>
+    <div style="display:grid;grid-template-columns:{{ revCols }};align-items:stretch;gap:20px">
+      <article style="display:flex;flex-direction:column;padding:28px;background:rgba(255,255,255,.58);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);border:1px solid rgba(255,255,255,.85);border-radius:24px;box-shadow:5px 6px 16px rgba(20,33,80,.06), -6px -6px 14px rgba(255,255,255,.75), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35);transition:transform .25s, box-shadow .25s" style-hover="transform:translateY(-3px);box-shadow:9px 11px 26px -8px rgba(20,33,80,.13), -7px -7px 18px rgba(255,255,255,.85), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35)">
+        <div aria-label="5 de 5" style="color:#f5a623;font-size:.92rem;letter-spacing:2px;margin-bottom:16px">★★★★★</div>
+        <div style="font-weight:700;font-size:.76rem;color:#6b7385;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px">Lexit</div>
+        <p style="flex:1;font-size:1.0625rem;color:#3a4254;line-height:1.6;margin-bottom:18px">“Excelente servicio de marketing y publicidad. Han potenciado nuestras ventas, lo que nos ha permitido crecer y consolidarnos en el mercado. Las reuniones periódicas permiten tener información actualizada sobre los avances de cada campaña.”</p>
+        <div style="display:flex;align-items:center;gap:11px">
+          <div aria-hidden="true" style="flex:none;width:38px;height:38px;border-radius:50%;background:#e1f3fe;color:#005fa3;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.82rem">FC</div>
+          <div>
+            <div style="font-weight:700;font-size:.86rem;color:#0a0223">Felipe Contreras</div>
+            <div style="font-size:.76rem;color:#6b7385">Hace 4 meses</div>
+          </div>
+        </div>
+      </article>
+      <article style="display:flex;flex-direction:column;padding:28px;background:rgba(255,255,255,.58);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);border:1px solid rgba(255,255,255,.85);border-radius:24px;box-shadow:5px 6px 16px rgba(20,33,80,.06), -6px -6px 14px rgba(255,255,255,.75), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35);transition:transform .25s, box-shadow .25s" style-hover="transform:translateY(-3px);box-shadow:9px 11px 26px -8px rgba(20,33,80,.13), -7px -7px 18px rgba(255,255,255,.85), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35)">
+        <div aria-label="5 de 5" style="color:#f5a623;font-size:.92rem;letter-spacing:2px;margin-bottom:16px">★★★★★</div>
+        <div style="font-weight:700;font-size:.76rem;color:#6b7385;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px">Empresa Portuaria Coquimbo</div>
+        <p style="flex:1;font-size:1.0625rem;color:#3a4254;line-height:1.6;margin-bottom:18px">“Muy buen servicio de desarrollo Web para la Empresa Portuaria Coquimbo. Buena disposición al trabajo y producto final.”</p>
+        <div style="display:flex;align-items:center;gap:11px">
+          <div aria-hidden="true" style="flex:none;width:38px;height:38px;border-radius:50%;background:#e1f3fe;color:#005fa3;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.82rem">GI</div>
+          <div>
+            <div style="font-weight:700;font-size:.86rem;color:#0a0223">Guillermo Ismodes</div>
+            <div style="font-size:.76rem;color:#6b7385">Hace 2 meses</div>
+          </div>
+        </div>
+      </article>
+      <article style="display:flex;flex-direction:column;padding:28px;background:rgba(255,255,255,.58);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);border:1px solid rgba(255,255,255,.85);border-radius:24px;box-shadow:5px 6px 16px rgba(20,33,80,.06), -6px -6px 14px rgba(255,255,255,.75), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35);transition:transform .25s, box-shadow .25s" style-hover="transform:translateY(-3px);box-shadow:9px 11px 26px -8px rgba(20,33,80,.13), -7px -7px 18px rgba(255,255,255,.85), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35)">
+        <div aria-label="5 de 5" style="color:#f5a623;font-size:.92rem;letter-spacing:2px;margin-bottom:16px">★★★★★</div>
+        <div style="font-weight:700;font-size:.76rem;color:#6b7385;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px">MOR</div>
+        <p style="flex:1;font-size:1.0625rem;color:#3a4254;line-height:1.6;margin-bottom:18px">“Son muy eficientes y siempre dispuestos a solucionar oportunamente cualquier inconveniente. Eso se agradece un montón.”</p>
+        <div style="display:flex;align-items:center;gap:11px">
+          <div aria-hidden="true" style="flex:none;width:38px;height:38px;border-radius:50%;background:#e1f3fe;color:#005fa3;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.82rem">MG</div>
+          <div>
+            <div style="font-weight:700;font-size:.86rem;color:#0a0223">Mauricio Guzmán</div>
+            <div style="font-size:.76rem;color:#6b7385">Hace 2 meses</div>
+          </div>
+        </div>
+      </article>
+      <article style="display:flex;flex-direction:column;padding:28px;background:rgba(255,255,255,.58);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);border:1px solid rgba(255,255,255,.85);border-radius:24px;box-shadow:5px 6px 16px rgba(20,33,80,.06), -6px -6px 14px rgba(255,255,255,.75), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35);transition:transform .25s, box-shadow .25s" style-hover="transform:translateY(-3px);box-shadow:9px 11px 26px -8px rgba(20,33,80,.13), -7px -7px 18px rgba(255,255,255,.85), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.35)">
+        <div aria-label="5 de 5" style="color:#f5a623;font-size:.92rem;letter-spacing:2px;margin-bottom:16px">★★★★★</div>
+        <div style="font-weight:700;font-size:.76rem;color:#6b7385;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px">Hernia Care</div>
+        <p style="flex:1;font-size:1.0625rem;color:#3a4254;line-height:1.6;margin-bottom:18px">“Son sinónimo de responsabilidad, creatividad, innovación. Sus diseños son modernos, limpios y comprenden a la perfección las exigencias del cliente.”</p>
+        <div style="display:flex;align-items:center;gap:11px">
+          <div aria-hidden="true" style="flex:none;width:38px;height:38px;border-radius:50%;background:#e1f3fe;color:#005fa3;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.82rem">MA</div>
+          <div>
+            <div style="font-weight:700;font-size:.86rem;color:#0a0223">Dr. Mauricio Almau</div>
+            <div style="font-size:.76rem;color:#6b7385">Hace 2 meses</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+  <div aria-hidden="true" style="display:{{ deskOnly }};position:absolute;right:-10%;bottom:-18%;width:38%;aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle at 45% 45%, rgba(0,147,247,.12), transparent 66%);pointer-events:none"></div>
+</section>
+
+<div id="contacto" data-screen-label="Footer" style="position:relative;background:#0a0820;color:#ffffff">
+  <section style="position:relative;overflow:hidden;background:#0b1c3e url('assets/cta-bg.png') center/cover no-repeat;padding:clamp(54px,6vw,88px) max(5vw,20px)">
+    <img src="assets/fx-dashed.svg" alt="" aria-hidden="true" style="display: {{ ctaFx }}; position: absolute; top: -47px; left: 143px; width: {{ ctaDashW }}; opacity: .5; z-index: 1; pointer-events: none; will-change: transform; animation: ddSpin 40s linear infinite">
+    <img src="assets/fx-circle.svg" alt="" aria-hidden="true" style="display:{{ ctaFx }};position:absolute;left:-110px;top:22%;width:280px;opacity:.4;z-index:0;pointer-events:none;will-change:transform;animation:ddDrift 30s ease-in-out infinite reverse">
+    <span aria-hidden="true" style="display: {{ ctaFx }}; position: absolute; width: 544px; height: 544px; z-index: 2; pointer-events: none; right: -129px; top: 165px; backdrop-filter: blur(16px) saturate(120%); -webkit-backdrop-filter: blur(16px) saturate(120%); border-radius: 50%; opacity: 0.9"></span><span aria-hidden="true" style="display: {{ ctaFx }}; position: absolute; right: -211px; top: 92px; z-index: 2; pointer-events: none; transform: scaleX(-1); line-height: 0"><img src="assets/fx-circle2.svg" alt="" aria-hidden="true" style="display: block; opacity: .9; pointer-events: none"></span><img src="assets/fx-circle2.svg" alt="" aria-hidden="true" style="display: {{ ctaFx }}; position: absolute; width: 592px; opacity: .9; z-index: 0; pointer-events: none; will-change: transform; animation: ddDrift 24s ease-in-out infinite; left: -227px; top: -77px; height: 592px">
+    <img src="assets/fx-arrow1.svg" alt="" aria-hidden="true" style="display:{{ ctaFx }};position:absolute;left:{{ ctaA1L }};top:{{ ctaA1T }};width:{{ ctaA1W }};z-index:1;pointer-events:none;filter:drop-shadow(0 12px 22px rgba(0,90,180,.5));will-change:transform;animation:ddFloatA 9s ease-in-out infinite">
+    <img src="assets/fx-arrow2.svg" alt="" aria-hidden="true" style="display:{{ ctaFx }};position:absolute;right:{{ ctaA2R }};top:{{ ctaA2T }};width:{{ ctaA2W }};z-index:1;pointer-events:none;filter:drop-shadow(0 14px 26px rgba(0,120,240,.45));will-change:transform;animation:ddFloatB 11s ease-in-out infinite">
+    <div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(90,160,255,.55),transparent);z-index:5"></div>
+    <div style="position:relative;z-index:4;max-width:620px;margin:0 auto;text-align:center">
+      <h2 style="font-size:clamp(1.65rem,3.2vw,2.5rem);font-weight:700;line-height:1.1;letter-spacing:-.02em;margin:0 0 16px;color:#ffffff;text-wrap:balance">Descubre lo que podemos hacer <span style="color:#2e9bff">por ti</span></h2>
+      <p style="max-width:470px;margin:0 auto 28px;color:rgba(255,255,255,.62);font-size:.95rem;line-height:1.6">Nuestro equipo de profesionales cuenta con experiencia en distintas especialidades e industrias, juntos encontraremos la mejor solución para tu negocio.</p>
+      <a href="contacto.html#formulario" style="display:inline-block;color:#ffffff;font-weight:600;font-size:.9rem;padding:13px 34px;border-radius:13px;text-decoration:none;background:linear-gradient(180deg,rgba(124,144,184,.42),rgba(58,74,110,.5));border:1px solid rgba(255,255,255,.26);box-shadow:0 12px 32px -12px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.35);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:transform .25s, background .25s, box-shadow .25s" style-hover="transform:translateY(-2px);background:linear-gradient(180deg,rgba(46,155,255,.62),rgba(0,103,180,.62));box-shadow:0 18px 44px -12px rgba(0,120,240,.6), inset 0 1px 0 rgba(255,255,255,.4)">Contacto</a>
+    </div>
+  </section>
+
+  <footer style="position:relative;z-index:2;background:#0a0820;padding:clamp(40px,4.5vw,58px) max(5vw,20px) 24px">
+    <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,max(230px,26%)),1fr));gap:40px;align-items:start">
+      <div>
+        <a href="index.html#top" aria-label="Delta Digital"><img src="assets/delta-logo-light.svg" alt="Delta Digital" style="height:34px;width:auto;display:block"></a>
+        <ul style="list-style:none;padding:0;margin:22px 0 18px;display:flex;flex-direction:column;gap:11px">
+          <li style="display:flex;align-items:center;gap:11px">
+            <svg viewBox="0 0 24 24" style="flex:none;width:16px;height:16px;color:#2e9bff;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <a href="tel:+56999098594" style="color:rgba(255,255,255,.82);font-size:.875rem;text-decoration:none;transition:color .15s;white-space:nowrap" style-hover="color:#ffffff">+56 9 9909 8594</a>
+          </li>
+          <li style="display:flex;align-items:center;gap:11px">
+            <svg viewBox="0 0 24 24" style="flex:none;width:16px;height:16px;color:#2e9bff;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg>
+            <a href="mailto:contacto@deltadigital.cl" style="color:rgba(255,255,255,.82);font-size:.875rem;text-decoration:none;transition:color .15s" style-hover="color:#ffffff">contacto@deltadigital.cl</a>
+          </li>
+          <li style="display:flex;align-items:center;gap:11px">
+            <svg viewBox="0 0 24 24" style="flex:none;width:16px;height:16px;color:#2e9bff;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span style="color:rgba(255,255,255,.82);font-size:.875rem">Dr. Manuel Barros Borgoño N°71 OF 1105</span>
+          </li>
+        </ul>
+        <div style="display:flex;gap:10px">
+          <a href="#" aria-label="LinkedIn" style="width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);color:#cfe3ff;transition:background .2s, transform .2s, color .2s" style-hover="background:#0093f7;color:#ffffff;transform:translateY(-2px)">
+            <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21h-4z"></path></svg>
+          </a>
+          <a href="#" aria-label="Instagram" style="width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);color:#cfe3ff;transition:background .2s, transform .2s, color .2s" style-hover="background:#0093f7;color:#ffffff;transform:translateY(-2px)">
+            <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"></circle></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav style="display:flex;flex-direction:column;gap:13px;padding-top:2px" aria-label="Footer">
+        <a href="index.html#top" style="color:rgba(255,255,255,.78);text-decoration:none;font-size:.9rem;font-weight:500;width:max-content;transition:color .15s, transform .2s" style-hover="color:#ffffff;transform:translateX(3px)">Inicio</a>
+        <a href="#servicios" style="color:rgba(255,255,255,.78);text-decoration:none;font-size:.9rem;font-weight:500;width:max-content;transition:color .15s, transform .2s" style-hover="color:#ffffff;transform:translateX(3px)">Servicios</a>
+        <a href="portafolio.html#corporativo" style="color:rgba(255,255,255,.78);text-decoration:none;font-size:.9rem;font-weight:500;width:max-content;transition:color .15s, transform .2s" style-hover="color:#ffffff;transform:translateX(3px)">Portafolio</a>
+        <a href="blog.html#articulos" style="color:rgba(255,255,255,.78);text-decoration:none;font-size:.9rem;font-weight:500;width:max-content;transition:color .15s, transform .2s" style-hover="color:#ffffff;transform:translateX(3px)">Blog</a>
+        <a href="contacto.html#formulario" style="color:rgba(255,255,255,.78);text-decoration:none;font-size:.9rem;font-weight:500;width:max-content;transition:color .15s, transform .2s" style-hover="color:#ffffff;transform:translateX(3px)">Contacto</a>
+      </nav>
+
+
+      <div style="display:flex;flex-direction:column;gap:11px">
+        <div style="position:relative;display:block;border-radius:10px;overflow:hidden;isolation:isolate;width:100%;max-width:268px;aspect-ratio:260/61;box-shadow:0 12px 28px -12px rgba(0,0,0,.5);transition:transform .28s, box-shadow .28s" style-hover="transform:translateY(-3px);box-shadow:0 20px 40px -14px rgba(0,90,210,.55)" style-before="content:'';position:absolute;inset:0;z-index:2;border-radius:inherit;pointer-events:none;mix-blend-mode:color-dodge;opacity:.4;background:repeating-linear-gradient(115deg, rgba(255,0,128,.5) 0%, rgba(255,196,0,.5) 7%, rgba(0,255,170,.5) 15%, rgba(0,170,255,.5) 23%, rgba(170,0,255,.5) 31%, rgba(255,0,128,.5) 40%);background-size:320% 320%;animation:ddHoloFoil 7s ease-in-out infinite" style-after="content:'';position:absolute;inset:0;z-index:3;border-radius:inherit;pointer-events:none;mix-blend-mode:overlay;background:linear-gradient(115deg, transparent 30%, rgba(255,255,255,.85) 48%, transparent 66%);background-size:280% 100%;animation:ddHoloGlare 7s ease-in-out infinite"><img src="assets/badges/google-partner.svg" alt="Google Partner" style="display:block;width:100%;height:100%"></div>
+        <div style="position:relative;display:block;border-radius:10px;overflow:hidden;isolation:isolate;width:100%;max-width:268px;aspect-ratio:260/61;box-shadow:0 12px 28px -12px rgba(0,0,0,.5);transition:transform .28s, box-shadow .28s" style-hover="transform:translateY(-3px);box-shadow:0 20px 40px -14px rgba(0,90,210,.55)" style-before="content:'';position:absolute;inset:0;z-index:2;border-radius:inherit;pointer-events:none;mix-blend-mode:color-dodge;opacity:.4;background:repeating-linear-gradient(115deg, rgba(255,0,128,.5) 0%, rgba(255,196,0,.5) 7%, rgba(0,255,170,.5) 15%, rgba(0,170,255,.5) 23%, rgba(170,0,255,.5) 31%, rgba(255,0,128,.5) 40%);background-size:320% 320%;animation:ddHoloFoil 7s ease-in-out infinite;animation-delay:-2.6s" style-after="content:'';position:absolute;inset:0;z-index:3;border-radius:inherit;pointer-events:none;mix-blend-mode:overlay;background:linear-gradient(115deg, transparent 30%, rgba(255,255,255,.85) 48%, transparent 66%);background-size:280% 100%;animation:ddHoloGlare 7s ease-in-out infinite;animation-delay:-2.6s"><img src="assets/badges/meta-partner.svg" alt="Meta Business Partner" style="display:block;width:100%;height:100%"></div>
+        <div style="position:relative;display:block;border-radius:10px;overflow:hidden;isolation:isolate;width:100%;max-width:268px;aspect-ratio:260/61;box-shadow:0 12px 28px -12px rgba(0,0,0,.5);transition:transform .28s, box-shadow .28s" style-hover="transform:translateY(-3px);box-shadow:0 20px 40px -14px rgba(0,90,210,.55)" style-before="content:'';position:absolute;inset:0;z-index:2;border-radius:inherit;pointer-events:none;mix-blend-mode:color-dodge;opacity:.4;background:repeating-linear-gradient(115deg, rgba(255,0,128,.5) 0%, rgba(255,196,0,.5) 7%, rgba(0,255,170,.5) 15%, rgba(0,170,255,.5) 23%, rgba(170,0,255,.5) 31%, rgba(255,0,128,.5) 40%);background-size:320% 320%;animation:ddHoloFoil 7s ease-in-out infinite;animation-delay:-4.7s" style-after="content:'';position:absolute;inset:0;z-index:3;border-radius:inherit;pointer-events:none;mix-blend-mode:overlay;background:linear-gradient(115deg, transparent 30%, rgba(255,255,255,.85) 48%, transparent 66%);background-size:280% 100%;animation:ddHoloGlare 7s ease-in-out infinite;animation-delay:-4.7s"><img src="assets/badges/hubspot-partner.svg" alt="HubSpot Partner" style="display:block;width:100%;height:100%"></div>
+      </div>
+    </div>
+
+    <div style="max-width:1180px;margin:32px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
+      <span style="color:rgba(255,255,255,.5);font-size:.8rem">© 2025 Delta Digital. Todos los derechos reservados.</span>
+      <div style="display:flex;gap:28px;flex-wrap:wrap">
+        <a href="preguntas-frecuentes.html#faq-l" style="color:rgba(255,255,255,.62);font-size:.84rem;text-decoration:none;transition:color .15s" style-hover="color:#ffffff">Aviso legal</a>
+        <a href="preguntas-frecuentes.html#faq-p" style="color:rgba(255,255,255,.62);font-size:.84rem;text-decoration:none;transition:color .15s" style-hover="color:#ffffff">Política de privacidad</a>
+        <a href="preguntas-frecuentes.html#faq-c" style="color:rgba(255,255,255,.62);font-size:.84rem;text-decoration:none;transition:color .15s" style-hover="color:#ffffff">Política de cookies</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<sc-if value="{{ showWhatsApp }}" hint-placeholder-val="{{ true }}">
+<a href="{{ waHref }}" target="_blank" rel="noopener" aria-label="WhatsApp" style="position:fixed;right:26px;bottom:26px;z-index:180;width:73px;height:73px;border-radius:50%;display:grid;place-items:center;backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);background:rgba(255,255,255,.14);box-shadow:0 18px 40px -16px rgba(16,24,40,.45);transition:transform .2s" style-hover="transform:translateY(-3px)">
+  <img src="assets/whatsapp.svg" alt="" aria-hidden="true" style="width:100%;height:100%;display:block">
+</a>
+</sc-if>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showWhatsApp&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Contacto&quot;},&quot;whatsappNumero&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;56999098594&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contacto&quot;}}">
+class Component extends DCLogic {
+  state = { emTab: 1, faq: 1, blogScrollable: true, navSolid: true, menuOpen: false, hero: null, narrow: typeof window !== 'undefined' && window.innerWidth <= 900, drawer: false, mServ: false };
+
+  _heroMove(e) {
+    const r = e.currentTarget.getBoundingClientRect();
+    const cx = e.clientX, cy = e.clientY;
+    if (this._hraf) return;
+    this._hraf = requestAnimationFrame(() => {
+      this._hraf = null;
+      const local = {}, blur = {};
+      const diag = Math.hypot(r.width, r.height);
+      [['0', 'ddOrbit'], ['1', 'ddPh1'], ['2', 'ddPh2'], ['3', 'ddPh3'], ['4', 'ddV1'], ['5', 'ddV2']].forEach(([k, id]) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const b = el.getBoundingClientRect();
+        local[k] = [
+          (((cx - b.left) / b.width) * 100).toFixed(1) + '%',
+          (((cy - b.top) / b.height) * 100).toFixed(1) + '%'
+        ];
+        const dx = Math.max(b.left - cx, 0, cx - b.right);
+        const dy = Math.max(b.top - cy, 0, cy - b.bottom);
+        const d = Math.hypot(dx, dy) / diag;
+        blur[k] = Math.min(4.5, Math.max(0, (d - 0.04) * 26)).toFixed(2) + 'px';
+      });
+      this.setState({ hero: { x: (cx - r.left) / r.width, y: (cy - r.top) / r.height, local, blur } });
+    });
+  }
+
+  componentDidMount() {
+    const check = () => {
+      const hero = document.getElementById('top');
+      const nav = document.getElementById('ddnav');
+      if (!hero || !nav) return;
+      if (this.state.navSolid !== true) this.setState({ navSolid: true });
+    };
+    this._checkNav = () => {
+      if (this._raf) return;
+      this._raf = requestAnimationFrame(() => { this._raf = null; check(); });
+    };
+    document.addEventListener('scroll', this._checkNav, { capture: true, passive: true });
+    window.addEventListener('scroll', this._checkNav, { passive: true });
+    window.addEventListener('resize', this._checkNav, { passive: true });
+    let tick = 0;
+    const poll = () => {
+      this._pollId = requestAnimationFrame(poll);
+      if (++tick % 6 === 0) check();
+    };
+    this._pollId = requestAnimationFrame(poll);
+    check();
+    this._syncBlogNav();
+    this._onResize = () => {
+      this._syncBlogNav();
+      const n = window.innerWidth <= 900;
+      const mid = n && window.innerWidth > 620;
+      const sm = window.innerWidth < 1080;
+      const sr = window.innerWidth >= 1230;
+      const cm = window.innerWidth < 780;
+      if (n !== this.state.narrow || mid !== this.state.mid || sm !== this.state.subWide || sr !== this.state.servRow || cm !== this.state.ctaSm) this.setState({ narrow: n, mid, subWide: sm, servRow: sr, ctaSm: cm, drawer: n ? this.state.drawer : false });
+    };
+    window.addEventListener('resize', this._onResize, { passive: true });
+    const proc = document.getElementById('proceso');
+    if (proc && 'IntersectionObserver' in window) {
+      this._procObs = new IntersectionObserver(entries => {
+        if (entries.some(e => e.isIntersecting)) {
+          this.setState({ procOn: true });
+          this._procObs.disconnect();
+          this._confTimer = setTimeout(() => this.setState(st => ({ burst: (st.burst || 0) + 1 })), 2150);
+        }
+      }, { threshold: 0.16 });
+      this._procObs.observe(proc);
+    } else {
+      this.setState({ procOn: true });
+    }
+    this._initReveal();
+  }
+
+  _confetti(b) {
+    if (!b) return null;
+    const cols = ['#0093f7', '#2e9bff', '#8fc8ff', '#0a0223', '#5ab0ff'];
+    const pieces = [];
+    for (let k = 0; k < 20; k++) {
+      const r = (n, m) => { const x = Math.sin(k * n + m) * 43758.5453; return x - Math.floor(x); };
+      const ang = (k * (360 / 20) - 90 + (r(12.9898, 78.233) - 0.5) * 22) * Math.PI / 180;
+      const dist = 34 + r(4.898, 7.23) * 40;
+      pieces.push(React.createElement('i', {
+        key: k,
+        style: {
+          position: 'absolute', left: '50%', top: '50%',
+          width: k % 3 ? '3.5px' : '4.5px', height: k % 3 ? '9.5px' : '6px', transform: 'rotate(' + (r(9.1, 1.4) * 360).toFixed(0) + 'deg)',
+          borderRadius: '1px', background: cols[k % 5],
+          '--tx': (Math.cos(ang) * dist).toFixed(1) + 'px',
+          '--ty': (Math.sin(ang) * dist).toFixed(1) + 'px',
+          '--rot': ((k * 71) % 360) + 'deg',
+          animation: 'ddConf .88s cubic-bezier(.12,.75,.3,1) ' + (r(2.11, 3.7) * 90).toFixed(0) + 'ms both'
+        }
+      }));
+    }
+    return React.createElement('span', { key: b, 'aria-hidden': 'true', style: { position: 'absolute', left: 0, top: 0, right: 0, bottom: 0, pointerEvents: 'none', zIndex: 3 } }, pieces);
+  }
+
+  _initReveal() {
+    const isAnimated = el => { const a = getComputedStyle(el).animationName; return a && a !== 'none'; };
+    const ok = el => {
+      const cs = getComputedStyle(el);
+      if (cs.position === 'fixed' || cs.position === 'absolute') return false;
+      if (isAnimated(el)) return false;
+      const r = el.getBoundingClientRect();
+      return r.height > 40 && r.width > 40;
+    };
+    const narrow = window.innerWidth <= 900;
+    const targets = [];
+    const push = el => {
+      if (narrow && el.closest && el.closest('#portafolio')) return;
+      if (el.closest && el.closest('#clientes')) return;
+      if (el.closest && el.closest('#proceso') && el.tagName !== 'H2') return;
+      if (el.getBoundingClientRect().width > window.innerWidth * 1.1) return;
+      if (el && ok(el) && !targets.includes(el) && !targets.some(t => t.contains(el))) targets.push(el);
+    };
+    document.querySelectorAll('section, #contacto').forEach(sec => {
+      sec.querySelectorAll('h1,h2').forEach(push);
+      sec.querySelectorAll('article').forEach(push);
+      sec.querySelectorAll('div').forEach(c => {
+        const cs = getComputedStyle(c);
+        if (cs.display !== 'grid' && cs.display !== 'flex') return;
+        const kids = [...c.children].filter(k => k.nodeType === 1);
+        if (kids.length < 2 || kids.length > 8) return;
+        if (kids.some(k => k.tagName === 'SPAN' || k.tagName === 'A' && k.getBoundingClientRect().height < 70)) return;
+        kids.forEach(push);
+      });
+    });
+    const done = el => { el.classList.remove('dd-rv', 'dd-rv-in'); el.style.animationDelay = ''; };
+    targets.forEach(el => el.classList.add('dd-rv'));
+    let pending = targets.slice();
+    const sweep = () => {
+      if (!pending.length) return;
+      const vh = window.innerHeight;
+      let shown = 0;
+      pending = pending.filter(el => {
+        const r = el.getBoundingClientRect();
+        if (r.top > vh * 0.92 || r.bottom < 0) return true;
+        el.style.animationDelay = (shown++ * 80) + 'ms';
+        el.classList.add('dd-rv-in');
+        el.addEventListener('animationend', () => done(el), { once: true });
+        setTimeout(() => done(el), 1500);
+        return false;
+      });
+    };
+    this._revealSweep = () => {
+      if (this._revealRaf) return;
+      this._revealRaf = requestAnimationFrame(() => { this._revealRaf = null; sweep(); });
+    };
+    document.addEventListener('scroll', this._revealSweep, { capture: true, passive: true });
+    window.addEventListener('scroll', this._revealSweep, { passive: true });
+    window.addEventListener('resize', this._revealSweep, { passive: true });
+    let t = 0;
+    const poll = () => {
+      this._revealPoll = requestAnimationFrame(poll);
+      if (++t % 8 === 0) sweep();
+    };
+    this._revealPoll = requestAnimationFrame(poll);
+    sweep();
+  }
+
+  _syncBlogNav() {
+    const track = document.getElementById('ddBlogTrack');
+    if (!track) return;
+    const can = track.scrollWidth - track.clientWidth > 8;
+    if (can !== this.state.blogScrollable) this.setState({ blogScrollable: can });
+  }
+
+  componentWillUnmount() {
+    if (this._onResize) window.removeEventListener('resize', this._onResize);
+    if (this._pollId) cancelAnimationFrame(this._pollId);
+    if (this._checkNav) {
+      document.removeEventListener('scroll', this._checkNav, { capture: true });
+      window.removeEventListener('scroll', this._checkNav);
+      window.removeEventListener('resize', this._checkNav);
+    }
+  }
+
+  _scrollBlog(dir) {
+    const track = document.getElementById('ddBlogTrack');
+    if (!track) return;
+    const card = track.firstElementChild;
+    const step = card ? card.offsetWidth + 32 : 360;
+    track.scrollBy({ left: step * dir, behavior: 'smooth' });
+  }
+
+  _whyMove(e) {
+    const cx = e.clientX, cy = e.clientY;
+    if (this._wraf) return;
+    this._wraf = requestAnimationFrame(() => {
+      this._wraf = null;
+      const stage = document.getElementById('ddWhy');
+      if (!stage) return;
+      const sr = stage.getBoundingClientRect();
+      const reach = sr.width * 0.42;
+      const out = {};
+      [...stage.querySelectorAll('img')].forEach((el, i) => {
+        if (el.getAttribute('src').indexOf('grid.png') > -1) return;
+        const b = el.getBoundingClientRect();
+        const ex = b.left + b.width / 2, ey = b.top + b.height / 2;
+        const dx = ex - cx, dy = ey - cy;
+        const d = Math.hypot(dx, dy) || 1;
+        const f = Math.max(0, 1 - d / reach);
+        const push = f * f * 12;
+        out[i] = [
+          ((dx / d) * push).toFixed(1) + 'px',
+          ((dy / d) * push).toFixed(1) + 'px',
+          (1 + f * 0.07).toFixed(3)
+        ];
+      });
+      const card = document.getElementById('ddWhyCard');
+      if (card) {
+        const cb = card.getBoundingClientRect();
+        out.card = [
+          (((cx - cb.left) / cb.width) * 100).toFixed(1) + '%',
+          (((cy - cb.top) / cb.height) * 100).toFixed(1) + '%',
+          (((cx - sr.left) / sr.width) * 100).toFixed(1) + '% ' + (((cy - sr.top) / sr.height) * 100).toFixed(1) + '%'
+        ];
+      }
+      this.setState({ why: out });
+    });
+  }
+
+  _stratMove(e) {
+    const cx = e.clientX, cy = e.clientY;
+    if (this._sraf) return;
+    this._sraf = requestAnimationFrame(() => {
+      this._sraf = null;
+      const out = {};
+      ['ddStratA', 'ddStratB'].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const b = el.getBoundingClientRect();
+        const dx = cx - (b.left + b.width / 2);
+        const dy = cy - (b.top + b.height / 2);
+        const d = Math.hypot(dx, dy) || 1;
+        const f = Math.max(0, 1 - d / 420);
+        const pull = f * f * 22;
+        out[id] = [
+          ((dx / d) * pull).toFixed(1) + 'px',
+          ((dy / d) * pull).toFixed(1) + 'px',
+          (1 + f * 0.08).toFixed(3)
+        ];
+      });
+      this.setState({ strat: out });
+    });
+  }
+
+  static PF = [
+    ['Verity', 'assets/portfolio/verity.jpg'],
+    ['Lotus Records', 'assets/portfolio/lotus.jpg'],
+    ['MIGA', 'assets/portfolio/miga.jpg'],
+    ['Vir Energía', 'assets/portfolio/vir-energia.jpg'],
+    ['Fundación Todo Mejora', 'assets/portfolio/todo-mejora.jpg'],
+    ['Danioba', 'assets/portfolio/danioba.jpg']
+  ];
+
+  _pfDur(i, el) {
+    const p = el.parentElement; if (!p) return;
+    const d = Math.max(0, el.offsetHeight - p.clientHeight);
+    const v = Math.min(13, Math.max(4, 6 * Math.sqrt(d / 600))).toFixed(2) + 's';
+    this.setState(s => {
+      const cur = s.pfDurs || {};
+      return cur[i] === v ? null : { pfDurs: Object.assign({}, cur, { [i]: v }) };
+    });
+  }
+
+  renderVals() {
+    const ec = this.state.ec;
+    const ecVals = {
+      ecIn: () => this.setState({ ec: true }),
+      ecOut: () => this.setState({ ec: false }),
+      ecH1: ec ? '120%' : '100%',
+      ecO2: ec ? 1 : 0,
+      ecT2: ec ? 'translateY(0)' : 'translateY(26%)',
+      ecO3: ec ? 1 : 0,
+      ecT3: ec ? 'translateY(0)' : 'translateY(34%)',
+      ecF1: ec ? 'blur(0.8px) brightness(.9)' : 'none',
+      ecF2: ec ? 'blur(0.5px) brightness(.94)' : 'none'
+    };
+    const num = String(this.props.whatsappNumero ?? '56999098594').replace(/[^0-9]/g, '');
+    const s = this.state.navSolid;
+    const n = this.state.narrow;
+    const servRow = this.state.servRow == null ? (typeof window !== 'undefined' && window.innerWidth >= 1230) : this.state.servRow;
+    const mid = this.state.mid == null ? (n && typeof window !== 'undefined' && window.innerWidth > 620) : this.state.mid;
+    const ctaMob = this.state.ctaSm == null ? (typeof window !== 'undefined' && window.innerWidth < 780) : this.state.ctaSm;
+    const m = this.state.menuOpen;
+    const h = this.state.hero;
+    const c = this.state.ctaHover;
+    const nx = h ? (h.x - 0.5) * 2 : 0;
+    const ny = h ? (h.y - 0.5) * 2 : 0;
+    return {
+      ...ecVals,
+      pfDisplay: this.state.pf == null ? 'none' : 'flex',
+      pfIsOpen: this.state.pf != null,
+      pfImgRef: el => {
+        if (el && this.state.pf != null) el.src = Component.PF[this.state.pf][1];
+      },
+      pfName: this.state.pf == null ? '' : Component.PF[this.state.pf][0],
+      pfSrc: this.state.pf == null ? '' : Component.PF[this.state.pf][1],
+      narrow: n,
+      navDesk: n ? 'none' : 'flex',
+      navMob: n ? 'inline-flex' : 'none',
+      toggleDrawer: () => this.setState({ drawer: !this.state.drawer }),
+      closeDrawer: () => this.setState({ drawer: false }),
+      burgerPath: this.state.drawer ? 'M6 6l12 12M18 6L6 18' : 'M3 6h18M3 12h18M3 18h18',
+      drawerX: this.state.drawer ? '0' : '-102%',
+      drawerVis: this.state.drawer ? 'visible' : 'hidden',
+      drawerShade: this.state.drawer ? 1 : 0,
+      toggleMServ: () => this.setState({ mServ: !this.state.mServ }),
+      mServDisplay: this.state.mServ ? 'flex' : 'none',
+      mServRot: this.state.mServ ? '180deg' : '0deg',
+      mServBg: this.state.mServ ? '#ffffff' : 'transparent',
+      deskOnly: n ? 'none' : 'block',
+      deskFlex: n ? 'none' : 'flex',
+      procPlay: this.state.procOn ? 'running' : 'paused',
+      revCols: n ? '1fr' : 'repeat(2,minmax(0,1fr))',
+      inclCols: n ? (mid ? 'repeat(2,minmax(0,1fr))' : '1fr') : 'repeat(3,minmax(0,1fr))',
+      procOut: () => this.setState({ procH: null }),
+      flagIn: () => this.setState(st => ({ flagOn: true, burst: (st.burst || 0) + 1 })),
+      flagOut: () => this.setState({ flagOn: false }),
+      flagBlue: this.state.flagOn ? 1 : 0,
+      flagTr: this.state.flagOn ? 'scale(1.1)' : 'scale(1)',
+      procConf: this._confetti(this.state.burst || 0),
+      ...Object.fromEntries([1, 2, 3, 4, 5, 6].flatMap(k => {
+        const on = this.state.procH === k;
+        return [
+          ['procIn' + k, () => this.setState({ procH: k })],
+          ['pcBg' + k, on ? '#0093f7' : '#0a0223'],
+          ['pcTr' + k, on ? 'scale(1.14)' : 'scale(1)'],
+          ['pcSh' + k, on ? '0 12px 26px -10px rgba(0,147,247,.75)' : '0 0 0 0 rgba(0,147,247,0)']
+        ];
+      })),
+      ctaCols: ctaMob ? '1fr' : 'minmax(0,1fr) minmax(0,1fr)',
+      ctaAlign: ctaMob ? 'end' : 'center',
+      ctaRatio: ctaMob ? 'auto' : '2280 / 880',
+      ctaMinH: ctaMob ? 'min(168vw,760px)' : '0',
+      ctaInnerMinH: ctaMob ? 'min(168vw,760px)' : 'clamp(300px,26vw,380px)',
+      ctaFit: ctaMob ? 'cover' : 'fill',
+      ctaPos: ctaMob ? 'center top' : 'center right',
+      ctaSrc: ctaMob ? 'assets/rrss/cta-mob.png' : 'assets/rrss/cta.png',
+      seoProcCols: n ? 'repeat(2,minmax(0,1fr))' : 'repeat(4,minmax(0,1fr))',
+      seoProcGap: n ? 'clamp(30px,4vw,44px) clamp(14px,4vw,20px)' : 'clamp(30px,3.6vw,44px) clamp(10px,1.4vw,20px)',
+      seoStepAlign: n ? 'center' : 'flex-start',
+      seoStepText: n ? 'center' : 'left',
+      seoStepImgW: n ? '100%' : 'clamp(150px,15vw,200px)',
+      seoNumMl: n ? '0' : 'clamp(20px,2.4vw,34px)',
+      emTabCols: n ? 'repeat(2,minmax(0,1fr))' : 'repeat(4,minmax(0,1fr))',
+      emTabsDisp: n ? 'none' : 'grid',
+      emPanelCols: n ? '1fr' : 'repeat(auto-fit,minmax(min(100%,300px),1fr))',
+      emImgOrder: n ? -1 : 0,
+      emImgJustify: n ? 'center' : 'end',
+      emPanelMb: n ? 'clamp(16px,3vw,22px)' : '0',
+      emPanelPl: n ? 'clamp(20px,2.2vw,30px)' : 'clamp(24px,3vw,44px)',
+      ...Object.fromEntries([1,2,3,4].flatMap(i => [
+        ['emT' + i, () => this.setState({ emTab: i })],
+        ['emP' + i, n || this.state.emTab === i ? 'block' : 'none'],
+        ['emBg' + i, this.state.emTab === i ? '#ffffff' : 'rgba(255,255,255,.55)'],
+        ['emBd' + i, this.state.emTab === i ? '#35a7ff' : 'rgba(255,255,255,.9)'],
+        ['emFw' + i, this.state.emTab === i ? '700' : '500'],
+        ['emSh' + i, this.state.emTab === i ? '0 10px 26px -14px rgba(0,120,240,.5)' : '4px 5px 14px rgba(20,33,80,.05), -5px -5px 12px rgba(255,255,255,.7)']
+      ])),
+      ...Object.fromEntries([1,2,3,4,5].flatMap(i => [
+        ['faqT' + i, () => this.setState(s => ({ faq: s.faq === i ? null : i }))],
+        ['faqH' + i, this.state.faq === i ? 'block' : 'none'],
+        ['faqRot' + i, this.state.faq === i ? '180deg' : '0deg']
+      ])),
+      procCols: 'repeat(4,minmax(0,1fr))',
+      procWrapDisp: n ? 'grid' : 'block',
+      mobOnly: n ? 'block' : 'none',
+      procGridDisp: n ? 'contents' : 'grid',
+      procG1Mb: n ? '0px' : 'clamp(34px,4vw,56px)',
+      procImgW: n ? '100%' : 'clamp(126px,13vw,172px)',
+      procTitleFs: n ? 'clamp(.9rem,3.4vw,1.02rem)' : '1.02rem',
+      servPull: servRow ? 'clamp(-118px,-9vw,-72px)' : '0px',
+      servPull1: (servRow || (n && !mid)) ? 'clamp(-118px,-9vw,-72px)' : '0px',
+      servPadTop: (servRow || (n && !mid)) ? '0px' : '38px',
+      servHeadMb: (servRow || (n && !mid)) ? 'clamp(112px,11vw,150px)' : '30px',
+      servGap: servRow ? 'clamp(20px,2.4vw,34px)' : 'clamp(72px,26vw,110px) 34px',
+      ctaFx: (this.state.subWide == null ? (typeof window !== 'undefined' && window.innerWidth < 1080) : this.state.subWide) ? 'none' : 'block',
+      blogNavDisp: n ? 'none' : 'flex',
+      ctaDashT: n ? '-64px' : '-44px',
+      ctaDashL: n ? '-16%' : '3%',
+      ctaDashW: n ? '150px' : '170px',
+      ctaA1L: n ? '-5%' : '13%',
+      ctaA1T: n ? '76%' : '48%',
+      ctaA1W: n ? '52px' : '66px',
+      ctaA2R: n ? '-6%' : '10%',
+      ctaA2T: n ? '4%' : '16%',
+      ctaA2W: n ? '58px' : '76px',
+      svcMt: n ? '4px' : '100px',
+      svcPb: n ? '64px' : '0',
+      svcSecPb: n ? '18px' : 'clamp(48px,5vw,72px)',
+      whySecPt: n ? '20px' : 'clamp(30px,3.5vw,48px)',
+      stratOv: n ? 'visible' : 'hidden',
+      stratRingL: n ? '12%' : '2.46%',
+      procHaloTop: n ? '40px' : '6%',
+      procGap: n ? '86px' : 'clamp(52px,5.5vw,72px)',
+      ellT: n ? 'auto' : '311px',
+      ellB: n ? '24px' : 'auto',
+      triR: n ? '40px' : '62px',
+      triT: n ? 'auto' : '716px',
+      triB: n ? '150px' : 'auto',
+      procHaloRight: n ? '-180px' : '-84px',
+      stratRingT: n ? '-40px' : '0',
+      stratRingW: '200px',
+      whyW: n ? 'calc(114% + 2 * max(5vw,20px))' : '124%',
+      whyML: n ? 'calc(-1 * max(5vw,20px))' : '0',
+      stratEllR: n ? '-90px' : '-110px',
+      stratEllT: n ? '-70px' : '-96px',
+      stratEllW: n ? '240px' : '380px',
+      svcPmb: n ? '22px' : '52px',
+      svcPt: n ? '90px' : '0',
+      pfImgH: n ? '100%' : 'auto',
+      blogCol: n ? (mid ? '48%' : '86%') : 'calc((100% - 64px)/3)',
+      blogGap: n ? '20px' : '32px',
+      heroCopyOrder: n ? 2 : 1,
+      heroArtOrder: n ? 1 : 2,
+      gridFlex: n ? 'flex' : 'grid',
+      scrollX: n ? 'auto' : 'visible',
+      svcGap: n ? '18px' : '104px 30px',
+      stkRight: n ? '2%' : 'calc(30% + 23px)',
+      ctaGap: n ? '12px' : '26px',
+      ctaPadX: n ? '24px' : '44px',
+      badgeSize: n ? '104px' : '118px',
+      fadeMask: n ? 'linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%)' : 'none',
+      trkM: n ? 'calc(-1 * max(5vw,20px))' : '0',
+      trkMpf: n ? 'calc(-1 * clamp(34px,4vw,56px))' : '0',
+      trkPpf: n ? '16px' : '0',
+      trkP: n ? 'max(5vw,20px)' : '0',
+      cardBasis: n ? (mid ? '48%' : '84%') : 'auto',
+      pfBtnTop: n ? 'none' : 'inline-flex',
+      pfFootDisp: n ? 'flex' : 'none',
+      pfTrackW: n ? '1180px' : '100%',
+      pfProgLeft: ((this.state.pfProg || 0) * 58) + '%',
+      pfScroll: e => {
+        const el = e.currentTarget;
+        const max = el.scrollWidth - el.clientWidth;
+        const p = max > 0 ? el.scrollLeft / max : 0;
+        if (Math.abs(p - (this.state.pfProg || 0)) > 0.01) this.setState({ pfProg: p });
+      },
+      pfHeight: n ? '440px' : 'min(52vw,600px)',
+      pfClose: () => this.setState({ pf: null }),
+      pfPrev: e => { e.stopPropagation(); this.setState(st => ({ pf: (st.pf + Component.PF.length - 1) % Component.PF.length })); },
+      pfNext: e => { e.stopPropagation(); this.setState(st => ({ pf: (st.pf + 1) % Component.PF.length })); },
+      ...Object.fromEntries([0, 1, 2, 3, 4, 5].map(i => ['pfOpen' + i, () => this.setState({ pf: i })])),
+      ...Object.fromEntries([0, 1, 2, 3, 4, 5].map(i => ['pfIn' + i, () => this.setState({ pfh: i })])),
+      pfOut: () => this.setState({ pfh: null }),
+      ...Object.fromEntries([0, 1, 2, 3, 4, 5].map(i => ['pfDur' + i, (this.state.pfDurs || {})[i] || '4.5s'])),
+      ...Object.fromEntries([0, 1, 2, 3, 4, 5].map(i => ['pfRef' + i, el => {
+        if (!el) return;
+        const meas = () => this._pfDur(i, el);
+        if (el.complete) requestAnimationFrame(meas); else el.addEventListener('load', () => requestAnimationFrame(meas), { once: true });
+        const card = el.parentElement;
+        if (card && !card.__ddM) { card.__ddM = 1; card.addEventListener('mouseenter', meas); }
+      }])),
+      ...Object.fromEntries([0, 1, 2, 3, 4, 5].map(i => ['pfOv' + i, this.state.pfh === i ? 1 : 0])),
+      ...Object.fromEntries([0, 1, 2, 3, 4, 5].map(i => ['pfTr' + i, this.state.pfh === i ? 'translate3d(0,calc(100cqh - 100%),0)' : 'translate3d(0,0,0)'])),
+      stratMove: e => this._stratMove(e),
+      stratLeave: () => this.setState({ strat: null }),
+      sax: (this.state.strat && this.state.strat.ddStratA ? this.state.strat.ddStratA[0] : '0px'),
+      say: (this.state.strat && this.state.strat.ddStratA ? this.state.strat.ddStratA[1] : '0px'),
+      sas: (this.state.strat && this.state.strat.ddStratA ? this.state.strat.ddStratA[2] : '1'),
+      sbx: (this.state.strat && this.state.strat.ddStratB ? this.state.strat.ddStratB[0] : '0px'),
+      sby: (this.state.strat && this.state.strat.ddStratB ? this.state.strat.ddStratB[1] : '0px'),
+      sbs: (this.state.strat && this.state.strat.ddStratB ? this.state.strat.ddStratB[2] : '1'),
+      whyMove: e => this._whyMove(e),
+      whyHolo: this.state.why && this.state.why.card ? '.6' : '0',
+      wcx: this.state.why && this.state.why.card ? this.state.why.card[0] : '50%',
+      wcy: this.state.why && this.state.why.card ? this.state.why.card[1] : '50%',
+      whyHoloPos: this.state.why && this.state.why.card ? this.state.why.card[2] : '50% 50%',
+      whyLeave: () => this.setState({ why: null }),
+      ...Object.fromEntries([1, 2, 3, 4, 5, 6, 7, 8, 9].flatMap(i => {
+        const v = (this.state.why && this.state.why[i]) || ['0px', '0px', '1'];
+        return [['w' + i + 'x', v[0]], ['w' + i + 'y', v[1]], ['w' + i + 's', v[2]]];
+      })),
+      badgeOn: () => this.setState({ badgeHover: true }),
+      badgeOff: () => this.setState({ badgeHover: false }),
+      badgePlay: this.state.badgeHover ? 'paused' : 'running',
+      ctaOn: () => this.setState({ ctaHover: true }),
+      ctaOff: () => this.setState({ ctaHover: false }),
+      ctaFrameBg: c ? 'rgba(58,120,220,.22)' : 'rgba(255,255,255,.08)',
+      ctaFrameShadow: c ? '0 18px 44px -14px rgba(0,120,240,.75), inset 0 1px 0 rgba(255,255,255,.22)' : '0 14px 34px -16px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.18)',
+      ctaInnerBg: c ? '#3b8ffb' : 'rgba(214,213,224,.86)',
+      ctaInnerColor: c ? '#ffffff' : '#0a0223',
+      ctaLift: c ? '-2px' : '0px',
+      heroMove: e => this._heroMove(e),
+      heroLeave: () => this.setState({ hero: null }),
+      h0x: (nx * -5).toFixed(1) + 'px',
+      h0y: (ny * -4).toFixed(1) + 'px',
+      h1x: (nx * 7).toFixed(1) + 'px',
+      h1y: (ny * 5).toFixed(1) + 'px',
+      h2x: (nx * 4).toFixed(1) + 'px',
+      h2y: (ny * 3).toFixed(1) + 'px',
+      h3x: (nx * 9).toFixed(1) + 'px',
+      h3y: (ny * 6).toFixed(1) + 'px',
+      b0: h && h.blur ? h.blur['0'] : '3px',
+      b1: h && h.blur ? h.blur['1'] : '3px',
+      b2: h && h.blur ? h.blur['2'] : '3px',
+      b3: h && h.blur ? h.blur['3'] : '3px',
+      b4: h && h.blur ? h.blur['4'] : '3px',
+      b5: h && h.blur ? h.blur['5'] : '3px',
+      h0mx: h && h.local['0'] ? h.local['0'][0] : '50%',
+      h0my: h && h.local['0'] ? h.local['0'][1] : '50%',
+      h1mx: h && h.local['1'] ? h.local['1'][0] : '50%',
+      h1my: h && h.local['1'] ? h.local['1'][1] : '50%',
+      h2mx: h && h.local['2'] ? h.local['2'][0] : '50%',
+      h2my: h && h.local['2'] ? h.local['2'][1] : '50%',
+      h3mx: h && h.local['3'] ? h.local['3'][0] : '50%',
+      h3my: h && h.local['3'] ? h.local['3'][1] : '50%',
+      holoPos: h ? (h.x * 100).toFixed(1) + '% ' + (h.y * 100).toFixed(1) + '%' : '50% 50%',
+      holoOn: h ? '.28' : '0',
+      openMenu: () => this.setState({ menuOpen: true }),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      servColor: m ? '#0093f7' : (s ? '#0a0223' : 'rgba(255,255,255,.92)'),
+      chevRot: m ? '180deg' : '0deg',
+      menuOpacity: m ? '1' : '0',
+      menuVis: m ? 'visible' : 'hidden',
+      menuY: m ? '0' : '-8px',
+      navBg: s ? '#ffffff' : 'rgba(13,4,38,.72)',
+      navBorder: s ? '#e7eaf2' : 'rgba(255,255,255,.08)',
+      navShadow: s ? '0 8px 26px -22px rgba(16,24,40,.7)' : '0 10px 30px -22px rgba(0,0,0,.9)',
+      navLogoLight: s ? '0' : '1',
+      navLogoDark: s ? '1' : '0',
+      navLink: s ? '#0a0223' : 'rgba(255,255,255,.92)',
+      navLinkHover: '#0093f7',
+      blogScrollable: this.state.blogScrollable,
+      showWhatsApp: this.props.showWhatsApp ?? true,
+      waHref: 'https://wa.me/' + num,
+      blogPrev: () => this._scrollBlog(-1),
+      blogNext: () => this._scrollBlog(1)
+    };
+  }
+}
+</script>
+</body>
+</html>
